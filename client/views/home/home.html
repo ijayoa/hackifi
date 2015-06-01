@@ -1,5 +1,406 @@
 <template name="home">
-<div id="skrollr-body">
+
+<head>
+<title>Hackifi | Home</title>
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<script src="js/wow.min.js"></script>
+<script>
+ new WOW().init();
+</script>
+
+        <script type="text/javascript" src="js/move-top.js"></script>
+        <script type="text/javascript" src="js/easing.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                $(".scroll").click(function(event){
+                    event.preventDefault();
+                    $('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+                });
+            });
+        </script>
+
+
+</head>
+<body>
+<!---->
+<div class="banner">
+     <div class="container">
+         <div class="header">
+             <div class="logo wow fadeInLeft" data-wow-delay="0.5s">s
+              <a class="navbar-brand" href="{{pathFor 'home'}}">{{Config.name}}</a>
+             </div>
+             <div class="top-menu">
+             <span class="menu"></span>
+                 <ul>
+                 <li class="active"><a href="index.html">Home</a></li>
+                 <li><a class="scroll" href="#features">Features</a></li>
+                 <li><a class="scroll" href="#about">About</a></li>
+                 <li><a class="scroll" href="#testimonials">Testimonials</a></li>
+                 <li><a class="scroll" href="#pricing">Pricing</a></li>
+                 <li><a class="scroll" href="#contact">Contact</a></li>
+                  {{#unless User}}
+                  <a id="home-login" href="{{pathFor route='atSignIn'}}"><li>{{_ "login2"}}</li></a>
+                  {{/unless}}
+                 </ul>
+             </div>
+              <!-- script-for-menu -->
+         <script>
+                $("span.menu").click(function(){
+                    $(".top-menu ul").slideToggle("slow" , function(){
+                    });
+                });
+         </script>
+         <!-- script-for-menu -->
+
+             <div class="clearfix"></div>
+         </div>
+         <div class="banner-info text-center">
+             <div class="col-md-12 banner-text wow fadeInRight text-center" data-wow-delay="0.5s">
+                 <h1>HACKATHONS MADE EASY</h1>
+                 <p>Hackifi is a customizable tool that makes it easier for hackathon organizers to create and manage hackathons.</p>
+                 <a class="view hvr-bounce-to-left" href="#">CREATE A COMPETITION</a>
+                 {{#if User}}
+                    <a href="{{pathFor 'dashboard'}}" class="view hvr-bounce-to-left btn btn-success"><i class="fa fa-dashboard"></i> {{_ "dashboard"}}</a>
+                    {{else}}
+                     <a class="btn btn-success" href="view hvr-bounce-to-left {{pathFor 'dashboard'}}">{{_ "getstarted"}}</a>
+                 {{/if}}
+             </div>
+             <!-- <div class="col-md-6 banner-pic wow fadeInLeft" data-wow-delay="0.5s">
+                 <img src="" alt=""/>
+             </div> -->
+             <div class="clearfix"></div>
+         </div>
+     </div>
+</div>
+<!---->
+<div id="features" class="features">
+     <div class="container">
+         <div class="features-head">
+             <h3>How it Works</h3>
+         </div>
+         <div class="features-section">
+             <div class="col-md-3 feature-grid">
+                 <img class="wow bounceIn" data-wow-delay="0.4s" src="images/icon1.png" alt=""/>
+                 <h3>Create Competition</h3>
+                 <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum lacinia consectetur.</p>
+             </div>
+             <div class="col-md-3 feature-grid">
+                 <img class="wow bounceIn" data-wow-delay="0.4s" src="images/icon2.png" alt=""/>
+                 <h3>Customize Settings</h3>
+                 <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum lacinia consectetur.</p>
+             </div>
+             <div class="col-md-3 feature-grid">
+                 <img class="wow bounceIn" data-wow-delay="0.4s" src="images/icon3.png" alt=""/>
+                 <h3>Personalize Url</h3>
+                 <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum lacinia consectetur.</p>
+             </div>
+             <div class="col-md-3 feature-grid">
+                 <img class="wow bounceIn" data-wow-delay="0.4s" src="images/icon4.png" alt=""/>
+                 <h3>Launch Hackathon</h3>
+                 <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum lacinia consectetur.</p>
+             </div>
+             <div class="clearfix"></div>
+         </div>
+     </div>
+</div>
+<!---->
+<div id="about" class="about">
+     <div class="container">
+         <div class="about-top">
+             <div class="col-md-6 about-device wow fadeInLeft" data-wow-delay="0.5s">
+                 <img src="/img/ipad.png" alt=""/>
+             </div>
+             <div class="col-md-6 about-device-info wow fadeInRight" data-wow-delay="0.5s">
+                 <div class="device-text">
+                     <h4>HACKIFI FOR RECRUITMENT</h4>
+                     <h3>Get Leads on Top Hackers</h3>
+                     <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+                     Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. </p>
+                 </div>
+                 <div class="about-list">
+                     <ul>
+                         <li><a href="#"><span class="abt1"></span>Awesome desgn</a></li>
+                         <li><a href="#"><span class="abt2"></span>Fully responsive</a></li>
+                         <li><a href="#"><span class="abt3"></span>Retina ready</a></li>
+                         <li><a href="#"><span class="abt4"></span>Tons of features  and easy to use</a></li>
+                     </ul>
+                 </div>
+             </div>
+             <div class="clearfix"></div>
+         </div>
+     </div>
+</div>
+<div class="about-bottom">
+     <div class="container">
+         <div class="col-md-6 about-customize wow fadeInRight" data-wow-delay="0.5s">
+             <div class="device-text-bottom">
+                    <h4>Customized Mobile Application</h4>
+                    <h3>Super easy to customize</h3>
+                    <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                    Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+             </div>
+         </div>
+         <div class="col-md-6 about-device-bottom wow fadeInLeft" data-wow-delay="0.5s">
+                <img src="images/phn3.jpg" alt=""/>
+         </div>
+         <div class="clearfix"></div>
+     </div>
+</div>
+<!---->
+  <script src="js/responsiveslides.min.js"></script>
+  <script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+      $("#slider2").responsiveSlides({
+        auto: true,
+        pager: true,
+        speed: 300,
+        namespace: "callbacks",
+      });
+    });
+  </script>
+<!---->
+<div id="testimonials" class="pricing">
+     <div class="container">
+         <div class="pricing-text">
+            <h4>CONVENIENCE HAS ITS PRICE</h4>
+            <h3>Pricings & Plans</h3>
+         </div>
+         <!-- start slider -->
+         <div class="pricing-grids">
+             <div class="slider">
+                 <ul class="rslides" id="slider2">
+                     <li>
+                         <div class="col-md-6 pricing-plans">
+                              <p>Once upon a time all the Rivers combined to protest against the action of the Sea in making their waters salt.
+                             “When we come to you,” said they to the Sea.</p>
+                              <div class="pic1">
+                                 <img src="images/pr1.png" alt=""/>
+                              </div>
+                              <div class="pic-info">
+                                    <h5>John Doe</h5>
+                                    <a href="#">CEO, THE RIVERS COMPANY</a>
+                              </div>
+                              <div class="clearfix"></div>
+                         </div>
+                         <div class="col-md-6 pricing-plans">
+                              <p>A shoe is not only a design, but it's a part of your body language, the way you walk. The way you're going to move is quite dictated by your shoes.</p>
+                              <div class="pic1">
+                                 <img src="images/pr2.png" alt=""/>
+                              </div>
+                              <div class="pic-info">
+                                    <h5>John Doe</h5>
+                                    <a href="#">CEO, THE RIVERS COMPANY</a>
+                              </div>
+                              <div class="clearfix"></div>
+                         </div>
+                          <div class="clearfix"></div>
+                      </li>
+                      <li>
+                         <div class="col-md-6 pricing-plans">
+                              <p>A shoe is not only a design, but it's a part of your body language, the way you walk. The way you're going to move is quite dictated by your shoes.</p>
+                              <div class="pic1">
+                                 <img src="images/pr2.png" alt=""/>
+                              </div>
+                              <div class="pic-info">
+                                    <h5>John Doe</h5>
+                                    <a href="#">CEO, THE RIVERS COMPANY</a>
+                              </div>
+                              <div class="clearfix"></div>
+                         </div>
+                          <div class="col-md-6 pricing-plans">
+                              <p>Once upon a time all the Rivers combined to protest against the action of the Sea in making their waters salt.
+                             “When we come to you,” said they to the Sea.</p>
+                              <div class="pic1">
+                                 <img src="images/m2.jpg" alt=""/>
+                              </div>
+                              <div class="pic-info">
+                                    <h5>John Doe</h5>
+                                    <a href="#">CEO, THE RIVERS COMPANY</a>
+                              </div>
+                              <div class="clearfix"></div>
+                         </div>
+                          <div class="clearfix"></div>
+                      </li>
+                      <li>
+                         <div class="col-md-6 pricing-plans">
+                              <p>Once upon a time all the Rivers combined to protest against the action of the Sea in making their waters salt.
+                             “When we come to you,” said they to the Sea.</p>
+                              <div class="pic1">
+                                 <img src="images/m1.jpg" alt=""/>
+                              </div>
+                              <div class="pic-info">
+                                    <h5>John Doe</h5>
+                                    <a href="#">CEO, THE RIVERS COMPANY</a>
+                              </div>
+                              <div class="clearfix"></div>
+                         </div>
+                         <div class="col-md-6 pricing-plans">
+                              <p>A shoe is not only a design, but it's a part of your body language, the way you walk. The way you're going to move is quite dictated by your shoes.</p>
+                              <div class="pic1">
+                                 <img src="images/pr1.png" alt=""/>
+                              </div>
+                              <div class="pic-info">
+                                    <h5>John Doe</h5>
+                                    <a href="#">CEO, THE RIVERS COMPANY</a>
+                              </div>
+                              <div class="clearfix"></div>
+                         </div>
+                          <div class="clearfix"></div>
+                      </li>
+                      <li>
+                         <div class="col-md-6 pricing-plans">
+                              <p>A shoe is not only a design, but it's a part of your body language, the way you walk. The way you're going to move is quite dictated by your shoes.</p>
+                              <div class="pic1">
+                                 <img src="images/pr2.png" alt=""/>
+                              </div>
+                              <div class="pic-info">
+                                    <h5>John Doe</h5>
+                                    <a href="#">CEO, THE RIVERS COMPANY</a>
+                              </div>
+                              <div class="clearfix"></div>
+                         </div>
+                          <div class="col-md-6 pricing-plans">
+                              <p>Once upon a time all the Rivers combined to protest against the action of the Sea in making their waters salt.
+                             “When we come to you,” said they to the Sea.</p>
+                              <div class="pic1">
+                                 <img src="images/m2.jpg" alt=""/>
+                              </div>
+                              <div class="pic-info">
+                                    <h5>John Doe</h5>
+                                    <a href="#">CEO, THE RIVERS COMPANY</a>
+                              </div>
+                              <div class="clearfix"></div>
+                         </div>
+                          <div class="clearfix"></div>
+                      </li>
+                  </ul>
+               </div>
+               <!-- end slider -->
+          </div>
+     </div>
+</div>
+<!---->
+<div class="theme">
+     <div class="container">
+         <h3 class="wow bounceIn" data-wow-delay="0.4s"><span>Like what you see ?</span> Get this great theme now !</h3>
+          <a class="view hvr-bounce-to-left wow bounceIn" data-wow-delay="0.4s" href="#">VIEW FEATURES</a>
+         <a class="download wow bounceIn" data-wow-delay="0.4s" href="#">DOWNLOAD NOW</a>
+     </div>
+</div>
+<!---->
+<div id="pricing" class="pricing-bottom">
+      <div class="container">
+         <div class="pricing-text-bottom">
+            <h4>QUALITY HAS ITS PRICE</h4>
+            <h3>Hackifi Pricings & Plans</h3>
+         </div>
+          <div class="price-section-grids text-center">
+             <div class="price-value text-center wow fadeInDown" data-wow-delay="0.4s">
+                 <div class="price-head">
+                    <h5>Personal</h5>
+                 </div>
+                 <div class="cost">
+                    <h3><span>$</span>25</h3>
+                    <p>\ per month</p>
+                 </div>
+                 <div class="cost-info">
+                    <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum <span>lacinia</span> consectetur.</p>
+                    <a href="#">ORDER NOW</a>
+                 </div>
+             </div>
+             <div class="price-value text-center wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="price-head">
+                         <h5>Business</h5>
+                    </div>
+                    <div class="cost">
+                         <h3><span>$</span>50</h3>
+                         <p>\ per month</p>
+                    </div>
+                    <div class="cost-info">
+                    <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum <span>lacinia</span> consectetur.</p>
+                    <a href="#">ORDER NOW</a>
+                    </div>
+             </div>
+             <div class="price-value text-center wow fadeInDown" data-wow-delay="0.4s">
+                 <div class="price-head">
+                         <h5>ultimate</h5>
+                  </div>
+                 <div class="cost">
+                     <h3><span>$</span>99</h3>
+                     <p>\ per month</p>
+                 </div>
+                 <div class="cost-info">
+                    <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum <span>lacinia</span> consectetur.</p>
+                    <a href="#">ORDER NOW</a>
+                 </div>
+             </div>
+             <div class="clearfix"></div>
+          </div>
+      </div>
+</div>
+<!---->
+<div id="contact" class="contact">
+     <div class="container">
+         <div class="contact-text">
+            <h4>STAY IN TOUCH</h4>
+            <h3>Contact us</h3>
+         </div>
+         <div class="contact-grids">
+             <div class="col-md-4 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
+                 <div class="icon1"></div>
+                 <p>Phone: (415) 124-5678</p>
+                 <p>Fax: (412) 123-8290</p>
+             </div>
+             <div class="col-md-4 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
+                 <div class="icon2"></div>
+                 <p>1001 Brickell Bay Dr.</p>
+                 <p>Suite 1900</p>
+                 <p>Miami, FL 33131</p>
+             </div>
+             <div class="col-md-4 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
+                 <div class="icon3"></div>
+                 <a href="mailto:example.com">support@yourname.com</a>
+             </div>
+             <div class="clearfix"></div>
+         </div>
+     </div>
+</div>
+<!---->
+<div class="footer text-center">
+     <div class="container">
+         <div class="social">
+             <a href="#"><span class="behance"></span></a>
+             <a href="#"><span class="dribble"></span></a>
+             <a href="#"><span class="twitter"></span></a>
+             <a href="#"><span class="facebook"></span></a>
+             <a href="#"><span class="linkedin"></span></a>
+         </div>
+         <p class="wow bounceIn" data-wow-delay="0.4s">Copyright &copy; 2015 LUCID All rights reserved | Template by  <a href="http://w3layouts.com">  W3layouts</a></p>
+     </div>
+</div>
+
+<script type="text/javascript">
+        $(document).ready(function() {
+                /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+                */
+        $().UItoTop({ easingType: 'easeOutQuart' });
+});
+</script>
+<a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+ </body>
+
+<!-- <div id="skrollr-body">
     {{> skrollrBackground}}
     <section id="intro" class="colored text-center">
         <header>
@@ -32,11 +433,11 @@
                         {{else}}
                         <a class="btn btn-success" href="{{pathFor 'dashboard'}}">{{_ "getstarted"}}</a>
                         {{/if}}
-                    </div>
+                    </div> -->
                     <!--                 <div class="col-lg-6 col-sm-6">
                                                 <img class="img-responsive" src="/img/image-header1.png" alt="">
                     </div> -->
-                </div>
+    <!--             </div>
             </div>
         </div>
     </section>
@@ -72,14 +473,14 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- <section id="examples">
                 <div class="container wow fadeInUp animated">
                         <h1>Great features!</h1>
                         <h2>You can use {{Config.siteName}} to do anything</h2>
                 </div>
     </section> -->
-    <section id="ipad" class="colored text-center">
+   <!--  <section id="ipad" class="colored text-center">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
@@ -115,9 +516,9 @@
         </div>
     </section>
 </div>
-{{> footerHome}}
+{{> footerHome}} -->
 </template>
-<template name="skrollrBackground">
+<!-- <template name="skrollrBackground">
 <div
     id="skroll-background-intro"
     class="parallax-image-wrapper parallax-image-wrapper-100"
@@ -129,11 +530,11 @@
         data-anchor-target="#intro"
         data-bottom-top="transform: translate3d(0px, -80%, 0px);"
         data-top-bottom="transform: translate3d(0px, 80%, 0px);"
-    ></div>
+    ></div> -->
     <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
-</div>
-</template>
-<template name="footerHome">
+<!-- </div>
+</template> -->
+<!-- <template name="footerHome">
     <footer id="footer-home">
         <div class="container">
             <div class="row text-center">
@@ -157,4 +558,4 @@
             </div>
         </div>
     </footer>
-</template>
+</template> -->

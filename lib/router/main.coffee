@@ -5,6 +5,7 @@ Router.map ->
 
   @route "dashboard",
     path: "/dashboard"
+    layoutTemplate: "dashboard-layout"
     waitOn: ->
       [
         subs.subscribe 'posts'
@@ -13,3 +14,7 @@ Router.map ->
       ]
     data: ->
       posts: Posts.find({},{sort: {createdAt: -1}}).fetch()
+
+  @route "myhackathons",
+    path: "dashboard/myhackathons"
+    layoutTemplate: "dashboard-layout"

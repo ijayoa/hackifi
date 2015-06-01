@@ -4,7 +4,7 @@
 @Config =
 
 	# Basic Details
-	name: 'My App'
+	name: 'Hackifi'
 	title: ->
 			TAPi18n.__ 'configTitle'
 	subtitle: ->
