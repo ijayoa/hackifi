@@ -14,6 +14,38 @@ Posts.allow
 	remove: (userId, doc) ->
 		userId == doc.owner
 
+Hackathons.allow
+	insert: (userId, doc) ->
+		userId == doc.owner
+	update: (userId, doc, fields, modifier) ->
+		userId == doc.owner
+	remove: (userId, doc) ->
+		userId == doc.owner
+
+Judges.allow
+	insert: (userId, doc) ->
+		userId == doc.owner
+	update: (userId, doc, fields, modifier) ->
+		userId == doc.owner
+	remove: (userId, doc) ->
+		userId == doc.owner
+
+Mentors.allow
+	insert: (userId, doc) ->
+		userId == doc.owner
+	update: (userId, doc, fields, modifier) ->
+		userId == doc.owner
+	remove: (userId, doc) ->
+		userId == doc.owner
+
+Sponsors.allow
+	insert: (userId, doc) ->
+		userId == doc.owner
+	update: (userId, doc, fields, modifier) ->
+		userId == doc.owner
+	remove: (userId, doc) ->
+		userId == doc.owner
+
 Attachments.allow
 	insert: (userId, doc) ->
 		true

@@ -1,0 +1,41 @@
+<template name="setUp">
+	{{> configureHackathon}}
+</template>
+
+<template name="configureHackathon">
+<h4>Configure Hackathon</h4>
+	<hr>
+	<div class="row">
+	   <div class="col-sm-4 text-center">
+          <a class="js-disable-create" href="{{pathFor 'createHackathon'}}"><img src="/img/check.png" width="48px" height="48px"> <br><p>Create Hackathon</p></a>
+
+          <button style="display:none;" class="btn btn-lg btn-success js-able-create"><i class="fa fa-check"></i>Hackathon Created</button>
+	   </div>
+	   <div class="col-sm-4 text-center">
+          <a href="{{pathFor 'addSponsors'}}"><img src="/img/sponsor.png" width="48px" height="48px"> <br><p>Add Sponsors</p></a>
+	   </div>
+	   <div class="col-sm-4 text-center">
+	      <a href="#"><img src="/img/judge.png" width="48px" height="48px"> <br><p>Add Judges</p></a>
+	   </div>
+	</div>
+</template>
+
+<template name="createHackathon">
+    <h4>Create Hackathon</h4>
+	<hr>
+	{{#autoForm collection="Hackathons" id="insertHackathonForm" type="insert"}}
+    <fieldset>
+      {{> afQuickField name='title' placeholder='eg. Hack for big Choices'}}
+      {{> afQuickField name='coverPhoto'}}
+      {{> afQuickField name='personalizedUrl' placeholder='localhost:3000/your url'}}
+      {{> afQuickField name='about'}}
+      {{> afQuickField name='rules'}}
+      {{> afQuickField name='eligibility'}}
+      {{> afQuickField name='prizes'}}
+      {{> afQuickField name='timeline'}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Save</button>
+  {{/autoForm}}
+</template>
+
+

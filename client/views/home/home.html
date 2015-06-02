@@ -28,7 +28,7 @@
 <div class="banner">
      <div class="container">
          <div class="header">
-             <div class="logo wow fadeInLeft" data-wow-delay="0.5s">s
+             <div class="logo wow fadeInLeft" data-wow-delay="0.5s">
               <a class="navbar-brand" href="{{pathFor 'home'}}">{{Config.name}}</a>
              </div>
              <div class="top-menu">
@@ -60,7 +60,7 @@
              <div class="col-md-12 banner-text wow fadeInRight text-center" data-wow-delay="0.5s">
                  <h1>HACKATHONS MADE EASY</h1>
                  <p>Hackifi is a customizable tool that makes it easier for hackathon organizers to create and manage hackathons.</p>
-                 <a class="view hvr-bounce-to-left" href="#">CREATE A COMPETITION</a>
+                 <a class="view hvr-bounce-to-left" href="{{pathFor 'dashboard'}}">CREATE A COMPETITION</a>
                  {{#if User}}
                     <a href="{{pathFor 'dashboard'}}" class="view hvr-bounce-to-left btn btn-success"><i class="fa fa-dashboard"></i> {{_ "dashboard"}}</a>
                     {{else}}

@@ -1,0 +1,21 @@
+<template name="addJudge">
+<h4>Add Hackathon Judges</h4>
+<small>Judges are people who judge hackathon teams.</small>
+<hr>
+{{#autoForm collection="Judges" id="insertJudgeForm" type="insert"}}
+    <fieldset>
+      {{> afQuickField name='name' placeholder='eg. Google'}}
+      {{> afQuickField name='personalWebsiteLink' placeholder="eg. johndoe.com"}}
+      {{> afQuickField name='picture'}}
+      {{> afQuickField name='about' rows="3"}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Save</button>
+  {{/autoForm}}
+</template>
+
+<template name="allJudges">
+<h4>Showing Judges</h4>
+<small>Judges are people who judge hackathon teams.</small>
+<hr>
+<p>list of all judges</p>
+</template>

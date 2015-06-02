@@ -1,0 +1,21 @@
+<template name="addSponsor">
+<h4>Add Hackathon Sponsors</h4>
+<small>Sponsors are companies who provide support for the hackathon</small>
+<hr>
+{{#autoForm collection="Sponsors" id="insertSponsorForm" type="insert"}}
+    <fieldset>
+      {{> afQuickField name='name' placeholder='eg. Google'}}
+      {{> afQuickField name='websiteLink' placeholder="eg. www.google.com"}}
+      {{> afQuickField name='sponsorLogo'}}
+      {{> afQuickField name='about' rows="3"}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Save</button>
+  {{/autoForm}}
+</template>
+
+<template name="allSponsors">
+<h4>Showing Sponsors</h4>
+<small>Sponsors are companies who provide support for the hackathon</small>
+<hr>
+<p>list of all sponsors</p>
+</template>

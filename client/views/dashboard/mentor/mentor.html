@@ -1,0 +1,22 @@
+<template name="addMentor">
+<h4>Add Hackathon Mentors</h4>
+<small>Mentors are people who advice teams uring the event.</small>
+<hr>
+{{#autoForm collection="Mentors" id="insertMentorForm" type="insert"}}
+    <fieldset>
+      {{> afQuickField name='name' placeholder='eg. John'}}
+      {{> afQuickField name='picture'}}
+      {{> afQuickField name='personalWebsiteLink' placeholder="eg. johndoe.com"}}
+      {{> afQuickField name='areaOfSpecialization' placeholder="eg. Business"}}
+      {{> afQuickField name='about' rows="3"}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Save</button>
+  {{/autoForm}}
+</template>
+
+<template name="allMentors">
+<h4>Showing Mentors</h4>
+<small>Mentors are people who advice teams uring the event.</small>
+<hr>
+<p>list of all mentors</p>
+</template>
