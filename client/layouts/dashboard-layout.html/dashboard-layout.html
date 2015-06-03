@@ -1,10 +1,14 @@
 <template name="dashboardlayout">
 <!-- <div class="layout master-layout {{$.Session.get 'sidebar'}}"> -->
 		{{> navbar}}
+
     <div class="row profile">
 		<div class="col-md-3">
 			<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
+				<!-- <div class="profile-userpic logo text-center">
+				<a href="{{pathFor 'home'}}"><img width="100" height="100" class="img-responsive" src="/img/hackifilogo.png" alt=""></a>
+			    </div> -->
 				<div class="profile-userpic">
 					<img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
 				</div>
@@ -49,9 +53,22 @@
 				            <li><a href="{{pathFor 'allJudges'}}"><i class="fa fa-eye"></i> View All</a></li>
 				          </ul>
 				        </li>
+				         <li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users"></i> Participants</a>
+				          <ul class="dropdown-menu forAnimate" role="menu">
+				           <li><a href="{{pathFor 'addJudge'}}"><i class="fa fa-user-plus"></i>New</a></li>
+				           <li><a href="{{pathFor 'allJudges'}}"><i class="fa fa-eye"></i> View All</a></li>
+				            <li><a href="{{pathFor 'allJudges'}}"><i class="fa fa-check"></i> Register</a></li>
+				          </ul>
+				        </li>
 						<li>
 							<a href="#">
-							<i class="glyphicon glyphicon-flag"></i>
+							<i class="fa fa-calendar"></i>
+							Schedule Updates </a>
+						</li>
+						<li>
+							<a href="#">
+							<i class="fa fa-question"></i>
 							Help </a>
 						</li>
 					</ul>
@@ -61,6 +78,7 @@
 		</div>
 		<div class="col-md-9">
             <div class="profile-content">
+            {{> breadcrumb}}
             {{#momentum plugin='iron-router' options=momentumIRTransition}}
 			   {{> yield}}
 		    {{/momentum}}

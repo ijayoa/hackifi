@@ -21,7 +21,8 @@
 </template>
 
 <template name="createHackathon">
-    <h4>Create Hackathon</h4>
+{{#unless  $.Session.get 'exists'}}
+  <h4>Create Hackathon</h4>
 	<hr>
 	{{#autoForm collection="Hackathons" id="insertHackathonForm" type="insert"}}
     <fieldset>
@@ -36,6 +37,31 @@
     </fieldset>
     <button type="submit" class="btn btn-primary">Save</button>
   {{/autoForm}}
+{{else}}
+{{#with hack}}
+  <h4>Hackathon Created</h4>
+  <hr>
+  <div class="alert alert-info">Click here to <i class="fa fa-gear"></i> 
+  <a href="{{pathFor 'updateHackathon'}}" class="alert-link"> Edit Settings</a>
+</div>
+{{/with}}
+{{/unless}}
 </template>
-
+<template name="updateHackathon">
+   <h4>Edit Hackathon Settings</h4>
+   <hr>
+    {{#autoForm collection="Hackathons" doc=this id="updateHackathonForm" type="update"}}
+      <fieldset>
+        {{> afQuickField name='title' placeholder='eg. Hack for big Choices'}}
+        {{> afQuickField name='coverPhoto'}}
+        {{> afQuickField name='personalizedUrl' placeholder='localhost:3000/your url'}}
+        {{> afQuickField name='about'}}
+        {{> afQuickField name='rules'}}
+        {{> afQuickField name='eligibility'}}
+        {{> afQuickField name='prizes'}}
+        {{> afQuickField name='timeline'}}
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Save</button>
+    {{/autoForm}}
+</template>
 

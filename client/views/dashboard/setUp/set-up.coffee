@@ -2,19 +2,22 @@ AutoForm.hooks
   insertHackathonForm:
     onSuccess: (formType, result) ->
       sAlert.success 'Hackathon was successfully created'
-      Router.go 'setUp'
+      Router.go 'createHackathon'
+    onError: (formType, error) ->
+      console.log 'error'
+  updateHackathonForm:
+    onSuccess: (formType, result) ->
+      sAlert.success 'Hackathon was successfully updated'
+      Router.go 'createHackathon'
     onError: (formType, error) ->
       console.log 'error'
 
 
 
-Template.configureHackathon.rendered = () ->
-  if  Hackathons.find(Meteor.userId).fetch()
-    $('.js-able-create').attr('disabled','disabled')
-    $('.js-disable-create').hide()
-    $('.js-able-create').toggle 'slow'
-    sAlert.success 'Add sponsors next!'
-
+Template.createHackathon.rendered = () ->
+  if  Hackathons.findOne({owner:Meteor.userId()}).fetch()
+    Session.set 'exists', true
+    sAlert.info 'Add sponsors next!'
 
 
 
