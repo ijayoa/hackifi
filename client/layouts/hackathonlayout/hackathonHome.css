@@ -1,0 +1,28 @@
+.navigation{
+
+  margin-top: -30px;
+  border: 0px;
+  background-color: #eeeeee;
+ /* border-bottom:solid; */
+}
+.navigation a{
+	color: #002b21;
+}
+
+.title{
+ border-bottom: 25px;
+ font-size: 17px;
+ font-weight: 500;
+}
+.jumbotron h1{
+	color: #fff;
+	margin-top: 3%;
+}
+
+.join{
+  color: #000;
+  background-color: #fff;
+  border-color: #fff;
+   opacity: 0.7;
+  margin-top: 3%;
+}

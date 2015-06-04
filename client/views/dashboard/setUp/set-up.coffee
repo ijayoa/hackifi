@@ -15,7 +15,7 @@ AutoForm.hooks
 
 
 Template.createHackathon.rendered = () ->
-  if  Hackathons.findOne({owner:Meteor.userId()}).fetch()
+  if Hackathons.findOne({owner:Meteor.userId()})
     Session.set 'exists', true
     sAlert.info 'Add sponsors next!'
 

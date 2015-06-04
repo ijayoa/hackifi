@@ -1,0 +1,47 @@
+<template name="hackathonHome">
+{{#with hackData}}
+{{#with getDoc coverPhoto 'Attachments'}}
+<div class="jumbotron" style="background-image: url({{url}}); background:cover;">
+
+ <h1 class="title text-center">Hack For Hackifi</h1>
+<p class="text-center"><a class="btn join btn-lg" role="button">REGISTER NOW</a></p>
+</div>
+ 
+
+{{/with}}
+
+{{/with}}
+{{#with hackData}}
+<nav class="navigation navbar" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><strong>Powered by Hackifi</strong></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/{{personalizedUrl}}">Overview</a></li>
+        <li><a href="/{{personalizedUrl}}/sponsors">Sponsors</a></li>
+        <li><a href="/{{personalizedUrl}}/judges">Judges</a></li>
+        <li><a href="/{{personalizedUrl}}/mentors">Mentor</a></li>
+        <li><a href="/{{personalizedUrl}}/register">Register</a></li>
+        <li><a href="/{{personalizedUrl}}/submissions">Submissions/Winners</a></li>
+        <li><a href="/{{personalizedUrl}}/resources">Resources</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{{/with}}
+<div class="container">
+	 {{#momentum plugin='iron-router' options=momentumIRTransition}}
+			   {{> yield}}
+     {{/momentum}}
+</div>
+</template>

@@ -35,5 +35,11 @@ Router.plugin 'ensureSignedIn', except: [
   'atSignUp'
   'atForgotPassword'
   'atSignOut'
+  'hackathonOverview'
+  'hackathonSponsors'
+  'hackathonJudges'
+  'hackathonMentors'
+  'hackathonRegister'
+  'hackathonSubmit'
 ]
 
