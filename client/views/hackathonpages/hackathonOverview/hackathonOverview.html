@@ -1,3 +1,40 @@
 <template name="hackathonOverview">
-<h1>this is the fucking overview</h1>
+
+{{#with hackData}}
+<div class="row mainrow">
+	<h3 class="text-center">Overview of {{title}} Hackathon</h3>
+<hr>
+</div>
+<div class="row">
+<div class="col-sm-8 col-sm-offset-2">
+    {{#with getDoc coverPhoto 'Attachments'}}
+	<img class="img img-responsive" hieght="100px" src="{{url}}"/>
+	{{/with}}
+	<br>
+</div>
+
+<div class="col-sm-8 col-sm-offset-2">
+<h3 class="text-header" >About</h3>
+<br>
+<p class="text-content">{{about}}</p>
+<br>
+<h3 class="text-header">Eligibility</h3>
+<br>
+<p class="text-content">{{eligibility}}</p>
+<br>
+<h3 class="text-header">Rules</h3>
+<br>
+<p class="text-content">{{rules}}</p>
+<br>
+<h3 class="text-header">Prizes</h3>
+<br>
+<p class="text-content">{{prizes}}</p>
+<br>
+<h3 class="text-header">Timeline</h3>
+<br>
+<p class="text-content">{{timeline}}</p>
+</div>
+</div>
+{{/with}}
+<p class="text-center"><a class="btn joinOverview btn-lg" role="button">REGISTER NOW</a></p>
 </template>

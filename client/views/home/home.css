@@ -1,0 +1,21 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+.navlogo{
+  float: left;
+  line-height: 21px;
+  height: 50px;
+
+}
+
+.setfont{
+	font-family: 'Raleway', sans-serif;
+}
+.maintitle{
+    font-family: 'Poiret One', cursive;
+}
+.feature-grid h3{
+	font-family: 'Raleway', sans-serif;
+}
+.features{
+	  background-color: #eee;
+}

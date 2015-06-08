@@ -22,6 +22,39 @@ Hackathons.allow
 	remove: (userId, doc) ->
 		userId == doc.owner
 
+Messages.allow
+	insert: (userId, doc) ->
+		userId == doc.owner
+	update: (userId, doc, fields, modifier) ->
+		userId == doc.owner
+	remove: (userId, doc) ->
+		userId == doc.owner
+
+
+Submissions.allow
+	insert: (userId, doc) ->
+		userId == doc.owner
+	update: (userId, doc, fields, modifier) ->
+		userId == doc.owner
+	remove: (userId, doc) ->
+		userId == doc.owner
+
+Feedbacks.allow
+	insert: (userId, doc) ->
+		userId == doc.owner
+	update: (userId, doc, fields, modifier) ->
+		userId == doc.owner
+	remove: (userId, doc) ->
+		userId == doc.owner
+
+Participants.allow
+	insert: (userId, doc) ->
+		userId == doc.owner
+	update: (userId, doc, fields, modifier) ->
+		userId == doc.owner
+	remove: (userId, doc) ->
+		userId == doc.owner
+
 Judges.allow
 	insert: (userId, doc) ->
 		userId == doc.owner

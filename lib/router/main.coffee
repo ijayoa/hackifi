@@ -45,12 +45,56 @@ Router.map ->
     data: ->
       return Hackathons.findOne(this.params._id)
 
+  @route "updateMentor",
+    path: "dashboard/mentors/edit/:_id"
+    layoutTemplate: "dashboardlayout"
+    waitOn: ->
+      [
+        subs.subscribe 'mentors'
+        subs.subscribe 'attachments'
+      ]
+    data: ->
+      return Mentors.findOne(this.params._id)
+
+  @route "updateSponsor",
+    path: "dashboard/sponsors/edit/:_id"
+    layoutTemplate: "dashboardlayout"
+    waitOn: ->
+      [
+        subs.subscribe 'sponsors'
+        subs.subscribe 'attachments'
+      ]
+    data: ->
+      return Sponsors.findOne(this.params._id)
+  
+  @route "updateJudge",
+    path: "dashboard/judges/edit/:_id"
+    layoutTemplate: "dashboardlayout"
+    waitOn: ->
+      [
+        subs.subscribe 'judges'
+        subs.subscribe 'attachments'
+      ]
+    data: ->
+      return Judges.findOne(this.params._id)
+
+
+
   @route "addSponsor",
     path: "dashboard/hackathon/add/sponsor"
     layoutTemplate: "dashboardlayout"
     waitOn: ->
       [
         subs.subscribe 'sponsors'
+        subs.subscribe 'attachments'
+      ]
+
+  @route "newMessage",
+    path: "dashboard/hackathon/new/message"
+    layoutTemplate: "dashboardlayout"
+    waitOn: ->
+      [
+        subs.subscribe 'messages'
         subs.subscribe 'attachments'
       ]
 
@@ -118,6 +162,7 @@ Router.map ->
         subs.subscribe 'judges'
         subs.subscribe 'sponsors'
         subs.subscribe 'attachments'
+        subs.subscribe 'participants'
       ]
     onBeforeAction: (pause) ->
       unless Hackathons.findOne({personalizedUrl:this.params._id})
@@ -137,6 +182,7 @@ Router.map ->
         subs.subscribe 'judges'
         subs.subscribe 'sponsors'
         subs.subscribe 'attachments'
+        subs.subscribe 'participants'
       ]
     onBeforeAction: (pause) ->
       unless Hackathons.findOne({personalizedUrl:this.params._id})
@@ -158,6 +204,7 @@ Router.map ->
         subs.subscribe 'judges'
         subs.subscribe 'sponsors'
         subs.subscribe 'attachments'
+        subs.subscribe 'participants'
       ]
     onBeforeAction: (pause) ->
       unless Hackathons.findOne({personalizedUrl:this.params._id})
@@ -179,6 +226,7 @@ Router.map ->
         subs.subscribe 'judges'
         subs.subscribe 'sponsors'
         subs.subscribe 'attachments'
+        subs.subscribe 'participants'
       ]
     onBeforeAction: (pause) ->
       unless Hackathons.findOne({personalizedUrl:this.params._id})
@@ -189,3 +237,67 @@ Router.map ->
       hData = Hackathons.findOne({personalizedUrl:this.params._id})
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
       judgeData: Judges.find({owner:hData.owner}).fetch()
+
+  @route "hackathonRegister",
+    path: "/:_id/register"
+    layoutTemplate:'hackathonHome'
+    waitOn: ->
+      [
+        subs.subscribe 'hackathons'
+        subs.subscribe 'mentors'
+        subs.subscribe 'judges'
+        subs.subscribe 'sponsors'
+        subs.subscribe 'attachments'
+        subs.subscribe 'participants'
+      ]
+    onBeforeAction: (pause) ->
+      unless Hackathons.findOne({personalizedUrl:this.params._id})
+        this.render 'notFound'
+      else
+        this.render 'hackathonRegister'
+    data: ->
+      hackData: Hackathons.findOne({personalizedUrl:this.params._id})
+
+  @route "hackathonSubmissions",
+    path: "/:_id/submissions"
+    layoutTemplate:'hackathonHome'
+    waitOn: ->
+      [
+        subs.subscribe 'hackathons'
+        subs.subscribe 'mentors'
+        subs.subscribe 'judges'
+        subs.subscribe 'sponsors'
+        subs.subscribe 'attachments'
+        subs.subscribe 'participants'
+        subs.subscribe 'submissions'
+      ]
+    onBeforeAction: (pause) ->
+      unless Hackathons.findOne({personalizedUrl:this.params._id})
+        this.render 'notFound'
+      else
+        this.render 'hackathonSubmissions'
+    data: ->
+      hackData: Hackathons.findOne({personalizedUrl:this.params._id})
+
+
+  @route "hackathonFeedbacks",
+    path: "/:_id/feedback"
+    layoutTemplate:'hackathonHome'
+    waitOn: ->
+      [
+        subs.subscribe 'hackathons'
+        subs.subscribe 'mentors'
+        subs.subscribe 'judges'
+        subs.subscribe 'sponsors'
+        subs.subscribe 'attachments'
+        subs.subscribe 'feedbacks'
+        subs.subscribe 'participants'
+        subs.subscribe 'submissions'
+      ]
+    onBeforeAction: (pause) ->
+      unless Hackathons.findOne({personalizedUrl:this.params._id})
+        this.render 'notFound'
+      else
+        this.render 'hackathonFeedbacks'
+    data: ->
+      hackData: Hackathons.findOne({personalizedUrl:this.params._id})

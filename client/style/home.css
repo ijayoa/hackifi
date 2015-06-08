@@ -31,7 +31,7 @@ padding:0;
 .banner{
 /*background:url(../images/bg.jpg) no-repeat 0px 0px;*/
 background-color: #002b21;
-min-height:500px;
+min-height:537px;
 background-size:cover;
 }
 .header{
@@ -45,7 +45,7 @@ float:right;
 }
 .top-menu ul li{
 display:inline-block;
-border-bottom:2px solid #fff;
+/*border-bottom:2px solid #fff;*/
 }
 .top-menu ul li a{
 color:#fff;
@@ -56,7 +56,7 @@ text-decoration:none;
 margin:0 0.5em;
 }
 .top-menu ul li a:hover,.top-menu ul li.active a{
-border-bottom:2px solid #228871;
+/*border-bottom:2px solid #228871;*/
 }
 .top-menu ul li a:hover{
 color:#228871;
@@ -81,7 +81,7 @@ margin-bottom:1.2em;
 }
 .banner-text h1{
 font-size:3.4em;
-font-weight:600;
+font-weight: lighter;
 color:#fff;
 margin-bottom:0.5em;
 }
@@ -183,7 +183,8 @@ margin-bottom: 0.7em;
 }
 .features-head h3{
 font-size: 2.7em;
-font-weight: 600;
+/*font-weight: 600;*/
+font-family: 'Raleway', sans-serif;
 color: #002b21;
 padding-bottom: 0.7em;
 background: url(../images/line.png) no-repeat 50% 100%;
@@ -198,16 +199,17 @@ text-align:center;
 margin-bottom:1em;
 }
 .feature-grid h3{
-color:#1a1a1a;
-font-size:1.9em;
+color:#002b21;
+font-size:1.5em;
 margin-bottom:0.5em;
 font-weight:500;
 }
 .feature-grid p{
-color:#aeadad;
+font-family: Raleway;
+color:#005e49;
 font-size:1.3em;
 line-height:1.5em;
-font-weight:400;
+/*font-weight:200;*/
 }
 /*--about--*/
 .about{

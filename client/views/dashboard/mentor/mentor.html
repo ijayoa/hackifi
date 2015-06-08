@@ -14,6 +14,22 @@
   {{/autoForm}}
 </template>
 
+<template name="updateMentor">
+<h3>Editing {{name}}</h3>
+<small>Mentors are people who advice teams uring the event.</small>
+<hr>
+{{#autoForm collection="Mentors" doc=this  id="updateMentorForm" type="update"}}
+    <fieldset>
+      {{> afQuickField name='name' placeholder='eg. John'}}
+      {{> afQuickField name='picture'}}
+      {{> afQuickField name='personalWebsiteLink' placeholder="eg. johndoe.com"}}
+      {{> afQuickField name='areaOfSpecialization' placeholder="eg. Business"}}
+      {{> afQuickField name='about'}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Save</button>
+  {{/autoForm}}
+</template>
+
 <template name="allMentors">
 {{#unless mentors}}
 <div class="alert alert-info">
@@ -32,10 +48,10 @@
 					{{#with getDoc picture 'Attachments'}}
 					<img src="{{url}}" name="picture" width="150" height="150" class="img-circle">
 					{{/with}}
-					<h3 class="name">{{name}}</h3>
+					<h3 class="hname">{{name}}</h3>
 				</center>
            <br>
-			<p class="tile text-center"><button class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</button> <button class="btn btn-xs btn-primary"> <i class="fa fa-trash"></i> Delete</button></p>
+			<p class="text-center"><a href="{{pathFor 'updateMentor'}}" role="btn" class="btnspace btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a> <a href="{{pathFor 'deleteMentor'}}" class="btn btn-xs btn-primary btnspace"> <i class="fa fa-trash"></i> Delete</a></p>
 		</div>
        {{/each}}
 

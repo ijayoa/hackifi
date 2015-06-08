@@ -13,6 +13,23 @@
   {{/autoForm}}
 </template>
 
+
+<template name="updateJudge">
+<h3>Editing {{name}}</h3>
+<small>Judges are people who judge hackathon teams.</small>
+<hr>
+{{#autoForm collection="Judges" doc=this id="updateJudgeForm" type="update"}}
+    <fieldset>
+      {{> afQuickField name='name' placeholder='eg. Google'}}
+      {{> afQuickField name='personalWebsiteLink' placeholder="eg. johndoe.com"}}
+      {{> afQuickField name='picture'}}
+      {{> afQuickField name='about'}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Save</button>
+  {{/autoForm}}
+</template>
+
+
 <template name="allJudges">
 {{#unless judges}}
 <div class="alert alert-info">
@@ -34,7 +51,7 @@
 					<h3 class="name">{{name}}</h3>
 				</center>
            <br>
-			<p class="tile text-center"><button class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</button> <button class="btn btn-xs btn-primary"> <i class="fa fa-trash"></i> Delete</button></p>
+           <p class="text-center"><a href="{{pathFor 'updateJudge'}}" role="btn" class="btnspace btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a> <a href="{{pathFor 'deleteJudge'}}" class="btn btn-xs btn-primary btnspace"> <i class="fa fa-trash"></i> Delete</a></p>
 		</div>
        {{/each}}
 

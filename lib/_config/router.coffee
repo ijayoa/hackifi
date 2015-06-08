@@ -40,6 +40,7 @@ Router.plugin 'ensureSignedIn', except: [
   'hackathonJudges'
   'hackathonMentors'
   'hackathonRegister'
-  'hackathonSubmit'
+  'hackathonSubmissions'
+  'hackathonFeedbacks'
 ]
 

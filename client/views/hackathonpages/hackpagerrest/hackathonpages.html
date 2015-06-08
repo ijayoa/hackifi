@@ -1,24 +1,28 @@
 <template name="hackathonMentors">
 <div class="row mainrow">
- <div class="col-sm-10 col-sm-offset-1">
+<h3 class="text-center">Hacakthon Mentors </h3>
+<hr>
+<div class="col-sm-10 col-sm-offset-1">
 {{#each mentorData}}
          <div class="col-md-4 col-sm-6">
              <div class="card-container">
                 <div class="card">
                     <div class="front">
                         <div class="cover">
-                            <img src="img/rotating_card_thumb3.png"/>
+                            <img src="/img/rotating_card_thumb.png"/>
                         </div>
                         <div class="user">
-                            <img class="img-circle" src="images/rotating_card_profile3.png"/>
+							{{#with getDoc picture 'Attachments'}}
+							<img class="img img-responsive" src="{{url}}"/>
+							{{/with}}
                         </div>
                         <div class="content">
                             <div class="main">
-                                <h3 class="name">John Marvel</h3>
-                                <p class="profession">CEO</p>
-                                <h5><i class="fa fa-map-marker fa-fw text-muted"></i> Paris, France</h5>
-                                <h5><i class="fa fa-building-o fa-fw text-muted"></i> Creative Tim Inc. </h5>
-                                <h5><i class="fa fa-envelope-o fa-fw text-muted"></i> john@creative-tim.com</h5>
+                                <h3 class="name">{{name}}</h3>
+                                <p class="profession">Mentor</p>
+                                <h5><i class="fa fa-map-marker fa-fw text-muted"></i> Unknown</h5>
+                                <h5><i class="fa fa-building-o fa-fw text-muted"></i> Unknown </h5>
+                                <h5><i class="fa fa-envelope-o fa-fw text-muted"></i>  {{personalWebsiteLink}}</h5>
                             </div>
                             <div class="footer">
                                 <div class="rating">
@@ -33,13 +37,13 @@
                     <div class="back">
                         <div class="header">
                             <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-                        </div> 
+                        </div>
                         <div class="content">
                             <div class="main">
-                                <h4 class="text-center">Experince</h4>
-                                <p>In the project since 2011</p>
+                                <h4 class="text-center">Experience</h4>
+                                <p class="text-center">{{about}}</p>
                                 <h4 class="text-center">Areas of Expertise</h4>
-                                <p>Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
+                                <p class="text-center">{{areaOfSpecialization}}</p>
                             </div>
                         </div>
                         <div class="footer">
@@ -54,13 +58,19 @@
             </div> <!-- end card-container -->
         </div> <!-- end col sm 3 -->
         {{else}}
-        <p>opps</p>
+          <h4>Hackathon Mentors</h4>
+		  <hr>
+		  <div class="alert alert-warning">>No Mentors for this Hackathon
+		  <a href="{{pathFor 'updateHackathon'}}" class="alert-link"> Give Feedback</a>
+		</div>
         {{/each}}
 </div></div>
 </template>
 
 <template name="hackathonJudges">
 <div class="row mainrow">
+<h3 class="text-center">Hacakthon Judges </h3>
+<hr>
  <div class="col-sm-10 col-sm-offset-1">
 {{#each judgeData}}
          <div class="col-md-4 col-sm-6">
@@ -68,18 +78,21 @@
                 <div class="card">
                     <div class="front">
                         <div class="cover">
-                            <img src="img/rotating_card_thumb3.png"/>
+                            <img src="/img/rotating_card_thumb3.png"/>
                         </div>
                         <div class="user">
-                            <img class="img-circle" src="images/rotating_card_profile3.png"/>
+                            {{#with getDoc picture 'Attachments'}}
+							<img class="img img-responsive" src="{{url}}"/>
+							{{/with}}
                         </div>
                         <div class="content">
+                  
                             <div class="main">
-                                <h3 class="name">John Marvel</h3>
-                                <p class="profession">CEO</p>
-                                <h5><i class="fa fa-map-marker fa-fw text-muted"></i> Paris, France</h5>
-                                <h5><i class="fa fa-building-o fa-fw text-muted"></i> Creative Tim Inc. </h5>
-                                <h5><i class="fa fa-envelope-o fa-fw text-muted"></i> john@creative-tim.com</h5>
+                                <h3 class="name">{{name}}</h3>
+                                <p class="profession">Judge</p>
+                                <h5><i class="fa fa-map-marker fa-fw text-muted"></i> Unknown</h5>
+                                <h5><i class="fa fa-building-o fa-fw text-muted"></i> Unknown </h5>
+                                <h5><i class="fa fa-envelope-o fa-fw text-muted"></i>  {{personalWebsiteLink}}</h5>
                             </div>
                             <div class="footer">
                                 <div class="rating">
@@ -91,16 +104,16 @@
                             </div>
                         </div>
                     </div> <!-- end front panel -->
-                    <div class="back">
+                     <div class="back">
                         <div class="header">
                             <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-                        </div> 
+                        </div>
                         <div class="content">
                             <div class="main">
-                                <h4 class="text-center">Experince</h4>
-                                <p>In the project since 2011</p>
+                                <h4 class="text-center">Experience</h4>
+                                <p class="text-center">{{about}}</p>
                                 <h4 class="text-center">Areas of Expertise</h4>
-                                <p>Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
+                                <p class="text-center">Unknown</p>
                             </div>
                         </div>
                         <div class="footer">
@@ -115,7 +128,78 @@
             </div> <!-- end card-container -->
         </div> <!-- end col sm 3 -->
         {{else}}
-        <p>opps</p>
+          <h4>Hackathon Judges</h4>
+		  <hr>
+		  <div class="alert alert-warning">>No judges for this Hackathon
+		  <a href="{{pathFor 'updateHackathon'}}" class="alert-link"> Give Feedback</a>
+		</div>
         {{/each}}
 </div></div>
+</template>
+
+<template name="hackathonRegister">
+
+<div class="row mainrow">
+<h3 class="text-center">To Register Complete the Following Form </h3>
+<hr>
+    <div class="col-sm-6 col-sm-offset-3">
+    {{#autoForm collection="Participants" id="insertParticipantForm" type="insert"}}
+    <fieldset>
+      {{> afQuickField name='name' placeholder='eg. Jane Doe'}}
+      {{> afQuickField name='location'}}
+      {{> afQuickField name='email'}}
+      {{> afQuickField name='linkToLinkedIn' placeholder='linkedIn.com/ijayoa'}}
+      {{> afQuickField name='picture'}}
+      {{> afQuickField name='age'}}
+      {{> afQuickField name='specialization'}}
+      {{> afQuickField name='country'}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Save</button>
+  {{/autoForm}}
+    </div>
+</div>
+</template>
+
+<template name="hackathonSubmissions">
+
+<div class="row mainrow">
+<h3 class="text-center">Submit Your Product by Completing the Following Form </h3>
+<hr>
+    <div class="col-sm-6 col-sm-offset-3">
+    {{#autoForm collection="Submissions" id="insertSubmissionsForm" type="insert"}}
+    <fieldset>
+
+      {{> afQuickField name='productName' placeholder='eg. Jane Doe'}}
+      {{> afQuickField name='productLogo'}}
+      {{> afQuickField name='productCategory'}}
+      {{> afQuickField name='shortDescription'}}
+      {{> afQuickField name='githubLink' placeholder='github.com/projectname'}}
+      <hr>
+      {{> afQuickField name='teamPicture'}}
+      {{> afQuickField name='aboutTeam'}}
+      {{> afQuickField name='motivation'}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  {{/autoForm}}
+    </div>
+</div>
+</template>
+
+<template name="hackathonFeedbacks">
+
+<div class="row mainrow">
+<h3 class="text-center">Feedback is Always Welcome </h3>
+<hr>
+    <div class="col-sm-6 col-sm-offset-3">
+    {{#autoForm collection="Feedbacks" id="insertFeedbackForm" type="insert"}}
+    <fieldset>
+
+      {{> afQuickField name='name' placeholder='eg. Jane Doe'}}
+      {{> afQuickField name='email'}}
+      {{> afQuickField name='yourFeedback'}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Send</button>
+  {{/autoForm}}
+    </div>
+</div>
 </template>

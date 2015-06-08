@@ -9,3 +9,7 @@ AutoForm.hooks
 Template.addMentor.rendered = () ->
 	sAlert.info 'You can add more than one mentor'
 
+# Template.allMentors.events
+# 	'click .js-edit-mentor': (evt) ->
+# 		console.log 'got here'
+# 		Router.go 'updateMentor'

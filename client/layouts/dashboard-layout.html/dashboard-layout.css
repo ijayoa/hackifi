@@ -28,15 +28,15 @@
 }
 
 .profile-usertitle-name {
-  color: #5a7391;
-  font-size: 16px;
+  color: #002b21;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 7px;
 }
 
 .profile-usertitle-job {
   text-transform: uppercase;
-  color: #5b9bd1;
+  color: #002b21;
   font-size: 12px;
   font-weight: 600;
   margin-bottom: 15px;
@@ -63,12 +63,14 @@
   margin-top: 30px;
 }
 .navbar{
-  background-color: #005e49;
+  background-color: #002b21;
   font-size: 16px;
+  font-family: 'Raleway', sans-serif;
 }
 .profile-usermenu ul li {
- border-bottom: 1px solid #002b21;
-  background-color: #005e49;
+  font-family: 'Raleway', sans-serif;
+ border-bottom: 1px solid #004637;
+  background-color: #002b21;
 }
 .profile-usermenu ul li ul li {
  border-bottom: 1px solid #005e49;
@@ -112,6 +114,7 @@
 
 /* Profile Content */
 .profile-content {
+  font-family: 'Raleway', sans-serif;
   padding: 20px;
   background: #eeeeee;
   min-height: 460px;

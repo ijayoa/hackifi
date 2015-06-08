@@ -26,10 +26,12 @@
 <body>
 <!---->
 <div class="banner">
-     <div class="container">
+     <div class="container setfont">
          <div class="header">
-             <div class="logo wow fadeInLeft" data-wow-delay="0.5s">
-              <a class="navbar-brand" href="{{pathFor 'home'}}">{{Config.name}}</a>
+             <div class="wow fadeInLeft" data-wow-delay="0.5s">
+              <a class="navlogo" href="{{pathFor 'home'}}">
+               <img src="/img/hackifilogo.png" width="120px" height="120px" class="img-responsive img">
+             </a>
              </div>
              <div class="top-menu">
              <span class="menu"></span>
@@ -41,7 +43,7 @@
                  <li><a class="scroll" href="#pricing">Pricing</a></li>
                  <li><a class="scroll" href="#contact">Contact</a></li>
                   {{#unless User}}
-                  <a id="home-login" href="{{pathFor route='atSignIn'}}"><li>{{_ "login2"}}</li></a>
+                  <li><a id="home-login" href="{{pathFor route='atSignIn'}}">{{_ "login2"}}</a></li>
                   {{/unless}}
                  </ul>
              </div>
@@ -58,12 +60,13 @@
          </div>
          <div class="banner-info text-center">
              <div class="col-md-12 banner-text wow fadeInRight text-center" data-wow-delay="0.5s">
-                 <h1>HACKATHONS MADE EASY</h1>
+
+                 <h1 class="maintitle">HACKATHONS MADE EASY</h1>
                  <p>Hackifi is a customizable tool that makes it easier for hackathon organizers to create and manage hackathons.</p>
                  {{#if User}}
                     <a href="{{pathFor 'dashboard'}}" class="view hvr-bounce-to-left btn btn-success"><i class="fa fa-dashboard"></i> {{_ "dashboard"}}</a>
                     {{else}}
-                     <a class="view hvr-bounce-to-left btn btn-success" href="{{pathFor 'dashboard'}}">{{_ "getstarted"}}</a>
+                     <a class="view hvr-bounce-to-left btn btn-success" href="{{pathFor 'dashboard'}}">CREATE FREE HACKATHON</a>
                  {{/if}}
              </div>
              <!-- <div class="col-md-6 banner-pic wow fadeInLeft" data-wow-delay="0.5s">
@@ -81,23 +84,23 @@
          </div>
          <div class="features-section">
              <div class="col-md-3 feature-grid">
-                 <img class="wow bounceIn" data-wow-delay="0.4s" src="images/icon1.png" alt=""/>
-                 <h3>Create Competition</h3>
+                 <img class="wow bounceIn" data-wow-delay="0.4s" width="90" hieght="90" src="images/icon1.png" alt=""/>
+                 <h3>Subscribe</h3>
                  <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum lacinia consectetur.</p>
              </div>
              <div class="col-md-3 feature-grid">
-                 <img class="wow bounceIn" data-wow-delay="0.4s" src="images/icon2.png" alt=""/>
+                 <img class="wow bounceIn" data-wow-delay="0.4s"  width="90" hieght="90" src="images/icon2.png" alt=""/>
                  <h3>Customize Settings</h3>
                  <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum lacinia consectetur.</p>
              </div>
              <div class="col-md-3 feature-grid">
-                 <img class="wow bounceIn" data-wow-delay="0.4s" src="images/icon3.png" alt=""/>
+                 <img class="wow bounceIn" data-wow-delay="0.4s"  width="90" hieght="90" src="images/icon3.png" alt=""/>
                  <h3>Personalize Url</h3>
                  <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum lacinia consectetur.</p>
              </div>
              <div class="col-md-3 feature-grid">
-                 <img class="wow bounceIn" data-wow-delay="0.4s" src="images/icon4.png" alt=""/>
-                 <h3>Launch Hackathon</h3>
+                 <img class="wow bounceIn" data-wow-delay="0.4s"  width="90" hieght="90" src="images/icon4.png" alt=""/>
+                 <h3>Hackathon Launched</h3>
                  <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum lacinia consectetur.</p>
              </div>
              <div class="clearfix"></div>

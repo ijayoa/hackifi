@@ -1,5 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Kelly+Slab);
 .navigation{
-
+  font-size: 17px;
+  padding: 11px;
   margin-top: -30px;
   border: 0px;
   background-color: #eeeeee;
@@ -9,13 +11,14 @@
 	color: #002b21;
 }
 
-.title{
+.titlehome{
  border-bottom: 25px;
  font-size: 17px;
- font-weight: 500;
+ font-weight: 900;
+font-family: 'Kelly Slab', cursive;
 }
 .jumbotron h1{
-	color: #fff;
+	color: #eeeeee;
 	margin-top: 3%;
 }
 
@@ -25,4 +28,7 @@
   border-color: #fff;
    opacity: 0.7;
   margin-top: 3%;
+}
+.hackcontent{
+  font-family: 'Raleway', sans-serif;
 }
