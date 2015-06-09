@@ -1,0 +1,23 @@
+<template name="dashboardAddParticipant">
+<div class="row mainrow">
+<h3 class="text-center">Enter Participant Details</h3>
+<hr>
+    <div class="col-sm-8 col-sm-offset-2">
+  {{#autoForm collection="Participants" id="dbInsertParticipantForm" type="method" meteormethod="insertRegistration"}}
+    <fieldset>
+      {{> afQuickField name='name' placeholder='eg. Jane Doe'}}
+      {{> afQuickField name='email'}}
+      {{> afQuickField name='picture'}}
+      {{> afQuickField name='location'}}
+      {{> afQuickField name='linkToLinkedIn' placeholder='linkedIn.com/ijayoa'}}
+      {{> afQuickField name='age'}}
+      <p> Enter your specialization seperated by a comma.</p>
+      {{> afQuickField name='specialization' placeholder='eg. Android,Web,Finance'}}
+      {{> afQuickField name='country'}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Save</button>
+  {{/autoForm}}
+    </div>
+</div>
+</template>
+

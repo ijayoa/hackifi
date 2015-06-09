@@ -1,7 +1,9 @@
 <template name="addJudge">
-<h3>Add Hackathon Judges</h3>
-<small>Judges are people who judge hackathon teams.</small>
+<div class="row mainrow">
+<h3 class="text-center">Add Hackathon Judges</h3>
+<p class="text-center">Judges are people who judge hackathon teams.</p>
 <hr>
+<div class="col-sm-8 col-sm-offset-2">
 {{#autoForm collection="Judges" id="insertJudgeForm" type="insert"}}
     <fieldset>
       {{> afQuickField name='name' placeholder='eg. Google'}}
@@ -11,13 +13,18 @@
     </fieldset>
     <button type="submit" class="btn btn-primary">Save</button>
   {{/autoForm}}
+</div>
+  </div>
+
 </template>
 
 
 <template name="updateJudge">
-<h3>Editing {{name}}</h3>
-<small>Judges are people who judge hackathon teams.</small>
+<div class="row mainrow">
+<h3 class="text-center">Editing {{name}}</h3>
+<p class="text-center">Judges are people who judge hackathon teams.</p>
 <hr>
+<div class="col-sm-8 col-sm-offset-2">
 {{#autoForm collection="Judges" doc=this id="updateJudgeForm" type="update"}}
     <fieldset>
       {{> afQuickField name='name' placeholder='eg. Google'}}
@@ -27,6 +34,8 @@
     </fieldset>
     <button type="submit" class="btn btn-primary">Save</button>
   {{/autoForm}}
+  </div>
+  </div>
 </template>
 
 

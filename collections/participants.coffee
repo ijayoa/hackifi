@@ -13,19 +13,11 @@ Schemas.Participants = new SimpleSchema
     optional: true
 
   specialization:
-    type: String
-    label: 'Specialization'
-    allowedValues: [
-      "Select Category"
-      "Technology"
-      "Finance"
-      "Agriculture"
-      "Safety and Alerts"
-      "Environmental"
-      "Business"
-      "Communication"
-      "Health"
-    ]
+    type: [String]
+    autoform:
+      type: 'tags'
+      afFieldInput:
+        maxTags: 4
 
   email:
     type: String
@@ -48,7 +40,7 @@ Schemas.Participants = new SimpleSchema
 
   country:
     type: String
-    label: 'Nationality'
+    label: 'Country'
     allowedValues: [
       "Select Country"
       "Afghanistan"
@@ -260,6 +252,11 @@ Schemas.Participants = new SimpleSchema
     ]
     optional: true
 
+  hackathon:
+    type: String
+    autoform:
+      omit: true
+
   createdAt:
     type: Date
     autoform:
@@ -276,19 +273,6 @@ Schemas.Participants = new SimpleSchema
     autoValue: ->
       if this.isUpdate
         new Date()
-
-  hackathon:
-    type: String
-    regEx: SimpleSchema.RegEx.Id
-    autoValue: ->
-      if this.isInsert
-        Meteor.userId()
-    autoform:
-      omit: true
-      options: ->
-        _.map Meteor.users.find().fetch(), (user)->
-          label: user.emails[0].address
-          value: user._id
 
 Participants.attachSchema(Schemas.Participants)
 

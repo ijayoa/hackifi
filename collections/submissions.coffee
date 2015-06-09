@@ -11,22 +11,33 @@ Schemas.Submissions = new SimpleSchema
 
   productCategory:
     type: String
-    allowedValues: [
-      "Select Category"
-      "Technology"
-      "Finance"
-      "Agriculture"
-      "Safety and Alerts"
-      "Environmental"
-      "Business"
-      "Communication"
-      "Health"
-    ]
+    label: "Select Product Category:"
+    autoform:
+      options: ->
+          return [
+            {value: 'Technology', label: 'Technology'}
+            {value: 'Finance', label: 'Finance'},
+            {value: 'Agriculture', label: 'Agriculture'},
+            {value: 'Safety and Alerts', label: 'Safety and Alerts'},
+            {value: 'Environmental', label: 'Environmental'},
+            {value: 'Business', label: 'Business'},
+            {value: 'Communication', label: 'Communication'},
+            {value: 'Health', label: 'Health'},
+            {value: 'Transportation', label: 'Transportation'}
+            {value: 'Social or LifeStyle', label: 'Social or LifeStyle'}
+           ]
 
   shortDescription:
     type: String
     autoform:
       rows: 5
+
+  teamMembers:
+    type: [String]
+    autoform:
+      type: 'tags'
+      afFieldInput:
+        maxTags: 4
 
   aboutTeam:
     type: String
@@ -55,6 +66,11 @@ Schemas.Submissions = new SimpleSchema
         type: 'fileUpload'
         collection: 'Attachments'
 
+  hackathon:
+    type: String
+    autoform:
+      omit: true
+
   createdAt:
     type: Date
     autoform:
@@ -71,19 +87,6 @@ Schemas.Submissions = new SimpleSchema
     autoValue: ->
       if this.isUpdate
         new Date()
-
-  hackathon:
-    type: String
-    regEx: SimpleSchema.RegEx.Id
-    autoValue: ->
-      if this.isInsert
-        Meteor.userId()
-    autoform:
-      omit: true
-      options: ->
-        _.map Meteor.users.find().fetch(), (user)->
-          label: user.emails[0].address
-          value: user._id
 
 Submissions.attachSchema(Schemas.Submissions)
 
