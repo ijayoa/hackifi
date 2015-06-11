@@ -1,37 +1,91 @@
+.maincont{
+  padding: 0px;
+
+}
+/*bread crumb*/
+.content-header {
+  background-color: #DADFE1;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding: 15px 15px 10px 20px;
+  font-size: 17px;
+  padding: 13px;
+}
+ .content-header > h1 {
+  margin: 0;
+  font-size: 24px;
+}
+.content-header > h1 > small {
+  font-size: 15px;
+  display: inline-block;
+  padding-left: 4px;
+  font-weight: 300;
+
+}
+.content-header > .breadcrumb {
+  float: right;
+  background: transparent;
+  margin-top: 0px;
+  margin-bottom: 0;
+  font-size: 12px;
+  padding: 7px 5px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.content-header > .breadcrumb > li > a {
+  color: #444;
+  text-decoration: none;
+}
+.content-header > .breadcrumb > li > a > .fa,
+.content-header > .breadcrumb > li > a > .glyphicon,
+.content-header > .breadcrumb > li > a > .ion {
+  margin-right: 5px;
+}
+.content-header > .breadcrumb > li + li:before {
+  content: '>\00a0';
+}
+/*end of breadcrumb*/
+
 /* Profile container */
-.profile {
-  /*margin: 20px 0;*/
+#profile {
+  width: 99.45%;
 }
 /* Profile sidebar */
 .profile-sidebar {
   padding: 20px 0 10px 0;
   background: #eeeeee;
+    min-height: 909px;
 }
-.dashboardRoute{
+/*.dashboardRoute{
   background-color: #bebebe;
   font-size: 17px;
   padding: 13px;
   margin-bottom:3%;
-}
+}*/
 .profile-userpic img {
   float: none;
   margin: 0 auto;
-  width: 50%;
-  height: 50%;
+  width: 79%;
+  height: 79%;
   -webkit-border-radius: 50% !important;
   -moz-border-radius: 50% !important;
   border-radius: 50% !important;
 }
 .profile-usertitle {
-  text-align: center;
-  margin-top: 20px;
+   font-family: 'Raleway', sans-serif;
+  /*text-align: center;*/
+  margin-top: 13px;
 }
 
 .profile-usertitle-name {
   color: #002b21;
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 7px;
+  margin-top: 24%;
 }
 
 .profile-usertitle-job {
@@ -86,7 +140,7 @@
 }
 
 .profile-usermenu ul li a {
-  color: #eeeeee;
+  color: #DADFE1;
   font-size: 16px;
   font-weight: 400;
 }
@@ -117,8 +171,8 @@
   font-family: 'Raleway', sans-serif;
   padding: 20px;
   background: #eeeeee;
-  min-height: 460px;
-  margin-left: -2.5%;
+  /*margin-left: -2.5%;*/
+  min-height: 909px;
 }
 
 hr{

@@ -1,97 +1,131 @@
 <template name="dashboardlayout">
-<!-- <div class="layout master-layout {{$.Session.get 'sidebar'}}"> -->
-		{{> navbar}}
-   <!-- <div class="container-fluid"> -->
-    <div class="row profile">
-		<div class="col-md-3">
-			<div class="profile-sidebar">
-				<!-- SIDEBAR USERPIC -->
+	<div class="container-fluid maincont"  id="profile">
+		<div class="row">
+			{{> navbar}}
+		</div>
+		<div class="row" >
+			<div class="col-xs-3 maincont">
+				<div class="profile-sidebar">
+					<!-- SIDEBAR USERPIC -->
 				<!-- <div class="profile-userpic logo text-center">
 				<a href="{{pathFor 'home'}}"><img width="100" height="100" class="img-responsive" src="/img/hackifilogo.png" alt=""></a>
-			    </div> -->
-				<div class="profile-userpic">
+			</div> -->
+			<div class="row">
+				<div class="col-xs-6 profile-userpic text-center">
+					<img src="/img/abena.png" class="img-responsive" alt="">
+
+				</div>
+				<div class="col-xs-6">
+					<div class="profile-usertitle">
+						<div class="profile-usertitle-name">
+							Abena King
+						</div>
+						<div class="profile-usertitle-job">
+							Organizer
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 	<div class="profile-userpic pull-left">
 					<img src="/img/abena.png" class="img-responsive" alt="">
 				</div>
-				<div class="profile-usertitle">
+				<div class="profile-usertitle pull-right">
 					<div class="profile-usertitle-name">
 						Abena King
 					</div>
 					<div class="profile-usertitle-job">
 						Organizer
 					</div>
-				</div>
+				</div> -->
+
 				<div class="profile-usermenu">
 					<ul class="nav">
 						<li>
 							<a href="{{pathFor 'dashboard'}}">
-							<i class="fa fa-dashboard"></i>
-							 Dashboard</a>
-						</li>
-						<li>
-							<a href="{{pathFor 'createHackathon'}}">
-							<i class="fa fa-gears"></i>
-						    Hackathon</a>
-						</li>
-						<li class="dropdown">
-				          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-university"></i> Sponsors</a>
-				          <ul class="dropdown-menu forAnimate" role="menu">
-				            <li><a href="{{pathFor 'addSponsor'}}"><i class="fa fa-user-plus"></i> New</a></li>
-				            <li><a href="{{pathFor 'allSponsors'}}"><i class="fa fa-eye"></i> View All</a></li>
-				          </ul>
-				        </li>
-				        <li class="dropdown">
-				          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users"></i> Mentors</a>
-				          <ul class="dropdown-menu forAnimate" role="menu">
-				            <li><a href="{{pathFor 'addMentor'}}"><i class="fa fa-user-plus"></i> New</a></li>
-				            <li><a href="{{pathFor 'allMentors'}}"><i class="fa fa-eye"></i> View All</a></li>
-				          </ul>
-				        </li>
-				        <li class="dropdown">
-				          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user-secret"></i> Judges</a>
-				          <ul class="dropdown-menu forAnimate" role="menu">
-				           <li><a href="{{pathFor 'addJudge'}}"><i class="fa fa-user-plus"></i> New</a></li>
-				            <li><a href="{{pathFor 'allJudges'}}"><i class="fa fa-eye"></i> View All</a></li>
-				          </ul>
-				        </li>
-				         <li class="dropdown">
-				          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users"></i> Participants</a>
-				          <ul class="dropdown-menu forAnimate" role="menu">
-				           <li><a href="{{pathFor 'dashboardAddParticipant'}}"><i class="fa fa-user-plus"></i>New</a></li>
-				           <li><a href="{{pathFor 'allParticipants'}}"><i class="fa fa-eye"></i> View All</a></li>
-				          </ul>
-				        </li>
-						<li>
-							<a href="{{pathFor 'newMessage'}}">
-							<i class="fa fa-calendar"></i>
-							Schedule Updates </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="fa fa-question"></i>
-							Help </a>
-						</li>
-					</ul>
+								<i class="fa fa-dashboard"></i>
+								Dashboard</a>
+							</li>
+							<li>
+								<a href="{{pathFor 'createHackathon'}}">
+									<i class="fa fa-gears"></i>
+									Hackathon</a>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa- fa-university"></i> Sponsors</a>
+									<ul class="dropdown-menu forAnimate" role="menu">
+										<li><a href="{{pathFor 'addSponsor'}}"><i class="fa fa-user-plus"></i> New</a></li>
+										<li><a href="{{pathFor 'allSponsors'}}"><i class="fa fa-eye"></i> View All</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users"></i> Mentors</a>
+									<ul class="dropdown-menu forAnimate" role="menu">
+										<li><a href="{{pathFor 'addMentor'}}"><i class="fa fa-user-plus"></i> New</a></li>
+										<li><a href="{{pathFor 'allMentors'}}"><i class="fa fa-eye"></i> View All</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user-secret"></i> Judges</a>
+									<ul class="dropdown-menu forAnimate" role="menu">
+										<li><a href="{{pathFor 'addJudge'}}"><i class="fa fa-user-plus"></i> New</a></li>
+										<li><a href="{{pathFor 'allJudges'}}"><i class="fa fa-eye"></i> View All</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users"></i> Participants</a>
+									<ul class="dropdown-menu forAnimate" role="menu">
+										<li><a href="{{pathFor 'dashboardAddParticipant'}}"><i class="fa fa-user-plus"></i>New</a></li>
+										<li><a href="{{pathFor 'allParticipants'}}"><i class="fa fa-eye"></i> View All</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-folder-open"></i> Submissions</a>
+									<ul class="dropdown-menu forAnimate" role="menu">
+										<li><a href="{{pathFor 'dashboardAddParticipant'}}"><i class="fa fa-user-plus"></i>New</a></li>
+										<li><a href="{{pathFor 'allParticipants'}}"><i class="fa fa-eye"></i> View All</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-comment"></i> Feedbacks</a>
+									<ul class="dropdown-menu forAnimate" role="menu">
+										<li><a href="{{pathFor 'allParticipants'}}"><i class="fa fa-eye"></i> View All</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-calculator"></i> ScoreBoard</a>
+								</li>
+								<li>
+									<a href="{{pathFor 'newMessage'}}">
+										<i class="fa fa-calendar"></i>
+										Schedule Updates </a>
+										<!-- <small class="badge btn-primary">new</small> -->
+									</li>
+									<li>
+										<a href="#">
+											<i class="fa fa-question"></i>
+											Help </a>
+										<!-- <small class="badge btn-primary">new</small> -->
+										</li>
+									</ul>
+								</div>
+								<!-- END MENU -->
+							</div>
+						</div>
+						<div class="col-xs-9 maincont" >
+							{{> breadcrumb}}
+							<div class="profile-content dashboard-left" style="background-color:#D2D7D3;">
+								{{#momentum plugin='iron-router' options=momentumIRTransition}}
+								{{> yield}}
+								{{/momentum}}
+							</div>
+						</div>
+					</div>
 				</div>
-				<!-- END MENU -->
-			</div>
-		</div>
-		<div class="col-md-9">
-            <div class="profile-content">
-            {{> breadcrumb}}
-            {{#momentum plugin='iron-router' options=momentumIRTransition}}
-			   {{> yield}}
-		    {{/momentum}}
-            </div>
-		</div>
-	</div>
-<!-- </div> -->
 
-<!-- 	</div> -->
 
-	<!-- Prevent footer from popping up when route loading -->
-<!-- 	{{#if isRouteReady}}
-	{{> footer}}
-	{{/if}}
 
-	{{> autoformModals}} -->
-</template>
+
+
+
+
+			</template>
