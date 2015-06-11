@@ -13,9 +13,22 @@
 .maintitle{
     font-family: 'Poiret One', cursive;
 }
-.feature-grid h3{
+/*.feature-grid h3{
 	font-family: 'Raleway', sans-serif;
-}
+}*/
 .features{
 	  background-color: #eee;
+}
+#howitworksintro{
+	font-family: 'Raleway', sans-serif;
+	font-size: 19px;
+	text-align: center;
+}
+#howitworks{
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+	text-align: center;
+}
+h4{
+	font-size: 26px; 
 }
