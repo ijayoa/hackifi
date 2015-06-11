@@ -154,6 +154,16 @@ Router.map ->
     data: ->
       mentors: Mentors.find({owner:Meteor.userId()},{sort: {createdAt: -1}}).fetch()
 
+  @route "allParticipants",
+    path: "dashboard/hackathon/participants"
+    layoutTemplate: "dashboardlayout"
+    waitOn: ->
+      [
+        subs.subscribe 'participants'
+        subs.subscribe 'attachments'
+      ]
+    data: ->
+      participants: Participants.find().fetch()
 
 
 
