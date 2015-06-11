@@ -143,7 +143,7 @@
 <h3 class="text-center">To Register Complete the Following Form </h3>
 <hr>
     <div class="col-sm-6 col-sm-offset-3">
-    {{#autoForm collection="Participants" id="insertParticipantForm" type="insert"}}
+    {{#autoForm collection="Participants" id="insertRegistrationForm" type="method" meteormethod="insertRegistration"}}
     <fieldset>
       {{> afQuickField name='name' placeholder='eg. Jane Doe'}}
       {{> afQuickField name='location'}}
@@ -166,15 +166,16 @@
 <h3 class="text-center">Submit Your Product by Completing the Following Form </h3>
 <hr>
     <div class="col-sm-6 col-sm-offset-3">
-    {{#autoForm collection="Submissions" id="insertSubmissionsForm" type="insert"}}
+    {{#autoForm collection="Submissions" id="insertSubmissionForm" type="method" meteormethod="insertSubmission"}}
     <fieldset>
-
-      {{> afQuickField name='productName' placeholder='eg. Jane Doe'}}
+      {{> afQuickField name='productName' placeholder='eg. Whatsapp'}}
       {{> afQuickField name='productLogo'}}
       {{> afQuickField name='productCategory'}}
       {{> afQuickField name='shortDescription'}}
       {{> afQuickField name='githubLink' placeholder='github.com/projectname'}}
       <hr>
+      <p>Enter the name of your team members followed by a comma</p>
+      {{> afQuickField name='teamMembers'}}
       {{> afQuickField name='teamPicture'}}
       {{> afQuickField name='aboutTeam'}}
       {{> afQuickField name='motivation'}}
@@ -191,7 +192,7 @@
 <h3 class="text-center">Feedback is Always Welcome </h3>
 <hr>
     <div class="col-sm-6 col-sm-offset-3">
-    {{#autoForm collection="Feedbacks" id="insertFeedbackForm" type="insert"}}
+    {{#autoForm collection="Feedbacks" id="insertFeedbackForm" type="method" meteormethod="sendFeedback"}}
     <fieldset>
 
       {{> afQuickField name='name' placeholder='eg. Jane Doe'}}
@@ -203,3 +204,4 @@
     </div>
 </div>
 </template>
+

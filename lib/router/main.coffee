@@ -19,20 +19,8 @@ Router.map ->
     path: "dashboard/myhackathons"
     layoutTemplate: "dashboardlayout"
 
-  # @route "setUp",
-  #   path: "dashboard/hackathon/configure"
-  #   layoutTemplate: "dashboardlayout"
 
-  @route "createHackathon",
-    path: "dashboard/hackathon/settings"
-    layoutTemplate: "dashboardlayout"
-    waitOn: ->
-      [
-        subs.subscribe 'hackathons'
-        subs.subscribe 'attachments'
-      ]
-    data: ->
-      hack: Hackathons.findOne({owner:Meteor.userId()})
+# update collections
 
   @route "updateHackathon",
     path: "dashboard/hackathon/edit/:_id"
@@ -77,8 +65,31 @@ Router.map ->
       ]
     data: ->
       return Judges.findOne(this.params._id)
+# end of update
 
+# add collections
 
+  @route "createHackathon",
+    path: "dashboard/hackathon/settings"
+    layoutTemplate: "dashboardlayout"
+    waitOn: ->
+      [
+        subs.subscribe 'hackathons'
+        subs.subscribe 'attachments'
+      ]
+    data: ->
+      hack: Hackathons.findOne({owner:Meteor.userId()})
+
+ # add hacakthon page
+  @route "dashboardAddParticipant",
+    path: "dashboard/hackathon/add/participant"
+    layoutTemplate:'dashboardlayout'
+    waitOn: ->
+      [
+        subs.subscribe 'hackathons'
+        subs.subscribe 'participants'
+        subs.subscribe 'attachments'
+      ]
 
   @route "addSponsor",
     path: "dashboard/hackathon/add/sponsor"
@@ -86,15 +97,6 @@ Router.map ->
     waitOn: ->
       [
         subs.subscribe 'sponsors'
-        subs.subscribe 'attachments'
-      ]
-
-  @route "newMessage",
-    path: "dashboard/hackathon/new/message"
-    layoutTemplate: "dashboardlayout"
-    waitOn: ->
-      [
-        subs.subscribe 'messages'
         subs.subscribe 'attachments'
       ]
 
@@ -116,7 +118,9 @@ Router.map ->
         subs.subscribe 'judges'
         subs.subscribe 'attachments'
       ]
+# end of add
 
+# show collections
   @route "allJudges",
     path: "dashboard/hackathon/judges"
     layoutTemplate: "dashboardlayout"
@@ -149,6 +153,9 @@ Router.map ->
       ]
     data: ->
       mentors: Mentors.find({owner:Meteor.userId()},{sort: {createdAt: -1}}).fetch()
+
+
+
 
   # @route "hackathonHome",
   #   path: "/:_id"
@@ -193,7 +200,7 @@ Router.map ->
       hData = Hackathons.findOne({personalizedUrl:this.params._id})
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
       sponsorData: Sponsors.find({owner:hData.owner}).fetch()
-
+ 
   @route "hackathonMentors",
     path: "/:_id/mentors"
     layoutTemplate:'hackathonHome'
@@ -238,6 +245,9 @@ Router.map ->
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
       judgeData: Judges.find({owner:hData.owner}).fetch()
 
+ # end of show collections
+
+# add hacakthon page
   @route "hackathonRegister",
     path: "/:_id/register"
     layoutTemplate:'hackathonHome'
@@ -256,6 +266,7 @@ Router.map ->
       else
         this.render 'hackathonRegister'
     data: ->
+      Session.set 'hackathon', Hackathons.findOne({personalizedUrl:this.params._id})
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
 
   @route "hackathonSubmissions",
@@ -277,6 +288,7 @@ Router.map ->
       else
         this.render 'hackathonSubmissions'
     data: ->
+      Session.set 'hackathon', Hackathons.findOne({personalizedUrl:this.params._id})
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
 
 
@@ -300,4 +312,17 @@ Router.map ->
       else
         this.render 'hackathonFeedbacks'
     data: ->
+      Session.set 'hackathon', Hackathons.findOne({personalizedUrl:this.params._id})
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
+
+
+
+  @route "newMessage",
+    path: "dashboard/hackathon/new/message"
+    layoutTemplate: "dashboardlayout"
+    waitOn: ->
+      [
+        subs.subscribe 'messages'
+        subs.subscribe 'attachments'
+      ]
+# end of add hackathon page

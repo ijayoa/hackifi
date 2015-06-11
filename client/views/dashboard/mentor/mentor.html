@@ -1,7 +1,9 @@
 <template name="addMentor">
-<h3>Add Hackathon Mentors</h3>
-<small>Mentors are people who advice teams uring the event.</small>
+<div class="row mainrow">
+<h3 class="text-center">Add Hackathon Mentors</h3>
+<p class="text-center">Mentors are people who advice teams during the event.</p>
 <hr>
+<div class="col-sm-8 col-sm-offset-2">
 {{#autoForm collection="Mentors" id="insertMentorForm" type="insert"}}
     <fieldset>
       {{> afQuickField name='name' placeholder='eg. John'}}
@@ -12,12 +14,16 @@
     </fieldset>
     <button type="submit" class="btn btn-primary">Save</button>
   {{/autoForm}}
+  </div>
+  </div>
 </template>
 
 <template name="updateMentor">
-<h3>Editing {{name}}</h3>
-<small>Mentors are people who advice teams uring the event.</small>
+<div class="row mainrow">
+<h3 class="text-center">Editing {{name}}</h3>
+<p class="text-center">Mentors are people who advice teams during the event.</p>
 <hr>
+<div class="col-sm-8 col-sm-offset-2">
 {{#autoForm collection="Mentors" doc=this  id="updateMentorForm" type="update"}}
     <fieldset>
       {{> afQuickField name='name' placeholder='eg. John'}}
@@ -27,7 +33,10 @@
       {{> afQuickField name='about'}}
     </fieldset>
     <button type="submit" class="btn btn-primary">Save</button>
+
   {{/autoForm}}
+   </div>
+  </div>
 </template>
 
 <template name="allMentors">

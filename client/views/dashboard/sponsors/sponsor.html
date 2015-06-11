@@ -1,7 +1,9 @@
 <template name="addSponsor">
-<h3>Add Hackathon Sponsors</h3>
-<small>Sponsors are companies who provide support for the hackathon</small>
+<div class="row mainrow">
+<h3 class="text-center">Add Hackathon Sponsors</h3>
+<p class="text-center">Sponsors are companies who provide support for the hackathon</p>
 <hr>
+<div class="col-sm-8 col-sm-offset-2">
 {{#autoForm collection="Sponsors" id="insertSponsorForm" type="insert"}}
     <fieldset>
       {{> afQuickField name='name' placeholder='eg. Google'}}
@@ -11,12 +13,16 @@
     </fieldset>
     <button type="submit" class="btn btn-primary">Save</button>
   {{/autoForm}}
+  </div>
+  </div>
 </template>
 
 <template name="updateSponsor">
-<h3>Editing {{name}}</h3>
-<small>Sponsors are companies who provide support for the hackathon</small>
+<div class="row mainrow">
+<h3  class="text-center">Editing {{name}}</h3>
+<p class="text-center">Sponsors are companies who provide support for the hackathon</p>
 <hr>
+<div class="col-sm-8 col-sm-offset-2">
 {{#autoForm collection="Sponsors" doc=this id="updateSponsorForm" type="update"}}
     <fieldset>
       {{> afQuickField name='name' placeholder='eg. Google'}}
@@ -26,6 +32,8 @@
     </fieldset>
     <button type="submit" class="btn btn-primary">Save</button>
   {{/autoForm}}
+  </div>
+  </div>
 </template>
 
 

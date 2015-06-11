@@ -3,7 +3,7 @@
 </template>
 
 <template name="configureHackathon">
-<h4>Configure Hackathon</h4>
+<h3>Configure Hackathon</h3>
 	<hr>
 	<div class="row">
 	   <div class="col-sm-4 text-center">
@@ -21,9 +21,12 @@
 </template>
 
 <template name="createHackathon">
+
 {{#unless  $.Session.get 'exists'}}
-  <h4>Create Hackathon</h4>
+ <div class="row mainrow">
+  <h3 class="text-center">Create Hackathon</h3>
 	<hr>
+  <div class="col-sm-8 col-sm-offset-2">
 	{{#autoForm collection="Hackathons" id="insertHackathonForm" type="insert"}}
     <fieldset>
       {{> afQuickField name='title' placeholder='eg. Hack for big Choices'}}
@@ -37,6 +40,8 @@
     </fieldset>
     <button type="submit" class="btn btn-primary">Save</button>
   {{/autoForm}}
+  </div>
+  </div>
 {{else}}
 {{#with hack}}
   <h4>Hackathon Created</h4>
@@ -46,10 +51,13 @@
 </div>
 {{/with}}
 {{/unless}}
+
 </template>
 <template name="updateHackathon">
-   <h4>Edit Hackathon Settings</h4>
+<div class="row mainrow">
+   <h3 class="text-center">Edit {{title}} Settings</h3>
    <hr>
+   <div class="col-sm-8 col-sm-offset-2">
     {{#autoForm collection="Hackathons" doc=this id="updateHackathonForm" type="update"}}
       <fieldset>
         {{> afQuickField name='title' placeholder='eg. Hack for big Choices'}}
@@ -63,5 +71,7 @@
       </fieldset>
       <button type="submit" class="btn btn-primary">Save</button>
     {{/autoForm}}
+    </div>
+    </div>
 </template>
 

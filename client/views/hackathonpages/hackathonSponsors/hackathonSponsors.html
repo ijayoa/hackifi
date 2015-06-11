@@ -6,11 +6,12 @@
 {{#each sponsorData}}
 	<div class="col-sm-3 text-center">
 	{{#with getDoc sponsorLogo 'Attachments'}}
-		<img class="img img-responsive"  width="150px" hieght="150px" src="{{url}}"/>
+	
+		<img class="img img-responsive" src="{{url}}"/>
 
 	{{/with}}
-	<br>
-	<h3 class="logonom">{{name}}</h3>
+	<br><!-- 
+	<h3 class="logonom">{{name}}</h3> -->
 	</div>
 {{else}}
 <!-- <hr>
