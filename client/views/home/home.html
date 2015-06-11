@@ -38,9 +38,8 @@
                  <ul>
                  <li class="active"><a href="index.html">Home</a></li>
                  <li><a class="scroll" href="#features">Features</a></li>
-                 <li><a class="scroll" href="#about">About</a></li>
-                 <li><a class="scroll" href="#testimonials">Testimonials</a></li>
                  <li><a class="scroll" href="#pricing">Pricing</a></li>
+                 <li><a class="scroll" href="#testimonials">Testimonials</a></li>
                  <li><a class="scroll" href="#contact">Contact</a></li>
                   {{#unless User}}
                   <li><a id="home-login" href="{{pathFor route='atSignIn'}}">{{_ "login2"}}</a></li>
@@ -62,11 +61,11 @@
              <div class="col-md-12 banner-text wow fadeInRight text-center" data-wow-delay="0.5s">
 
                  <h1 class="maintitle">HACKATHONS MADE EASY</h1>
-                 <p>Hackifi is a customizable tool that makes it easier for hackathon organizers to create and manage hackathons.</p>
+                 <p>Hackifi is a customizable tool that makes it easier for hackathon organizers to set up and manage hackathons.</p>
                  {{#if User}}
                     <a href="{{pathFor 'dashboard'}}" class="view hvr-bounce-to-left btn btn-success"><i class="fa fa-dashboard"></i> {{_ "dashboard"}}</a>
                     {{else}}
-                     <a class="view hvr-bounce-to-left btn btn-success" href="{{pathFor 'dashboard'}}">CREATE FREE HACKATHON</a>
+                     <a class="view hvr-bounce-to-left btn btn-success" href="{{pathFor 'dashboard'}}">PLAN A HACKATHON</a>
                  {{/if}}
              </div>
              <!-- <div class="col-md-6 banner-pic wow fadeInLeft" data-wow-delay="0.5s">
@@ -80,28 +79,36 @@
 <div id="features" class="features">
      <div class="container">
          <div class="features-head">
-             <h3>How it Works</h3>
+             <h3>How it Works</h3><br>
+             <p id="howitworksintro">Hackifi incorporates best practices and automates the management of hackathons from start-to-finish. As hackathons become more popular, organizers set their events apart by increasingly differentiating the experience they offer. Beautiful interfaces, streamlined workflow with easy scheduling of communications and a transparent judging scoreboard are some of Hackifi's features. With this software, organizers are free to focus on organizing an awesome live competition with almost no adminisrative burden. </p>
          </div>
          <div class="features-section">
              <div class="col-md-3 feature-grid">
                  <img class="wow bounceIn" data-wow-delay="0.4s" width="90" hieght="90" src="images/icon1.png" alt=""/>
                  <h3>Subscribe</h3>
-                 <p>Subscribe for hackifi. Our pricing plans are flexible to suit your hackathon's requirement.</p>
+                 <p id="howitworks">By subscribing to the Bronze, Silver or Gold packages, organizers are eligible for the basic features. Based on the high volume of participants at hackathons and with added benefits, the Gold offer is our most-purchased package. </p>
+
              </div>
              <div class="col-md-3 feature-grid">
                  <img class="wow bounceIn" data-wow-delay="0.4s"  width="90" hieght="90" src="images/icon2.png" alt=""/>
                  <h3>Customize Settings</h3>
-                 <p>Hackathon details such as title, rules, timeline and eligibility and cover photo are entered.</p>
+
+                 <p id="howitworks">Simply customize your dashboard with your registration, communication schedules and updates, entry  submissions, visible or invisible judging scoreboard and participant feedback fields. </p>
+
              </div>
              <div class="col-md-3 feature-grid">
                  <img class="wow bounceIn" data-wow-delay="0.4s"  width="90" hieght="90" src="images/icon3.png" alt=""/>
                  <h3>Personalize Url</h3>
-                 <p>Set custom url for hackathon participants to interact with your hackathon page.</p>
+
+                 <p id="howitworks">Create a unique URL for the hackathon, usually the hackathon name. This improves brand presence and promotion. </p> 
+
              </div>
              <div class="col-md-3 feature-grid">
                  <img class="wow bounceIn" data-wow-delay="0.4s"  width="90" hieght="90" src="images/icon4.png" alt=""/>
                  <h3>Hackathon Launched</h3>
-                 <p>And that's all! Your hackathon is lauched and all set to roll out.</p>
+
+                 <p id="howitworks">With these three completed steps, your hackathon has been set up and automated. Minimal management is still needed for smooth running. And an awesome event is live and running smoothly!</p>
+
              </div>
              <div class="clearfix"></div>
          </div>
@@ -112,21 +119,20 @@
      <div class="container">
          <div class="about-top">
              <div class="col-md-6 about-device wow fadeInLeft" data-wow-delay="0.5s">
-                 <img src="/img/ipad.png" alt=""/>
+                 <img src="images/hack123.jpg" alt=""/>
              </div>
              <div class="col-md-6 about-device-info wow fadeInRight" data-wow-delay="0.5s">
                  <div class="device-text">
-                     <h4>HACKIFI FOR RECRUITMENT</h4>
-                     <h3>Get Leads on Top Hackers</h3>
-                     <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
-                     Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. </p>
+                     <h4>HACKIFI FOR RECRUITMENT </h4>
+                     <h3>Recruit the best developers </h3>
+                     <p>With our database of the best software developers and programmers from all over the world, we offer leads and matches to software job-seekers and the kings of software. </p>
                  </div>
                  <div class="about-list">
                      <ul>
-                         <li><a href="#"><span class="abt1"></span>Awesome desgn</a></li>
-                         <li><a href="#"><span class="abt2"></span>Fully responsive</a></li>
-                         <li><a href="#"><span class="abt3"></span>Retina ready</a></li>
-                         <li><a href="#"><span class="abt4"></span>Tons of features  and easy to use</a></li>
+                         <li><a href="#"><span class="abt1"></span>Winners and winnings</a></li>
+                         <li><a href="#"><span class="abt2"></span>Real-time global coverage of hackathons</a></li>
+                         <li><a href="#"><span class="abt3"></span>Mobile Optimized</a></li>
+                         <li><a href="#"><span class="abt4"></span>With tons of features</a></li>
                      </ul>
                  </div>
              </div>
@@ -138,10 +144,9 @@
      <div class="container">
          <div class="col-md-6 about-customize wow fadeInRight" data-wow-delay="0.5s">
              <div class="device-text-bottom">
-                    <h4>Customized Mobile Application</h4>
+                    <h4>CUSTOMIZED MOBILE APPLICATION</h4>
                     <h3>Super easy to customize</h3>
-                    <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-                    Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                    <p>Hackathons and all online competitions should emphasize brand presence. With our drag-and-drop templates for easy customization of your brand logo, colors, design and signature, the cause for your hackathon was organized is communicated clearly to all. </p>
              </div>
          </div>
          <div class="col-md-6 about-device-bottom wow fadeInLeft" data-wow-delay="0.5s">
@@ -163,185 +168,13 @@
       });
     });
   </script>
-<!---->
-<div id="testimonials" class="pricing">
-     <div class="container">
-         <div class="pricing-text">
-            <h4>CONVENIENCE HAS ITS PRICE</h4>
-            <h3>Pricings & Plans</h3>
-         </div>
-         <!-- start slider -->
-         <div class="pricing-grids">
-             <div class="slider">
-                 <ul class="rslides" id="slider2">
-                     <li>
-                         <div class="col-md-6 pricing-plans">
-                              <p>Once upon a time all the Rivers combined to protest against the action of the Sea in making their waters salt.
-                             “When we come to you,” said they to the Sea.</p>
-                              <div class="pic1">
-                                 <img src="images/pr1.png" alt=""/>
-                              </div>
-                              <div class="pic-info">
-                                    <h5>John Doe</h5>
-                                    <a href="#">CEO, THE RIVERS COMPANY</a>
-                              </div>
-                              <div class="clearfix"></div>
-                         </div>
-                         <div class="col-md-6 pricing-plans">
-                              <p>A shoe is not only a design, but it's a part of your body language, the way you walk. The way you're going to move is quite dictated by your shoes.</p>
-                              <div class="pic1">
-                                 <img src="images/pr2.png" alt=""/>
-                              </div>
-                              <div class="pic-info">
-                                    <h5>John Doe</h5>
-                                    <a href="#">CEO, THE RIVERS COMPANY</a>
-                              </div>
-                              <div class="clearfix"></div>
-                         </div>
-                          <div class="clearfix"></div>
-                      </li>
-                      <li>
-                         <div class="col-md-6 pricing-plans">
-                              <p>A shoe is not only a design, but it's a part of your body language, the way you walk. The way you're going to move is quite dictated by your shoes.</p>
-                              <div class="pic1">
-                                 <img src="images/pr2.png" alt=""/>
-                              </div>
-                              <div class="pic-info">
-                                    <h5>John Doe</h5>
-                                    <a href="#">CEO, THE RIVERS COMPANY</a>
-                              </div>
-                              <div class="clearfix"></div>
-                         </div>
-                          <div class="col-md-6 pricing-plans">
-                              <p>Once upon a time all the Rivers combined to protest against the action of the Sea in making their waters salt.
-                             “When we come to you,” said they to the Sea.</p>
-                              <div class="pic1">
-                                 <img src="images/m2.jpg" alt=""/>
-                              </div>
-                              <div class="pic-info">
-                                    <h5>John Doe</h5>
-                                    <a href="#">CEO, THE RIVERS COMPANY</a>
-                              </div>
-                              <div class="clearfix"></div>
-                         </div>
-                          <div class="clearfix"></div>
-                      </li>
-                      <li>
-                         <div class="col-md-6 pricing-plans">
-                              <p>Once upon a time all the Rivers combined to protest against the action of the Sea in making their waters salt.
-                             “When we come to you,” said they to the Sea.</p>
-                              <div class="pic1">
-                                 <img src="images/m1.jpg" alt=""/>
-                              </div>
-                              <div class="pic-info">
-                                    <h5>John Doe</h5>
-                                    <a href="#">CEO, THE RIVERS COMPANY</a>
-                              </div>
-                              <div class="clearfix"></div>
-                         </div>
-                         <div class="col-md-6 pricing-plans">
-                              <p>A shoe is not only a design, but it's a part of your body language, the way you walk. The way you're going to move is quite dictated by your shoes.</p>
-                              <div class="pic1">
-                                 <img src="images/pr1.png" alt=""/>
-                              </div>
-                              <div class="pic-info">
-                                    <h5>John Doe</h5>
-                                    <a href="#">CEO, THE RIVERS COMPANY</a>
-                              </div>
-                              <div class="clearfix"></div>
-                         </div>
-                          <div class="clearfix"></div>
-                      </li>
-                      <li>
-                         <div class="col-md-6 pricing-plans">
-                              <p>A shoe is not only a design, but it's a part of your body language, the way you walk. The way you're going to move is quite dictated by your shoes.</p>
-                              <div class="pic1">
-                                 <img src="images/pr2.png" alt=""/>
-                              </div>
-                              <div class="pic-info">
-                                    <h5>John Doe</h5>
-                                    <a href="#">CEO, THE RIVERS COMPANY</a>
-                              </div>
-                              <div class="clearfix"></div>
-                         </div>
-                          <div class="col-md-6 pricing-plans">
-                              <p>Once upon a time all the Rivers combined to protest against the action of the Sea in making their waters salt.
-                             “When we come to you,” said they to the Sea.</p>
-                              <div class="pic1">
-                                 <img src="images/m2.jpg" alt=""/>
-                              </div>
-                              <div class="pic-info">
-                                    <h5>John Doe</h5>
-                                    <a href="#">CEO, THE RIVERS COMPANY</a>
-                              </div>
-                              <div class="clearfix"></div>
-                         </div>
-                          <div class="clearfix"></div>
-                      </li>
-                  </ul>
-               </div>
-               <!-- end slider -->
-          </div>
-     </div>
-</div>
-<!---->
+
 <div class="theme">
      <div class="container">
-         <h3 class="wow bounceIn" data-wow-delay="0.4s"><span>Like what you see ?</span> Get this great theme now !</h3>
-          <a class="view hvr-bounce-to-left wow bounceIn" data-wow-delay="0.4s" href="#">VIEW FEATURES</a>
-         <a class="download wow bounceIn" data-wow-delay="0.4s" href="#">DOWNLOAD NOW</a>
+         <h3 class="wow bounceIn" data-wow-delay="0.4s"> Have a hackathon to organize and don't know how to manage everything?</h3>
+          <!-- <a class="view hvr-bounce-to-left wow bounceIn" data-wow-delay="0.4s" href="#">VIEW FEATURES</a> -->
+         <a class="download wow bounceIn pull-right" data-wow-delay="0.4s" href="#">START A TRIAL WITH HACKIFI</a>
      </div>
-</div>
-<!---->
-<div id="pricing" class="pricing-bottom">
-      <div class="container">
-         <div class="pricing-text-bottom">
-            <h4>QUALITY HAS ITS PRICE</h4>
-            <h3>Hackifi Pricings & Plans</h3>
-         </div>
-          <div class="price-section-grids text-center">
-             <div class="price-value text-center wow fadeInDown" data-wow-delay="0.4s">
-                 <div class="price-head">
-                    <h5>Personal</h5>
-                 </div>
-                 <div class="cost">
-                    <h3><span>$</span>25</h3>
-                    <p>\ per month</p>
-                 </div>
-                 <div class="cost-info">
-                    <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum <span>lacinia</span> consectetur.</p>
-                    <a href="#">ORDER NOW</a>
-                 </div>
-             </div>
-             <div class="price-value text-center wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="price-head">
-                         <h5>Business</h5>
-                    </div>
-                    <div class="cost">
-                         <h3><span>$</span>50</h3>
-                         <p>\ per month</p>
-                    </div>
-                    <div class="cost-info">
-                    <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum <span>lacinia</span> consectetur.</p>
-                    <a href="#">ORDER NOW</a>
-                    </div>
-             </div>
-             <div class="price-value text-center wow fadeInDown" data-wow-delay="0.4s">
-                 <div class="price-head">
-                         <h5>ultimate</h5>
-                  </div>
-                 <div class="cost">
-                     <h3><span>$</span>99</h3>
-                     <p>\ per month</p>
-                 </div>
-                 <div class="cost-info">
-                    <p>Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum <span>lacinia</span> consectetur.</p>
-                    <a href="#">ORDER NOW</a>
-                 </div>
-             </div>
-             <div class="clearfix"></div>
-          </div>
-      </div>
 </div>
 <!---->
 <div id="contact" class="contact">
@@ -353,18 +186,19 @@
          <div class="contact-grids">
              <div class="col-md-4 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
                  <div class="icon1"></div>
-                 <p>Phone: (415) 124-5678</p>
-                 <p>Fax: (412) 123-8290</p>
+                 <p>Work: (233) 246-614-835</p>
+                 <p>Mobile: (233) 248-060-588</p>
              </div>
              <div class="col-md-4 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
                  <div class="icon2"></div>
-                 <p>1001 Brickell Bay Dr.</p>
-                 <p>Suite 1900</p>
-                 <p>Miami, FL 33131</p>
+                 <p>20 Aluguntuguntu Street</p>
+                 <p>Ambassadorial Enclave</p>
+                 <p>East Legon, Greater Accra</p>
+                 <p>Accra</p>
              </div>
              <div class="col-md-4 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
                  <div class="icon3"></div>
-                 <a href="mailto:example.com">support@yourname.com</a>
+                 <a href="mailto:example.com">Email us: support@hackifi.com</a>
              </div>
              <div class="clearfix"></div>
          </div>
@@ -380,7 +214,7 @@
              <a href="#"><span class="facebook"></span></a>
              <a href="#"><span class="linkedin"></span></a>
          </div>
-         <p class="wow bounceIn" data-wow-delay="0.4s">Copyright &copy; 2015 LUCID All rights reserved | Template by  <a href="http://w3layouts.com">  W3layouts</a></p>
+         <p class="wow bounceIn" data-wow-delay="0.4s"> Copyright &copy; 2015 Hackifi. All rights reserved </p>
      </div>
 </div>
 
