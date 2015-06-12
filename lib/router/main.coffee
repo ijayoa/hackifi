@@ -132,6 +132,28 @@ Router.map ->
     data: ->
       judges: Judges.find({owner:Meteor.userId()},{sort: {createdAt: -1}}).fetch()
 
+  @route "allFeedback",
+    path: "dashboard/hackathon/feedbacks"
+    layoutTemplate: "dashboardlayout"
+    waitOn: ->
+      [
+        subs.subscribe 'feedbacks'
+        subs.subscribe 'participants'
+        subs.subscribe 'attachments'
+      ]
+    data: ->
+      feedbacks: Feedbacks.find().fetch()
+
+   @route "allSubmissions",
+    path: "/dashboard/hackathon/submissions"
+    layoutTemplate:'dashboardlayout'
+    waitOn: ->
+      [
+        subs.subscribe 'hackathons'
+        subs.subscribe 'attachments'
+        subs.subscribe 'submissions'
+      ]
+
   @route "allSponsors",
     path: "dashboard/hackathon/sponsors"
     layoutTemplate: "dashboardlayout"
@@ -154,6 +176,16 @@ Router.map ->
     data: ->
       mentors: Mentors.find({owner:Meteor.userId()},{sort: {createdAt: -1}}).fetch()
 
+  @route "allParticipants",
+    path: "dashboard/hackathon/participants"
+    layoutTemplate: "dashboardlayout"
+    waitOn: ->
+      [
+        subs.subscribe 'participants'
+        subs.subscribe 'attachments'
+      ]
+    data: ->
+      participants: Participants.find().fetch()
 
 
 

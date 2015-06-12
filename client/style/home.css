@@ -1,12 +1,27 @@
+
+.navbar-brand{
+	font-family: 'Kelly Slab', cursive;
+}
+/*html, body {
+    width: 99.45%;
+    overflow-x: hidden;
+}*/
 /*--
 	Author: W3layouts
 	Author URL: http://w3layouts.com
 	License: Creative Commons Attribution 3.0 Unported
 	License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+
+.row {
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
 body{
 	margin:0;
 	padding:0;
+
 	background:#fff;
 	font-family: 'Source Sans Pro', sans-serif;
  }

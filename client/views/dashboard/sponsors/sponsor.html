@@ -1,6 +1,6 @@
 <template name="addSponsor">
 <div class="row mainrow">
-<h3 class="text-center">Add Hackathon Sponsors</h3>
+<h3 class="text-center">Add Hackathon Sponsor</h3>
 <p class="text-center">Sponsors are companies who provide support for the hackathon</p>
 <hr>
 <div class="col-sm-8 col-sm-offset-2">
@@ -38,18 +38,20 @@
 
 
 <template name="allSponsors">
+<div class="row mainrow">
+  <div class="col-xs-8 col-xs-offset-2">
 {{#unless sponsors}}
 <div class="alert alert-info">
 				<p>There are no visible sponsors.</p>
 				<p><a href="{{pathFor 'addSponsor'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
 </div>
 {{else}}
-<h3>Showing Sponsors</h3>
-<small>Sponsors are companies who provide support for the hackathon</small>
+<h3 class="text-center">Sponsors</h3>
+<p  class="text-center">Sponsors are companies who provide support for the hackathon</p>
 <hr>
 
 	<div class="row destacados">
-		{{#each sponsors}}
+{{#each sponsors}}
 		<div class=" col-xs-6 col-md-3 well apps wow fadeInUp animated">
 				<center>
 					{{#with getDoc sponsorLogo 'Attachments'}}
@@ -58,32 +60,16 @@
 					<!-- <h3 class="name">{{name}}</h3> -->
 				</center>
            <br>
-			<p class="text-center"><a href="{{pathFor 'updateSponsor'}}" role="btn" class="btnspace btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a> <a href="{{pathFor 'deleteSponsor'}}" class="btn btn-xs btn-primary btnspace"> <i class="fa fa-trash"></i> Delete</a></p>
+			<p class="text-center"><a href="{{pathFor 'updateSponsor'}}" role="btn" class="btnspace btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a> <a href="{{pathFor 'deleteSponsor'}}" class="btn btn-xs btn-danger btnspace"> <i class="fa fa-trash"></i></a></p>
 		</div>
-       {{/each}}
+{{/each}}
 
 </div>
 
 {{/unless}}
+</div>
+</div>
 </template>
 
-<template name="newMessage">
-<h3>Send Broadcast Message</h3>
-<small>A Broadcast Message can be sent to all parties</small>
-<hr>
-<div class="row">
-<div class="col-sm-6 col-sm-offset-3">
-{{#autoForm collection="Messages" id="insertMessageForm" type="insert"}}
-    <fieldset>
-      {{> afQuickField name='selectMedium'}}
-      {{> afQuickField name='to'}}
-      {{> afQuickField name='title' placeholder="eg. Judging Criteria Changed"}}
-      {{> afQuickField name='content'}}
-      {{> afQuickField name='addAttachment'}}
-    </fieldset>
-    <button type="submit" class="btn btn-primary">Send Message</button>
-  {{/autoForm}}
- </div>
- </div>
-</template>
+
 

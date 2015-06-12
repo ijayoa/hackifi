@@ -15,7 +15,11 @@ Schemas.Mentors = new SimpleSchema
       rows: 5
 
   areaOfSpecialization:
-    type: String
+    type: [String]
+    autoform:
+      type: 'tags'
+      afFieldInput:
+        maxTags: 4
 
   picture:
     type: String

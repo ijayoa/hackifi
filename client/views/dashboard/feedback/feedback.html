@@ -1,0 +1,41 @@
+<template name="allFeedback">
+	<div class="row">
+	<h3 class="text-center">Feedbacks</h3>
+	<hr>
+	</div>
+	{{#each feedbacks}}
+
+	<div class="row">
+		<div class="col-sm-1 col-sm-offset-1">
+			<div class="maincont">
+				<img class="img-circle img-responsive user-photo" src="/img/userphoto.png">
+			</div><!-- /thumbnail -->
+		</div><!-- /col-sm-1 -->
+
+		<div class="col-sm-9 ">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong>{{name}}</strong> <span class="text-muted">commented 5 minutes ago</span>
+					<span class="pull-right badge btn-primary"><a href="mailto:{{email}}"><i class="fa fa-reply"></i> Reply via mail</a></span>
+				</div>
+				<div class="panel-body">
+					{{yourFeedback}}
+				</div><!-- /panel-body -->
+			</div><!-- /panel panel-default -->
+		</div><!-- /col-sm-5 -->
+
+	</div><!-- /row -->
+	{{else}}
+	<div class="row mainrow">
+	<div class="col-xs-8 col-xs-offset-2">
+
+ <div class="alert alert-info alert-dismissable">
+	  	<i class="fa fa-info"></i>
+	  	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	  	<b>Information!</b> No feedback has been received.
+        </div>
+	</div>
+
+        </div>
+	{{/each}}
+</template>

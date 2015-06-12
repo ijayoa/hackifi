@@ -10,7 +10,7 @@ AutoForm.hooks
   updateSponsorForm:
     onSuccess: (formType, result) ->
       sAlert.success 'Sponsor was successfully updated'
-      # Router.go 'allSponsors'
+      Router.go 'allSponsors'
     onError: (formType, error) ->
       console.log 'error'
 

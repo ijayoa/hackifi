@@ -6,6 +6,14 @@ AutoForm.hooks
     onError: (formType, error) ->
       console.log 'error'
 
+AutoForm.hooks
+  updateMentorForm:
+    onSuccess: (formType, result) ->
+      sAlert.success 'Mentor was successfully updated'
+      Router.go 'allMentors'
+    onError: (formType, error) ->
+      console.log 'error'
+
 Template.addMentor.rendered = () ->
 	sAlert.info 'You can add more than one mentor'
 

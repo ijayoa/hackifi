@@ -1,6 +1,6 @@
 <template name="addMentor">
 <div class="row mainrow">
-<h3 class="text-center">Add Hackathon Mentors</h3>
+<h3 class="text-center">Add Hackathon Mentor</h3>
 <p class="text-center">Mentors are people who advice teams during the event.</p>
 <hr>
 <div class="col-sm-8 col-sm-offset-2">
@@ -40,19 +40,21 @@
 </template>
 
 <template name="allMentors">
+<div class="row mainrow">
+  <div class="col-xs-8 col-xs-offset-2">
 {{#unless mentors}}
 <div class="alert alert-info">
 				<p>There are no visible mentors.</p>
 				<p><a href="{{pathFor 'addMentor'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
 </div>
 {{else}}
-<h3>Showing Mentors</h3>
-<small>Mentors are people who advice teams.</small>
+<h3 class="text-center">Showing Mentors</h3>
+<p class="text-center">Mentors are people who advice teams.</p>
 <hr>
 
 <div class="row destacados">
 		{{#each mentors}}
-		<div class=" col-xs-6 col-md-3 well apps wow fadeInUp animated">
+		<div class="text-center col-xs-6 col-md-3 well apps wow fadeInUp animated">
 				<center>
 					{{#with getDoc picture 'Attachments'}}
 					<img src="{{url}}" name="picture" width="150" height="150" class="img-circle">
@@ -60,11 +62,13 @@
 					<h3 class="hname">{{name}}</h3>
 				</center>
            <br>
-			<p class="text-center"><a href="{{pathFor 'updateMentor'}}" role="btn" class="btnspace btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a> <a href="{{pathFor 'deleteMentor'}}" class="btn btn-xs btn-primary btnspace"> <i class="fa fa-trash"></i> Delete</a></p>
+			<p class="text-center"><a href="{{pathFor 'updateMentor'}}" role="btn" class="btnspace btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a> <a href="{{pathFor 'deleteMentor'}}" class="btn btn-xs btn-danger btnspace"> <i class="fa fa-trash"></i></a></p>
 		</div>
        {{/each}}
 
 </div>
 
 {{/unless}}
+</div>
+</div>
 </template>

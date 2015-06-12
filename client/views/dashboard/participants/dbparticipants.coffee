@@ -2,6 +2,7 @@ AutoForm.hooks
   dbInsertParticipantForm:
     onSuccess: (formType, result) ->
       sAlert.success 'Registration Successful'
+      Router.go 'allParticipants'
     onError: (formType, error) ->
       console.log error
     formToDoc: (doc, ss, formId) ->
