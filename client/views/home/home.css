@@ -6,7 +6,31 @@
   height: 50px;
 
 }
+.at-terms-link p a{
+	background: #005e49;
+}
+.at-pwd-link p a{
+background: #005e49;
+}
+ .at-link p a{
+	background: #005e49;
+}
+.at-signup-link p a{
+    background: #005e49;
 
+}
+.at-form{
+	font-family: 'Raleway',serif
+}
+.at-btn{
+	background: #002b21;
+	font-family: 'Raleway',serif
+}
+
+.at-signin-link p a {
+
+	background: #005e49;
+}
 .setfont{
 	font-family: 'Raleway', sans-serif;
 }

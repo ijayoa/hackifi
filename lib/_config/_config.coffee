@@ -27,8 +27,8 @@
 	dateFormat: 'D/M/YYYY'
 
 	# Meta / Extenrnal content
-	privacyUrl: 'http://meteorfactory.io'
-	termsUrl: 'http://meteorfactory.io'
+	privacyUrl: '#'
+	termsUrl: '#'
 
 	# For email footers
 	legal:
