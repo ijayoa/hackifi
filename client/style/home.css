@@ -330,7 +330,7 @@ width:100%;
 }
 /*--pricing--*/
 .pricing{
-background:url(../images/price.jpg) no-repeat;
+background-color: #002b21;
 min-height:660px;
 background-size:cover;
 padding:5% 0;
@@ -463,7 +463,7 @@ color:#fff;
 font-size:1em;
 }
 .theme{
-background:#15141a;
+background:#eeeeee;
 padding:4em 0;
 }
 .theme h3 span{
@@ -471,7 +471,7 @@ color:#fff;
 font-weight:600;
 }
 .theme h3{
-color:#fff;
+color:#002b21;
 font-size:2.4em;
 font-weight:100;
 display:inline-block;

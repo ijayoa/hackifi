@@ -51,9 +51,11 @@ background: #005e49;
 }
 #howitworks{
 	font-family: 'Raleway', sans-serif;
-	font-size: 14px;
+	font-size: 19px;
 	text-align: center;
 }
 h4{
 	font-size: 26px; 
 }
+body{padding-top:20px}
+
