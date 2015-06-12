@@ -144,7 +144,7 @@ Router.map ->
     data: ->
       feedbacks: Feedbacks.find().fetch()
 
-   @route "allSubmissions",
+  @route "allSubmissions",
     path: "/dashboard/hackathon/submissions"
     layoutTemplate:'dashboardlayout'
     waitOn: ->
@@ -153,6 +153,19 @@ Router.map ->
         subs.subscribe 'attachments'
         subs.subscribe 'submissions'
       ]
+
+  @route "aboutSubmission",
+    path: "/dashboard/hackathon/submissions/:_id"
+    layoutTemplate:'dashboardlayout'
+    waitOn: ->
+      [
+        subs.subscribe 'hackathons'
+        subs.subscribe 'attachments'
+        subs.subscribe 'submissions'
+      ]
+    data: ->
+      submission: Submissions.findOne(this.params._id)
+
 
   @route "allSponsors",
     path: "dashboard/hackathon/sponsors"
@@ -357,4 +370,20 @@ Router.map ->
         subs.subscribe 'messages'
         subs.subscribe 'attachments'
       ]
+
+  @route "scoreBoard",
+    path: "/dashboard/hackathon/scoreboard"
+    layoutTemplate:'dashboardlayout'
+    waitOn: ->
+      [
+        subs.subscribe 'hackathons'
+        subs.subscribe 'mentors'
+        subs.subscribe 'judges'
+        subs.subscribe 'sponsors'
+        subs.subscribe 'attachments'
+        subs.subscribe 'feedbacks'
+        subs.subscribe 'participants'
+        subs.subscribe 'submissions'
+      ]
+
 # end of add hackathon page

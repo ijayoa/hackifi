@@ -1,4 +1,7 @@
-
+.pname{
+  font-size: 22px;
+  padding-bottom: 5%;
+}
 .panel-image {
     position: relative;   
 }

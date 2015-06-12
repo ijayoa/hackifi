@@ -6,7 +6,7 @@
 			<h3 class="text-center">Team Submissions</h3>
 			<hr>
 			<div class="row form-group" style="margin-top:10px;">
-			{{#each submissions}}
+				{{#each submissions}}
 
 				<div class="col-xs-12 col-md-6">
 					<div class="panel panel-default">
@@ -18,25 +18,82 @@
 						</div>
 						<input type="checkbox" id="toggle-4" checked class="panel-image-toggle">
 						<div class="panel-body">
-							<h4>{{productName}}</h4>
+							<h4 class="pname">{{productName}}</h4>
 							<p>{{shortDescription}}</p>
 						</div>
 						<div class="panel-footer text-center">
-							<a href="#"><span class="fa fa-long-arrow-down"></span></a>
-							<a href="{{githubLink}}"><span class="fa fa-github-alt"></span></a>
+							<a href="{{pathFor 'aboutSubmission'}}">
+								<span class="fa fa-expand"></span></a>
+								<a href="http://{{githubLink}}" target="_blank"><span class="fa fa-github-alt"></span></a>
+							</div>
 						</div>
 					</div>
+
+					{{else}}
+					<div class="alert alert-info">
+						<p>There are no submissions.</p>
+						<p><a href="{{pathFor 'newMessage'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Send Notice</a></p>
+					</div>
+					{{/each}}
 				</div>
 
-			{{else}}
-			<div class="alert alert-info">
-				<p>There are no submissions.</p>
-				<p><a href="{{pathFor 'newMessage'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Send Notice</a></p>
 			</div>
-			{{/each}}
-			</div>
+		</div>
 
+	</template>
+
+	<template name="aboutSubmission">
+		<div class="row mainrow">
+			<div class="col-xs-8 col-xs-offset-2">
+
+{{#with submission}}
+<div class="row form-group" style="margin-top:10px;">
+	<div class="col-xs-8 col-md-8 col-xs-offset-2">
+<div class="panel panel-default">
+<div class="panel-heading">
+                    <h3 class="panel-title">About {{productName}}</h3>
+                    <span class="text-muted">submitted 5 minutes ago</span>
+					<span class="pull-right badge btn-primary"><a href="#"><i class="fa fa-certificate"></i> {{productCategory}}</a></span>
+                </div>
+	<div class="panel-image">
+		{{#with getDoc  productLogo 'Attachments'}}
+		<img src="{{url}}" name="picture" class=" img-responsive panel-image-preview">
+		{{/with}}
+		<label for="toggle-4"></label>
+	</div>
+	<input type="checkbox" id="toggle-4" checked class="panel-image-toggle">
+	<div class="panel-body">
+		<h4 class="pname">{{productName}}</h4>
+		<p>{{shortDescription}}</p>
+		<br>
+		<h4 class="pname">Motivation</h4>
+		<p>{{motivation}}</p>
+	</div>
+	<div class="panel-heading">
+                    <h3 class="panel-title">The {{productName}} Team</h3>
+                    <span class="text-muted">{{teamMembers}}</span>
+                </div>
+	<div class="panel-image">
+		{{#with getDoc  teamPicture 'Attachments'}}
+		<img src="{{url}}" name="picture" class=" img-responsive panel-image-preview">
+		{{/with}}
+		<label for="toggle-4"></label>
+	</div>
+	<div class="panel-body">
+		<h4 class="pname">About The Team</h4>
+		<p>{{aboutTeam}}</p>
+	</div>
+	<div class="panel-footer text-center">
+		<a href="{{pathFor 'allSubmissions'}}">
+			<span class="fa fa-arrows-alt"></span></a>
+			<a href="http://{{githubLink}}" target="_blank"><span class="fa fa-github-alt"></span></a>
 		</div>
 	</div>
-</template>
+</div>
+</div>
 
+	{{/with}}
+
+</div>
+</div>
+</template>
