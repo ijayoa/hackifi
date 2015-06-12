@@ -2,6 +2,18 @@
   padding: 0px;
 
 }
+.alert > .fa, .alert > .glyphicon {
+  position: absolute;
+     left: -2px;
+  top: -20px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  line-height: 35px;
+  text-align: center;
+  background: inherit;
+  border: inherit;
+}
 /*bread crumb*/
 .content-header {
   background-color: #DADFE1;
@@ -78,21 +90,22 @@
 .profile-usertitle {
    font-family: 'Raleway', sans-serif;
   /*text-align: center;*/
-  margin-top: 13px;
+  margin-left: -9px;
+  margin-top: 9px;
 }
 
 .profile-usertitle-name {
   color: #002b21;
-  font-size: 18px;
-  font-weight: 600;
-  margin-top: 24%;
+  font-size: 17px;
+  /*font-weight: 600;*/
+  margin-top: 17%;
 }
 
 .profile-usertitle-job {
   text-transform: uppercase;
   color: #002b21;
   font-size: 12px;
-  font-weight: 600;
+  /*font-weight: 600;*/
   margin-bottom: 15px;
 }
 
@@ -152,7 +165,7 @@
 
 .profile-usermenu ul li a:hover {
   background-color: #fafcfd;
-  color: #5b9bd1;
+  color: #002b21;
 }
 
 .profile-usermenu ul li.active {
@@ -161,7 +174,7 @@
 
 .profile-usermenu ul li.active a {
   color: #5b9bd1;
-  background-color: #f6f9fb;
+  background-color: #005e49;
   border-left: 2px solid #5b9bd1;
   margin-left: -2px;
 }

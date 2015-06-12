@@ -40,14 +40,16 @@
 
 
 <template name="allJudges">
+<div class="row mainrow">
+  <div class="col-xs-8 col-xs-offset-2">
 {{#unless judges}}
 <div class="alert alert-info">
 				<p>There are no visible judges.</p>
 				<p><a href="{{pathFor 'addJudge'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
 </div>
 {{else}}
-<h3>Showing Judges</h3>
-<small>Judges are people who judge hackathon teams.</small>
+<h3 class="text-center">Showing Judges</h3>
+<p class="text-center">Judges are people who judge hackathon teams.</p>
 <hr>
 
 	<div class="row destacados">
@@ -57,14 +59,16 @@
 					{{#with getDoc picture 'Attachments'}}
 					<img src="{{url}}" name="picture" width="150" height="150" class="img-circle">
 					{{/with}}
-					<h3 class="name">{{name}}</h3>
+					<h3 class="hname">{{name}}</h3>
 				</center>
            <br>
-           <p class="text-center"><a href="{{pathFor 'updateJudge'}}" role="btn" class="btnspace btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Edit</a> <a href="{{pathFor 'deleteJudge'}}" class="btn btn-xs btn-primary btnspace"> <i class="fa fa-trash"></i> Delete</a></p>
+           <p class="text-center"><a href="{{pathFor 'updateJudge'}}" role="btn" class="btnspace btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a> <a href="{{pathFor 'deleteJudge'}}" class="btn btn-xs btn-danger btnspace"> <i class="fa fa-trash"></i></a></p>
 		</div>
        {{/each}}
 
 </div>
 
 {{/unless}}
+</div>
+</div>
 </template>
