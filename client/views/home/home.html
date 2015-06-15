@@ -26,7 +26,8 @@
 <body>
 <!---->
 <div class="banner">
-     <div class="container setfont">
+<div class="setfont">
+     <div class="container sfont">
          <div class="header">
              <div class="wow fadeInLeft" data-wow-delay="0.5s">
               <a class="navlogo" href="{{pathFor 'home'}}">
@@ -37,13 +38,14 @@
              <span class="menu"></span>
                  <ul>
                  <li class="active"><a href="index.html">Home</a></li>
+                 <li><a class="scroll" href="#howitworks">How It Works</a></li>
                  <li><a class="scroll" href="#features">Features</a></li>
                  <li><a class="scroll" href="#pricing">Pricing</a></li>
                  <li><a class="scroll" href="#testimonials">Testimonials</a></li>
                  <li><a class="scroll" href="#contact">Contact</a></li>
-                 <!--  {{#unless User}}
+                  {{#unless User}}
                   <li><a id="home-login" href="{{pathFor route='atSignIn'}}">{{_ "login2"}}</a></li>
-                  {{/unless}} -->
+                  {{/unless}}
                  </ul>
              </div>
               <!-- script-for-menu -->
@@ -58,8 +60,7 @@
              <div class="clearfix"></div>
          </div>
          <div class="banner-info text-center">
-             <div class="col-md-12 banner-text wow fadeInRight text-center" data-wow-delay="0.5s">
-
+             <div class="col-md-12 col-xs-6 banner-text wow fadeInRight text-center" data-wow-delay="0.5s">
                  <h1 class="maintitle">HACKATHONS MADE EASY</h1>
                  <p>Hackifi is a customizable tool that makes it easier for hackathon organizers to set up and manage hackathons.</p>
                  {{#if User}}
@@ -74,25 +75,29 @@
              <div class="clearfix"></div>
          </div>
      </div>
+    </div>
 </div>
 <!---->
 <div id="features" class="features">
      <div class="container">
          <div class="features-head">
-             <h3>How it Works</h3><br>
-             <p id="howitworksintro">Hackifi incorporates best practices and automates the management of hackathons from start-to-finish. As hackathons become more popular, organizers set their events apart by increasingly differentiating the experience they offer.</p>
+             <h3 class="text-center">How it Works</h3><br>
+             <p id="howitworksintro" class="text-center">SET UP HACKATHONS IN 4 EASY STEPS</p>
          </div>
          <div class="features-section">
+         
+         <div class="col-md-12">
+         <div class="row">
              <div class="col-md-3 feature-grid">
-                 <img class="wow bounceIn" data-wow-delay="0.4s" width="90" hieght="90" src="images/icon1.png" alt=""/>
-                 <h3>Subscribe</h3>
+                <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-google-wallet fa-4x"></i></button>
+                 <h3 class="process-step">Subscribe</h3>
 
                  <p id="howitworks">Subscribe to the Bronze, Silver or Gold offer. </p>
 
              </div>
              <div class="col-md-3 feature-grid">
-                 <img class="wow bounceIn" data-wow-delay="0.4s"  width="90" hieght="90" src="images/icon2.png" alt=""/>
-                 <h3>Customize Settings</h3>
+                 <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-paint-brush fa-4x"></i></button>
+                 <h3 class="process-step">Customize Settings</h3>
 
                  <p id="howitworks">Enter details such as rules, schedules, eligibility. </p>
 
@@ -100,38 +105,128 @@
 
              </div>
              <div class="col-md-3 feature-grid">
-                 <img class="wow bounceIn" data-wow-delay="0.4s"  width="90" hieght="90" src="images/icon3.png" alt=""/>
-                 <h3>Personalize Url</h3>
+                 <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-tint fa-4x"></i></button>
+                 <h3 class="process-step">Personalize Url</h3>
 
                  <p id="howitworks">Set a unique URL for participants to interact with the competition. </p> 
 
              </div>
              <div class="col-md-3 feature-grid">
-                 <img class="wow bounceIn" data-wow-delay="0.4s"  width="90" hieght="90" src="images/icon4.png" alt=""/>
-                 <h3>Hackathon Launched</h3>
+                 <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-rocket fa-4x"></i></button>
+                 <h3 class="process-step">Hackathon Launched</h3>
 
-                 <p id="howitworks">That's All!, your hackathon is now live! </p>
+                 <p id="howitworks">That's All!, your hackathon is now live! Easy Breezy!</p>
 
 
 
+             </div>
+             </div>
+             </div>
+             <div class="clearfix"></div>
+         </div>
+     </div>
+</div>
+<div class="features-cover">
+<div class="container">
+<div class="row">
+        <div class="content-feature-grids" id="features">
+                 <h3 class="text-center">Hackifi Features</h3><br>
+                <p id="howitworksintro" class="text-center">WE MAKE HACKATHONS EASY BY PROVIDING</p>
+                <div class="col-md-6">
+                    <div class="feature-grid">
+                        <div class="feature-grid-left icon1">
+                            <span><i class="fa fa-dashboard fa-3x"></i></span>
+                        </div>
+                        <div class="feature-grid-right">
+                            <h2>Hackathon DashBoard</h2>
+                            <p>The hackathon organizer can create a hackathon through a dashboard, add the details and the image and is given a personalized hackathon url. </p>
+                        </div>
+                        <div class="clearfix"></div>        
+                    </div>
+                    <div class="feature-grid">
+                        <div class="feature-grid-left icon2">
+                            <span><i class="fa fa-microphone fa-3x"></i></span>
+                        </div>
+                        <div class="feature-grid-right">
+                            <h2>Communication</h2>
+                            <p>The organizer can send out update and messages either via  email or sms, this messages can be scheduled and sent at a later times by the software.</p>
+                        </div>
+                        <div class="clearfix"></div>        
+                    </div>
+                    <div class="feature-grid">
+                        <div class="feature-grid-left icon3">
+                            <span><i class="fa fa-legal fa-3x"></i></span>
+                        </div>
+                        <div class="feature-grid-right">
+                            <h2>ScoreBoard</h2>
+                            <p>The system also provides a scoreboard on how the winners were chosen, it has the option of making it visible or not. </p>
+                        </div>
+                        <div class="clearfix"></div>        
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-grid">
+                        <div class="feature-grid-left icon4">
+                            <span><i class="fa fa-check fa-3x"></i> </span>
+                        </div>
+                        <div class="feature-grid-right">
+                            <h2>Registration</h2>
+                            <p>Participants can register for the hackathon either as individuals or teams using either gmail or direct signups.</p>
+                        </div>
+                        <div class="clearfix"></div>        
+                    </div>
+                    <div class="feature-grid">
+                        <div class="feature-grid-left icon5">
+                            <span><i class="fa fa-folder-open fa-3x"></i></span>
+                        </div>
+                        <div class="feature-grid-right">
+                            <h2>Submission</h2>
+                            <p>Teams can submit their project when the hackathon is over. Submission can be be in either video, web links or doc formats </p>
+                        </div>
+                        <div class="clearfix"></div>        
+                    </div>
+                    <div class="feature-grid">
+                        <div class="feature-grid-left icon6">
+                            <span><i class="fa fa-comments fa-3x"></i></span>
+                        </div>
+                        <div class="feature-grid-right">
+                            <h2>Feedback</h2>
+                            <p>Participants can give feedback about their hackathon experience.</p>
+                        </div>
+                        <div class="clearfix"></div>        
+                    </div>
+                </div>
+                    <div class="clearfix"></div>        
+                </div>
+    </div>
+</div>
+</div>
+<div class="features2">
+     <div class="container">
+         <div class="features-head">
+             <h3 class="text-center">Why Use Hackifi?</h3><br>
+             <p id="howitworksintro" class="text-center">WE ARE DEDICATED</p>
+         </div>
+         <div class="features-section">
+
+         <div class="col-md-12 text-center">
+         <div class="row">
+              <p id="howitworksintroP">Hackifi incorporates best practices and automates the management of hackathons from start-to-finish. As hackathons become more popular, organizers set their events apart by increasingly differentiating the experience they offer.</p>
+             </div>
+             <div class="text-center row process-step">
+                <a class="text-center downloadwhy wow bounceIn" data-wow-delay="0.4s" href="#">GET A QUOTE TODAY</a>
+             </div>
              </div>
              <div class="clearfix"></div>
          </div>
      </div>
 </div>
 <!---->
-<div class="theme">
-     <div class="container">
-         <h3 class="wow bounceIn" data-wow-delay="0.4s"> Our prices are fixed based on the volume of participants at your hackathon. </h3>
-          <!-- <a class="view hvr-bounce-to-left wow bounceIn" data-wow-delay="0.4s" href="#">VIEW FEATURES</a> -->
-         <a class="download wow bounceIn pull-right" data-wow-delay="0.4s" href="#">GET A QUOTE TODAY</a>
-     </div>
-</div>
-<!---->
 <div id="testimonials" class="pricing">
+<div class="pricing-cover">
      <div class="container">
          <div class="pricing-text">
-            <h4>WHAT OUR CUSTOMERS ARE SAYING ABOUT US</h4><br>
+            <p>WHAT OUR CUSTOMERS ARE SAYING ABOUT US</p><br>
             <h3>Testimonials</h3>
          </div>
          <!-- start slider -->
@@ -151,7 +246,7 @@
                               <div class="clearfix"></div>
                          </div>
                          <div class="col-md-6 pricing-plans">
-                              <p>I wish I had this app last year. Organizing my first hackathon for a new company was overwhelming. Hackify makes it seamless. </p>
+                              <p>I wish I had this app last year. Organizing my first hackathon for a new company was overwhelming. Hackifi makes it seamless. </p>
                               <div class="pic1">
                                  <img src="images/victorhubaccra.jpg" alt=""/>
                               </div>
@@ -165,7 +260,7 @@
                       </li>
                       <li>
                          <div class="col-md-6 pricing-plans">
-                              <p>Handling my first hackathon was a nightmare. I never realized all the asssignments I had to make sure where in order. When I found Hackify onine, I was so releaved! </p>
+                              <p>Handling my first hackathon was a nightmare. I never realized all the asssignments I had to make sure where in order. When I found Hackifi online, I was so releaved! </p>
                               <div class="pic1">
                                  <img src="images/averi.jpg" alt=""/>
                               </div>
@@ -176,7 +271,7 @@
                               <div class="clearfix"></div>
                          </div>
                           <div class="col-md-6 pricing-plans">
-                              <p>Hackify is a software that delivers on every promise made. I was able to communicate wit the judges, teams and other organizers so easily. Kudos to the team!</p>
+                              <p>Hackifi is a software that delivers on every promise made. I was able to communicate wit the judges, teams and other organizers so easily. Kudos to the team!</p>
                               <div class="pic1">
                                  <img src="images/amma.jpg" alt=""/>
                               </div>
@@ -194,12 +289,23 @@
           </div>
      </div>
 </div>
-
+</div>
+<div class="theme">
+     <div class="container text-center">
+         <div class="pricing-text text-center">
+            <p class="text-center">QUALITY HAS ITS PRICE</p>
+            <h3>Hackifi Pricing Plans</h3>
+         </div>
+         <p id="howitworksintroP" class="pp text-center wow bounceIn" data-wow-delay="0.4s"> Our prices are fixed based on the volume of participants at your hackathon. </p>
+          <!-- <a class="view hvr-bounce-to-left wow bounceIn" data-wow-delay="0.4s" href="#">VIEW FEATURES</a> -->
+         <a class="text-center download wow bounceIn" data-wow-delay="0.4s" href="#">GET A QUOTE TODAY</a>
+     </div>
+</div>
 <div id="about" class="about">
      <div class="container">
          <div class="about-top">
              <div class="col-md-6 about-device wow fadeInLeft" data-wow-delay="0.5s">
-                 <img src="images/hack123.jpg" alt=""/>
+                 <img src="images/app.png" alt=""/>
              </div>
              <div class="col-md-6 about-device-info wow fadeInRight" data-wow-delay="0.5s">
                  <div class="device-text">
@@ -209,10 +315,10 @@
                  </div>
                  <div class="about-list">
                      <ul>
-                         <li><a href="#"><span class="abt1"></span>Winners and winnings</a></li>
-                         <li><a href="#"><span class="abt2"></span>Real-time global coverage of hackathons</a></li>
-                         <li><a href="#"><span class="abt3"></span>Mobile Optimized</a></li>
-                         <li><a href="#"><span class="abt4"></span>With tons of features</a></li>
+                         <li><a href="#"><i class="icon-color fa fa-trophy"></i> Discover Winners</a></li>
+                         <li><a href="#"><i class="icon-color fa fa-globe"></i>  Real-time global coverage of hackathons</a></li>
+                         <li><a href="#"><i class="icon-color fa fa-mobile"></i> Mobile Optimized</a></li>
+                         <li><a href="#"><i class="icon-color fa fa-magic"></i>  With tons of features</a></li>
                      </ul>
                  </div>
              </div>
@@ -258,19 +364,19 @@
          </div>
          <div class="contact-grids">
              <div class="col-md-4 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
-                 <div class="icon1"></div>
+                 <div class="icon1"><i class="icon-color fa fa-mobile fa-3x"></i></div>
                  <p>Work: (233) 246-614-835</p>
                  <p>Mobile: (233) 248-060-588</p>
              </div>
              <div class="col-md-4 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
-                 <div class="icon2"></div>
+                 <div class="icon2"><i class="icon-color fa fa-map-marker fa-3x"></i></div>
                  <p>20 Aluguntuguntu Street</p>
                  <p>Ambassadorial Enclave</p>
                  <p>East Legon, Greater Accra</p>
                  <p>Accra</p>
              </div>
              <div class="col-md-4 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
-                 <div class="icon3"></div>
+                 <div class="icon3"><i class="icon-color fa fa-envelope fa-3x"></i></div>
                  <a href="mailto:example.com">Email us: support@hackifi.com</a>
              </div>
              <div class="clearfix"></div>
@@ -287,7 +393,7 @@
              <a href="#"><span class="facebook"></span></a>
              <a href="#"><span class="linkedin"></span></a>
          </div>
-         <p class="wow bounceIn" data-wow-delay="0.4s"> Copyright &copy; 2015 Hackifi. All rights reserved </p>
+         <p id="footp" class="wow bounceIn" data-wow-delay="0.4s"> Copyright &copy; 2015 Hackifi.</p>
      </div>
 </div>
 

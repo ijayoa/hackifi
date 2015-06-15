@@ -31,8 +31,14 @@ background: #005e49;
 
 	background: #005e49;
 }
-.setfont{
+.sfont{
 	font-family: 'Raleway', sans-serif;
+	}
+.setfont{
+	min-height:560px;
+	font-family: 'Raleway', sans-serif;
+	background: #002b21;
+	opacity: 0.89;
 }
 .maintitle{
     font-family: 'Poiret One', cursive;
@@ -49,7 +55,14 @@ background: #005e49;
 	font-size: 19px;
 	text-align: center;
 }
+#howitworksintroP{
+	font-family: 'Raleway', sans-serif;
+	font-size: 19px;
+	font-weight: 600;
+	text-align: center;
+}
 #howitworks{
+	  padding: 8px;
 	font-family: 'Raleway', sans-serif;
 	font-size: 19px;
 	text-align: center;
@@ -59,3 +72,116 @@ h4{
 }
 body{padding-top:20px}
 
+/*neww how it works*/
+
+.process-step{
+    margin-top:17px;
+    
+}
+
+.btn-circle {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 50%;
+}
+.features2{
+	padding:4% 0;
+    border-bottom:1px solid #D2D7D3;
+	background-color: #D2D7D3;
+}
+.icon-color{
+	color:#005e49;
+}
+/*neww how it works ends*/
+
+/*---start-feartures-grids----*/
+.feature-grid{
+	float: left;
+	margin-bottom: 5%;
+}
+.feature-grid:nth-child(2),.feature-grid:nth-child(4),.feature-grid:nth-child(6){
+	margin-right:0;
+}
+.feature-grid-left {
+	width: 13%;
+	float: left;
+	margin-top: 0.3em;
+}
+.feature-grid-left span{
+	font-family: 'Open Sans', sans-serif;
+	width:64px;
+	height:64px;
+	display:inline-block;
+}
+/*.icon1 span{
+	background: url(../images/icons.png) no-repeat -6px 0px;
+}
+.icon2 span{
+	background: url(../images/icons.png) no-repeat -328px 0px;
+}
+.icon3 span{
+	background: url(../images/icons.png) no-repeat -268px 0px;
+}
+.icon4 span{
+	background: url(../images/icons.png) no-repeat -74px 0px;
+}
+.icon5 span{
+	background: url(../images/icons.png) no-repeat -140px 0px;
+}
+.icon6 span{
+	background: url(../images/icons.png) no-repeat -204px 0px;
+}*/
+.feature-grid-right{
+	width:84%;
+	float:right;
+}
+.feature-grid-right h2{
+	font-family: 'Poiret One', cursive;
+	font-size: 1.8em;
+	color: #3D3D3D;
+	font-weight: 300;
+	line-height: 1.5em;
+	margin: 0px 0px 0.2em 0;
+	display: block;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+}
+.feature-grid-right p{
+	font-family: 'Raleway', sans-serif;
+	color: #6B6A6A;
+	line-height: 1.9em;
+	width: 90%;
+}
+.content-feature-grids {
+	border-bottom: 1px solid #DADFE1;
+	padding: 8% 0 5%;
+}
+.content-feature-grids h3 {
+	color: #3D3D3D;
+	font-size: 2.7em;
+	font-family: 'Poiret One', cursive;
+	text-align: center;
+}
+.content-feature-grids p{
+	color: #3D3D3D;
+	font-size: 1.2em;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+	margin: 0 0 6%;
+	font-weight: 300;
+}
+div.feature-grid-right p {
+	text-align: left;
+	font-size: 19px;
+	font-weight: 300;
+}
+.features-cover{
+	background-color: #DADFE1;
+}
+/*---//End-feartures-grids----*/
