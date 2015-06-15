@@ -44,7 +44,8 @@
                  <li><a class="scroll" href="#testimonials">Testimonials</a></li>
                  <li><a class="scroll" href="#contact">Contact</a></li>
                   {{#unless User}}
-                  <li><a id="home-login" href="{{pathFor route='signIn'}}">{{_ "login2"}}</a></li>
+                  <!-- {{_ "login2"}} -->
+                  <li><a  style="padding: 12px;" class="hvr-bounce-to-left btn btn-success view wow fadeInLeft" id="home-login" href="{{pathFor route='signIn'}}">Get Started</a></li>
                   {{/unless}}
                  </ul>
              </div>
@@ -66,7 +67,7 @@
                  {{#if User}}
                     <a href="{{pathFor 'dashboard'}}" class="view hvr-bounce-to-left btn btn-success"><i class="fa fa-dashboard"></i> {{_ "dashboard"}}</a>
                     {{else}}
-                     <a class="view hvr-bounce-to-left btn btn-success" href="{{pathFor 'dashboard'}}">PLAN A HACKATHON</a>
+                     <a class="view hvr-bounce-to-left btn btn-success" href="{{pathFor route='signIn'}}">PLAN A HACKATHON</a>
                  {{/if}}
              </div>
              <!-- <div class="col-md-6 banner-pic wow fadeInLeft" data-wow-delay="0.5s">
@@ -78,6 +79,84 @@
     </div>
 </div>
 <!---->
+<div class="features-cover">
+<div class="container">
+<div class="row">
+        <div class="content-feature-grids" id="features">
+                 <h3 class="text-center">Hackifi Features</h3><br>
+                <p id="howitworksintro" class="text-center">WE MAKE HACKATHONS EASY BY PROVIDING</p>
+                <div class="col-md-6">
+                    <div class="feature-grid wow fadeInLeft">
+                        <div class="feature-grid-left icon1">
+                            <span><i class="fa fa-dashboard fa-3x"></i></span>
+                        </div>
+                        <div class="feature-grid-right">
+                            <h2>Hackathon DashBoard</h2>
+                            <p>Get instant overview of hacakathon performance and respond quickly to notifications.</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="feature-grid wow fadeInLeft">
+                        <div class="feature-grid-left icon2">
+                            <span><i class="fa fa-microphone fa-3x"></i></span>
+                        </div>
+                        <div class="feature-grid-right">
+                            <h2>Communication</h2>
+                            <p>Remain connected always, send out manual or automated updates, deadlines or messages.</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="feature-grid wow fadeInLeft">
+                        <div class="feature-grid-left icon3">
+                            <span><i class="fa fa-legal fa-3x"></i></span>
+                        </div>
+                        <div class="feature-grid-right">
+                            <h2>ScoreBoard</h2>
+                            <p>Enter scores and automatically generate a digital scoreboard that can be made visible to participants. </p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-grid wow fadeInRight">
+                        <div class="feature-grid-left icon4">
+                            <span><i class="fa fa-check fa-3x"></i> </span>
+                        </div>
+                        <div class="feature-grid-right">
+                            <h2>Registration</h2>
+                            <p>Collect and review participant's details and export them after the hackathon for future marketing purposes.</p>
+                        </div>
+                        <div class="clearfix"></div>        
+                    </div>
+                    <div class="feature-grid wow fadeInRight">
+                        <div class="feature-grid-left icon5">
+                            <span><i class="fa fa-folder-open fa-3x"></i></span>
+                        </div>
+                        <div class="feature-grid-right">
+                            <h2>Submission</h2>
+                            <p>Collect team submissions through slides and links. Also, promote submissions on social media.</p>
+                        </div>
+                        <div class="clearfix"></div>        
+                    </div>
+                    <div class="feature-grid wow fadeInRight">
+                        <div class="feature-grid-left icon6">
+                            <span><i class="fa fa-comments fa-3x"></i></span>
+                        </div>
+                        <div class="feature-grid-right">
+                            <h2>Feedback</h2>
+                            <p>Recieve and analyze feedback from participants about their experience.</p>
+                        </div>
+                        <div class="clearfix"></div>        
+                    </div>
+                </div>
+                    <div class="clearfix"></div>        
+                </div>
+    </div>
+    <!-- <div class="row text-center">
+        <a class="view hvr-bounce-to-left btn btn-success" href="{{pathFor route='signIn'}}">PLAN A HACKATHON</a>
+    </div> -->
+</div>
+</div>
 <div id="features" class="features">
      <div class="container">
          <div class="features-head">
@@ -88,14 +167,14 @@
          
          <div class="col-md-12">
          <div class="row">
-             <div class="col-md-3 feature-grid">
+             <div class="col-md-3 feature-grid wow fadeInUp">
                 <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-google-wallet fa-4x"></i></button>
                  <h3 class="process-step">Subscribe</h3>
 
                  <p id="howitworks">Subscribe to the Bronze, Silver or Gold offer. </p>
 
              </div>
-             <div class="col-md-3 feature-grid">
+             <div class="col-md-3 feature-grid wow fadeInUp">
                  <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-paint-brush fa-4x"></i></button>
                  <h3 class="process-step">Customize Settings</h3>
 
@@ -104,14 +183,14 @@
 
 
              </div>
-             <div class="col-md-3 feature-grid">
+             <div class="col-md-3 feature-grid wow fadeInUp">
                  <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-tint fa-4x"></i></button>
                  <h3 class="process-step">Personalize Url</h3>
 
                  <p id="howitworks">Set a unique URL for participants to interact with the competition. </p> 
 
              </div>
-             <div class="col-md-3 feature-grid">
+             <div class="col-md-3 feature-grid wow fadeInUp">
                  <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-rocket fa-4x"></i></button>
                  <h3 class="process-step">Hackathon Launched</h3>
 
@@ -126,81 +205,6 @@
          </div>
      </div>
 </div>
-<div class="features-cover">
-<div class="container">
-<div class="row">
-        <div class="content-feature-grids" id="features">
-                 <h3 class="text-center">Hackifi Features</h3><br>
-                <p id="howitworksintro" class="text-center">WE MAKE HACKATHONS EASY BY PROVIDING</p>
-                <div class="col-md-6">
-                    <div class="feature-grid">
-                        <div class="feature-grid-left icon1">
-                            <span><i class="fa fa-dashboard fa-3x"></i></span>
-                        </div>
-                        <div class="feature-grid-right">
-                            <h2>Hackathon DashBoard</h2>
-                            <p>The hackathon organizer can create a hackathon through a dashboard, add the details and the image and is given a personalized hackathon url. </p>
-                        </div>
-                        <div class="clearfix"></div>        
-                    </div>
-                    <div class="feature-grid">
-                        <div class="feature-grid-left icon2">
-                            <span><i class="fa fa-microphone fa-3x"></i></span>
-                        </div>
-                        <div class="feature-grid-right">
-                            <h2>Communication</h2>
-                            <p>The organizer can send out update and messages either via  email or sms, this messages can be scheduled and sent at a later times by the software.</p>
-                        </div>
-                        <div class="clearfix"></div>        
-                    </div>
-                    <div class="feature-grid">
-                        <div class="feature-grid-left icon3">
-                            <span><i class="fa fa-legal fa-3x"></i></span>
-                        </div>
-                        <div class="feature-grid-right">
-                            <h2>ScoreBoard</h2>
-                            <p>The system also provides a scoreboard on how the winners were chosen, it has the option of making it visible or not. </p>
-                        </div>
-                        <div class="clearfix"></div>        
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="feature-grid">
-                        <div class="feature-grid-left icon4">
-                            <span><i class="fa fa-check fa-3x"></i> </span>
-                        </div>
-                        <div class="feature-grid-right">
-                            <h2>Registration</h2>
-                            <p>Participants can register for the hackathon either as individuals or teams using either gmail or direct signups.</p>
-                        </div>
-                        <div class="clearfix"></div>        
-                    </div>
-                    <div class="feature-grid">
-                        <div class="feature-grid-left icon5">
-                            <span><i class="fa fa-folder-open fa-3x"></i></span>
-                        </div>
-                        <div class="feature-grid-right">
-                            <h2>Submission</h2>
-                            <p>Teams can submit their project when the hackathon is over. Submission can be be in either video, web links or doc formats </p>
-                        </div>
-                        <div class="clearfix"></div>        
-                    </div>
-                    <div class="feature-grid">
-                        <div class="feature-grid-left icon6">
-                            <span><i class="fa fa-comments fa-3x"></i></span>
-                        </div>
-                        <div class="feature-grid-right">
-                            <h2>Feedback</h2>
-                            <p>Participants can give feedback about their hackathon experience.</p>
-                        </div>
-                        <div class="clearfix"></div>        
-                    </div>
-                </div>
-                    <div class="clearfix"></div>        
-                </div>
-    </div>
-</div>
-</div>
 <div class="features2">
      <div class="container">
          <div class="features-head">
@@ -214,7 +218,7 @@
               <p id="howitworksintroP">Hackifi incorporates best practices and automates the management of hackathons from start-to-finish. As hackathons become more popular, organizers set their events apart by increasingly differentiating the experience they offer.</p>
              </div>
              <div class="text-center row process-step">
-                <a class="text-center downloadwhy wow bounceIn" data-wow-delay="0.4s" href="#">GET A QUOTE TODAY</a>
+                <a class="text-center downloadwhy wow bounceIn" data-wow-delay="0.4s" href="mailto:support@hackifi.com">GET A QUOTE TODAY</a>
              </div>
              </div>
              <div class="clearfix"></div>
@@ -293,12 +297,12 @@
 <div class="theme">
      <div class="container text-center">
          <div class="pricing-text text-center">
-            <p class="text-center">QUALITY HAS ITS PRICE</p>
+            <p class="text-center">ORGANIZE BETTER HACKATHONS</p>
             <h3>Hackifi Pricing Plans</h3>
          </div>
          <p id="howitworksintroP" class="pp text-center wow bounceIn" data-wow-delay="0.4s"> Our prices are fixed based on the volume of participants at your hackathon. </p>
           <!-- <a class="view hvr-bounce-to-left wow bounceIn" data-wow-delay="0.4s" href="#">VIEW FEATURES</a> -->
-         <a class="text-center download wow bounceIn" data-wow-delay="0.4s" href="#">GET A QUOTE TODAY</a>
+         <a class="text-center download wow bounceIn" data-wow-delay="0.4s" href="mailto:support@hackifi.com">GET A QUOTE TODAY</a>
      </div>
 </div>
 <div id="about" class="about">
@@ -317,7 +321,7 @@
                      <ul>
                          <li><a href="#"><i class="icon-color fa fa-trophy"></i> Discover Winners</a></li>
                          <li><a href="#"><i class="icon-color fa fa-globe"></i>  Real-time global coverage of hackathons</a></li>
-                         <li><a href="#"><i class="icon-color fa fa-mobile"></i> Mobile Optimized</a></li>
+                         <li><a href="#"><i style="padding-right: 1%;" class="icon-color fa fa-mobile"></i>  Mobile Optimized</a></li>
                          <li><a href="#"><i class="icon-color fa fa-magic"></i>  With tons of features</a></li>
                      </ul>
                  </div>
@@ -377,7 +381,7 @@
              </div>
              <div class="col-md-4 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
                  <div class="icon3"><i class="icon-color fa fa-envelope fa-3x"></i></div>
-                 <a href="mailto:example.com">Email us: support@hackifi.com</a>
+                 <a href="mailto:support@hackifi.com">Email us: support@hackifi.com</a>
              </div>
              <div class="clearfix"></div>
          </div>

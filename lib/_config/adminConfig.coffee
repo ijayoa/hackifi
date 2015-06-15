@@ -22,7 +22,6 @@
 		}
 	dashboard:
 		homeUrl: '/dashboard'
-		skin: 'black'
 		# widgets: [
 		# 	{
 		# 		template: 'adminCollectionWidget'

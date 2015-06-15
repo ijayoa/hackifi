@@ -41,7 +41,8 @@ AccountsTemplates.configure
 
 AccountsTemplates.configureRoute 'signIn',
   name: 'signIn',
-  path: '/login'
+  path: '/login',
+  redirect: '/dashboard'
 
 AccountsTemplates.configureRoute 'signUp'
 AccountsTemplates.configureRoute 'forgotPwd'

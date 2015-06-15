@@ -53,6 +53,8 @@ background-size:cover;
 padding-top:3em;
 }
 .logo{
+top: 0%;
+left: 0%;
 float:left;
 }
 .top-menu{
@@ -152,6 +154,7 @@ padding:14px 2em;
 border-radius:3px;
 font-weight:600;
 }
+
 /* Bounce To Left */
 .hvr-bounce-to-left {
   display: inline-block;
@@ -354,16 +357,14 @@ width:100%;
 /*--pricing--*/
 .pricing{
 background: url(../images/price.jpg) no-repeat;
-background-color: #002b21;
-min-height:660px;
+min-height:550px;
 background-size:cover;
-padding:5% 0;
 }
 .pricing-cover{
 background-color: #002b21;
-min-height:660px;
+min-height:550px;
 padding:5% 0;
-opacity: 0.88;
+opacity: 0.7;
 }
 .pricing-text{
 text-align:center;
@@ -460,10 +461,9 @@ ul.callbacks_tabs.callbacks1_tabs {
 margin:5% 0;
 }
 .pricing-plans p{
-color:#fff;
-font-style:italic;
-font-size:1.7em;
-font-weight:300;
+font-family: 'Raleway', sans-serif;
+color:#eee;
+font-size:19px;
 margin-bottom:1em;
 width: 95%;
 }
@@ -487,10 +487,11 @@ font-size: 1.15em;
 margin-bottom: 5px;
 }
 .pic-info a{
-font-weight:600;
+font-family: 'Raleway', sans-serif;
+font-weight:500;
 display:inline-block;
 text-decoration:none;
-color:#fff;
+color:#eee;
 font-size:1em;
 }
 .theme{
@@ -677,7 +678,7 @@ padding-bottom: 0.5em;
 }
 .contact-grids{
   height: 0px;
-margin:5% 0 20% 0;
+margin:1% 0 20% 0;
 }
 .icon1{
 /*background: url(../images/icons1.png) no-repeat -46px -14px;*/

@@ -117,33 +117,17 @@ body{padding-top:20px}
 	height:64px;
 	display:inline-block;
 }
-/*.icon1 span{
-	background: url(../images/icons.png) no-repeat -6px 0px;
-}
-.icon2 span{
-	background: url(../images/icons.png) no-repeat -328px 0px;
-}
-.icon3 span{
-	background: url(../images/icons.png) no-repeat -268px 0px;
-}
-.icon4 span{
-	background: url(../images/icons.png) no-repeat -74px 0px;
-}
-.icon5 span{
-	background: url(../images/icons.png) no-repeat -140px 0px;
-}
-.icon6 span{
-	background: url(../images/icons.png) no-repeat -204px 0px;
-}*/
+
 .feature-grid-right{
 	width:84%;
 	float:right;
 }
 .feature-grid-right h2{
+	text-align:left;
 	font-family: 'Poiret One', cursive;
 	font-size: 1.8em;
-	color: #3D3D3D;
-	font-weight: 300;
+	color: #002b21;
+	font-weight: 500;
 	line-height: 1.5em;
 	margin: 0px 0px 0.2em 0;
 	display: block;
