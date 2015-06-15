@@ -205,7 +205,7 @@ Router.map ->
   # @route "hackathonHome",
   #   path: "/:_id"
   @route "hackathonOverview",
-    path: "/:_id"
+    path: "/hackathon/:_id"
     layoutTemplate:'hackathonHome'
     waitOn: ->
       [
@@ -225,7 +225,7 @@ Router.map ->
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
 
   @route "hackathonSponsors",
-    path: "/:_id/sponsors"
+    path: "/hackathon/:_id/sponsors"
     layoutTemplate:'hackathonHome'
     waitOn: ->
       [
@@ -247,7 +247,7 @@ Router.map ->
       sponsorData: Sponsors.find({owner:hData.owner}).fetch()
  
   @route "hackathonMentors",
-    path: "/:_id/mentors"
+    path: "/hackathon/:_id/mentors"
     layoutTemplate:'hackathonHome'
     waitOn: ->
       [
@@ -269,7 +269,7 @@ Router.map ->
       mentorData: Mentors.find({owner:hData.owner}).fetch()
 
   @route "hackathonJudges",
-    path: "/:_id/judges"
+    path: "/hackathon/:_id/judges"
     layoutTemplate:'hackathonHome'
     waitOn: ->
       [
@@ -291,7 +291,7 @@ Router.map ->
       judgeData: Judges.find({owner:hData.owner}).fetch()
 
   @route "hackathonResources",
-    path: "/:_id/resources"
+    path: "/hackathon/:_id/resources"
     layoutTemplate:'hackathonHome'
     waitOn: ->
       [
@@ -312,7 +312,7 @@ Router.map ->
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
 
   @route "hackathonScoreboard",
-    path: "/:_id/scoreboard"
+    path: "/hackathon/:_id/scoreboard"
     layoutTemplate:'hackathonHome'
     waitOn: ->
       [
@@ -335,7 +335,7 @@ Router.map ->
 
 # add hacakthon page
   @route "hackathonRegister",
-    path: "/:_id/register"
+    path: "/hackathon/:_id/register"
     layoutTemplate:'hackathonHome'
     waitOn: ->
       [
@@ -356,7 +356,7 @@ Router.map ->
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
 
   @route "hackathonSubmissions",
-    path: "/:_id/submissions"
+    path: "/hackathon/:_id/submissions"
     layoutTemplate:'hackathonHome'
     waitOn: ->
       [
@@ -379,7 +379,7 @@ Router.map ->
 
 
   @route "hackathonFeedbacks",
-    path: "/:_id/feedback"
+    path: "/hackathon/:_id/feedback"
     layoutTemplate:'hackathonHome'
     waitOn: ->
       [

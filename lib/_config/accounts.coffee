@@ -39,6 +39,9 @@ AccountsTemplates.configure
   onSubmitHook: ->
     console.log 'submitting form'
 
-AccountsTemplates.configureRoute 'signIn'
+AccountsTemplates.configureRoute 'signIn',
+  name: 'signIn',
+  path: '/login'
+
 AccountsTemplates.configureRoute 'signUp'
 AccountsTemplates.configureRoute 'forgotPwd'

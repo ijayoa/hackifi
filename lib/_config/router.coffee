@@ -28,11 +28,20 @@ onAfterAction = ->
 
 Router.onAfterAction onAfterAction
 
-#To allow non-logged in users to access more routes, add it in the config file
+# To allow non-logged in users to access more routes, add it in the config file
 Router.plugin 'ensureSignedIn', except: [
   'home'
   'atSignIn'
   'atSignUp'
   'atForgotPassword'
   'atSignOut'
+  'hackathonOverview'
+  'hackathonSponsors'
+  'hackathonJudges'
+  'hackathonMentors'
+  'hackathonRegister'
+  'hackathonSubmissions'
+  'hackathonFeedbacks'
+  'hackathonScoreboard'
+  'hackathonResources'
 ]

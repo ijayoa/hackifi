@@ -55,14 +55,5 @@
 
 	#Routes
 	homeRoute: '/'
-	publicRoutes: [
-		'home'
-		# 'hackathonOverview'
-		# 'hackathonSponsors'
-		# 'hackathonJudges'
-		# 'hackathonMentors'
-		# 'hackathonRegister'
-		# 'hackathonSubmissions'
-		# 'hackathonFeedbacks'
-	]
+	publicRoutes: ['home']
 	dashboardRoute: '/dashboard'
