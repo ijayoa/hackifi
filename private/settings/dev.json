@@ -1,10 +1,5 @@
 {
     "environment": "dev",
-
-    "public": {
-        "ga": {
-            "id": "UA-XXXXXXXX-1"
-        },
         "mixpanel": {
             "token": "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "identifyUsers": true

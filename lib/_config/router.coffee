@@ -4,6 +4,7 @@ Router.configure
   layoutTemplate: "masterLayout"
   loadingTemplate: "loading"
   notFoundTemplate: "notFound"
+  trackPageView: true
   routeControllerNameConverter: "camelCase"
 
   onBeforeAction: ->
