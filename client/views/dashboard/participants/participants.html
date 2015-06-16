@@ -24,7 +24,7 @@
 <template name="allParticipants">
 
 <div class="row mainrow">
-<h3 class="text-center">Registered Participants</h3> 
+<h3 class="text-center">Registered Participants</h3>
 <p class="text-center">Total:</p>
 <hr>
 
@@ -33,7 +33,7 @@
                                 <div class="box-body table-responsive no-padding">
                                     <table class="table table-hover">
                                         <tbody><tr>
-                                            
+
                                             <th>Name</th>
                                             <th>Age</th>
                                             <th>LinkedIn</th>
@@ -42,7 +42,7 @@
                                             <th>Mail</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
-                                          
+
                                         </tr>
                                         {{#each participants}}
                                         <tr>
@@ -54,22 +54,22 @@
                                             <td><a href="mailto:{{email}}" class="btn btn-default btn-xs"><i class="fa fa-envelope"></i></a></td>
                                             <td><a href="/dashboard/participants/{{_id}}/edit" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a></td>
                                              <td><a data-toggle="modal" doc="{{_id}}" data-target="#dashboard-delete-modal" class="hidden-xs btn btn-xs btn-danger btn-delete"><i class="fa fa-times" doc="{{_id}}"></i></a></td>
-                                          
-                                            
+
+
                                         </tr>
                                         {{else}}
                                         <div class="alert alert-info">
                                               <p>There are no visible participants.</p>
-                                              <p><a href="{{pathFor 'addParticipant'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
+                                              <p><a href="{{pathFor 'dashboardAddParticipant'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
                                       </div>
                                       {{/each}}
-                                        
+
                                     </tbody></table>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->
                         </div>
 </div>
-<!-- 
+<!--
 <div class="modal fade" id="dashboard-delete-modal" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">

@@ -20,8 +20,4 @@ Template.createHackathon.rendered = () ->
     sAlert.info 'Add sponsors next!'
 
 
-Template.createHackathon.helpers
-  hackData: ->
-    Hackathons.find(Meteor.userId())
-
 

@@ -17,4 +17,10 @@ AutoForm.hooks
         doc.hackathon = hackathonId._id
         return doc
 
-
+Template.allParticipants.helpers
+  participants: ->
+    mydata = Hackathons.findOne({owner: Meteor.userId()})
+    if Participants.find(hackathon: mydata._id).fetch()
+      return Participants.find(hackathon: mydata._id).fetch()
+    else
+      console.log 'error' + Participants.find(hackathon: mydata._id).fetch()

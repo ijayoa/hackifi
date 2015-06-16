@@ -1,5 +1,5 @@
 {
-    "environment": "dev",
+    "environment": "production",
     "public": {
         "ga": {
             "id": "UA-64174242-1"

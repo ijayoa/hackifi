@@ -195,6 +195,9 @@ Router.map ->
         subs.subscribe 'participants'
         subs.subscribe 'attachments'
       ]
+    data: ->
+      allP = Hackathons.findOne(owner: Meteor.userId())
+      participants: Participants.find(hackathon: allP._id).fetch()
 
   @route "hackathonOverview",
     path: "/hackathon/:_id"
