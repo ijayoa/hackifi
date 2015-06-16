@@ -62,6 +62,46 @@
   <a href="{{pathFor 'updateHackathon'}}" class="alert-link"> Edit Settings</a>
 </div> -->
 {{/with}}
+
+{{#with hack}}
+
+<div class="row mainrow">
+  <h3 class="text-center">Hackathon Details</h3>
+  <p class="muted text-center">Preview Mode</p>
+<hr>
+</div>
+<div class="row">
+<div class="col-sm-6 col-sm-offset-3">
+    {{#with getDoc coverPhoto 'Attachments'}}
+  <img class="img img-responsive" src="{{url}}"/>
+  {{/with}}
+  <br>
+</div>
+
+<div class="col-sm-8 col-sm-offset-2" style="margin-bottom:3%;">
+<h3 class="text-header" >About</h3>
+<br>
+<p class="text-content">{{about}}</p>
+<br>
+<h3 class="text-header">Eligibility</h3>
+<br>
+<p class="text-content">{{eligibility}}</p>
+<br>
+<h3 class="text-header">Rules</h3>
+<br>
+<p class="text-content">{{rules}}</p>
+<br>
+<h3 class="text-header">Prizes</h3>
+<br>
+<p class="text-content">{{prizes}}</p>
+<br>
+<h3 class="text-header">Timeline</h3>
+<br>
+<p class="text-content">{{timeline}}</p>
+</div>
+</div>
+{{/with}}
+
 {{/unless}}
 
 </template>
@@ -86,4 +126,6 @@
     </div>
     </div>
 </template>
+
+
 
