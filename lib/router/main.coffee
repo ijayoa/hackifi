@@ -141,8 +141,6 @@ Router.map ->
         subs.subscribe 'participants'
         subs.subscribe 'attachments'
       ]
-    data: ->
-      feedbacks: Feedbacks.find().fetch()
 
   @route "allSubmissions",
     path: "/dashboard/hackathon/submissions"
@@ -197,13 +195,7 @@ Router.map ->
         subs.subscribe 'participants'
         subs.subscribe 'attachments'
       ]
-    data: ->
-      participants: Participants.find().fetch()
 
-
-
-  # @route "hackathonHome",
-  #   path: "/:_id"
   @route "hackathonOverview",
     path: "/hackathon/:_id"
     layoutTemplate:'hackathonHome'
