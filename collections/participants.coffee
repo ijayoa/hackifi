@@ -5,9 +5,6 @@ Schemas.Participants = new SimpleSchema
   name:
     type: String
 
-  age:
-    type: Number
-
   linkToLinkedIn:
     type: String
     optional: true

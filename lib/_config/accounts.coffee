@@ -3,19 +3,20 @@
 AccountsTemplates.configure
   
   # Behaviour
-  confirmPassword: false
+  confirmPassword: true
   enablePasswordChange: true
   forbidClientAccountCreation: false
   overrideLoginErrors: true
   sendVerificationEmail: false
   lowercaseUsername: false
+  enforceEmailVerification : false
   
   # Appearance
   showAddRemoveServices: true
   showForgotPasswordLink: true
   showLabels: true
   showPlaceholders: true
-  showResendVerificationEmailLink: false
+  showResendVerificationEmailLink: true
   
   # Client-side Validation
   continuousValidation: false

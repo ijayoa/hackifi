@@ -10,7 +10,6 @@
       {{> afQuickField name='picture'}}
       {{> afQuickField name='location'}}
       {{> afQuickField name='linkToLinkedIn' placeholder='linkedIn.com/ijayoa'}}
-      {{> afQuickField name='age'}}
       <p> Enter your specialization seperated by a comma.</p>
       {{> afQuickField name='specialization' placeholder='eg. Android,Web,Finance'}}
       {{> afQuickField name='country'}}
@@ -24,10 +23,13 @@
 <template name="allParticipants">
 
 <div class="row mainrow">
-<h3 class="text-center">Registered Participants</h3>
+<p><a href="{{pathFor 'dashboardAddParticipant'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add Participant</a></p>
+<div class="row">
+  <h3 class="text-center">Registered Participants</h3>
 <p class="text-center">Total:</p>
 <hr>
 
+</div>
 <div class="col-xs-12">
                             <div class="box">
                                 <div class="box-body table-responsive no-padding">
@@ -35,7 +37,6 @@
                                         <tbody><tr>
 
                                             <th>Name</th>
-                                            <th>Age</th>
                                             <th>LinkedIn</th>
                                             <th>Specialization</th>
                                             <th>Country</th>
@@ -47,7 +48,6 @@
                                         {{#each participants}}
                                         <tr>
                                             <td>{{name}}</td>
-                                            <td>{{age}}</td>
                                             <td><a href="{{linkToLinkedIn}}" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-linkedin"></i></a></td>
                                             <td>{{specialization}}</td>
                                             <td>{{country}}</td>

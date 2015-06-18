@@ -48,9 +48,14 @@
 				<p><a href="{{pathFor 'addMentor'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
 </div>
 {{else}}
-<h3 class="text-center">Showing Mentors</h3>
+<p><a href="{{pathFor 'addMentor'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add Mentor</a></p>
+<div class="row">
+  <h3 class="text-center">Showing Mentors</h3>
 <p class="text-center">Mentors are people who advice teams.</p>
+
 <hr>
+</div>
+
 
 <div class="row destacados">
 		{{#each mentors}}

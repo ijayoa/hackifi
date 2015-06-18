@@ -8,9 +8,11 @@ Router.map ->
     layoutTemplate: "dashboardlayout"
     waitOn: ->
       [
-        subs.subscribe 'posts'
-        subs.subscribe 'comments'
         subs.subscribe 'attachments'
+        subs.subscribe 'hackathons'
+        subs.subscribe 'participants'
+        subs.subscribe 'submissions'
+        subs.subscribe 'feedbacks'
       ]
     data: ->
       posts: Posts.find({},{sort: {createdAt: -1}}).fetch()

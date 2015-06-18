@@ -32,25 +32,25 @@
 
 	# For email footers
 	legal:
-		address: 'Jessnerstrasse 18, 12047 Berlin'
-		name: 'Meteor Factory'
-		url: 'http://benjaminpeterjones.com'
+		address: 'East Legon, Accra, Ghana.'
+		name: 'Hackifi'
+		url: 'http://hackifi.com'
 
-	about: 'http://meteorfactory.io'
-	blog: 'http://learn.meteorfactory.io'
+	about: 'http://hackifi.com'
+	blog: 'http://blog.hackifi.com'
 
 	socialMedia:
 		facebook:
-			url: 'http://facebook.com/benjaminpeterjones'
+			url: 'http://facebook.com/hackifi'
 			icon: 'facebook'
 		twitter:
-			url: 'http://twitter.com/BenPeterJones'
+			url: 'http://twitter.com/hackifi'
 			icon: 'twitter'
 		github:
-			url: 'http://github.com/yogiben'
+			url: 'http://github.com/ijayoa'
 			icon: 'github'
 		info:
-			url: 'http://meteorfactory.io'
+			url: 'http://'
 			icon: 'link'
 
 	#Routes

@@ -78,7 +78,10 @@ body{padding-top:20px}
     margin-top:17px;
     
 }
-
+.small-title{
+	margin: 26%;
+	padding: 6%;
+}
 .btn-circle {
   width: 150px;
   height: 150px;

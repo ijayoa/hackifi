@@ -27,15 +27,15 @@
 <!---->
 <div class="banner">
 <div class="setfont">
-     <div class="container sfont">
-         <div class="header">
+     <div class="container-fluid sfont">
+         <div class="header row">
              <div class="wow fadeInLeft" data-wow-delay="0.5s">
               <a class="navlogo" href="{{pathFor 'home'}}">
                <img src="/img/hackifilogo.png" width="120px" height="120px" class="img-responsive img">
              </a>
              </div>
              <div class="top-menu">
-             <span class="menu"></span>
+               <span class="menu"></span>
                  <ul>
                  <li class="active"><a href="index.html">Home</a></li>
                  <li><a class="scroll" href="#howitworks">How It Works</a></li>
@@ -60,21 +60,24 @@
 
              <div class="clearfix"></div>
          </div>
-         <div class="banner-info text-center">
-             <div class="col-md-12 col-xs-6 banner-text wow fadeInRight text-center" data-wow-delay="0.5s">
+         <div class="row banner-info text-center">
+             <div class="col-md-12 hidden-xs banner-text wow fadeInRight text-center" data-wow-delay="0.5s">
                  <h1 class="maintitle">HACKATHONS MADE EASY</h1>
-                 <p>Hackifi is a customizable tool that makes it easier for hackathon organizers to set up and manage hackathons.</p>
+                 <p>Hackifi makes it easier for hackathon organizers to set up and manage hackathons.</p>
                  {{#if User}}
                     <a href="{{pathFor 'dashboard'}}" class="view hvr-bounce-to-left btn btn-success"><i class="fa fa-dashboard"></i> {{_ "dashboard"}}</a>
                     {{else}}
                      <a class="view hvr-bounce-to-left btn btn-success" href="{{pathFor route='signIn'}}">PLAN A HACKATHON</a>
                  {{/if}}
              </div>
-             <!-- <div class="col-md-6 banner-pic wow fadeInLeft" data-wow-delay="0.5s">
-                 <img src="" alt=""/>
-             </div> -->
+             <div class="small-title col-xs-8 col-xs-offset-2 visible-xs banner-text wow fadeInRight text-center" data-wow-delay="0.5s">
+                 <h1 class="maintitle">HACKATHONS MADE EASY</h1>
+                 <p>Hackifi helps you organize hackathons from start to finish</p>
+                 <a class="view hvr-bounce-to-left btn btn-success" href="{{pathFor route='signIn'}}">PLAN A HACKATHON</a>
+             </div>
              <div class="clearfix"></div>
          </div>
+
      </div>
     </div>
 </div>
@@ -362,11 +365,11 @@
 <!---->
 <div id="contact" class="contact">
      <div class="container">
-         <div class="contact-text">
+         <div class="row contact-text">
             <h4>STAY IN TOUCH</h4>
             <h3>Contact us</h3>
          </div>
-         <div class="contact-grids">
+         <div class="row contact-grids">
              <div class="col-md-4 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
                  <div class="icon1"><i class="icon-color fa fa-mobile fa-3x"></i></div>
                  <p>Work: (233) 246-614-835</p>
@@ -377,7 +380,7 @@
                  <p>20 Aluguntuguntu Street</p>
                  <p>Ambassadorial Enclave</p>
                  <p>East Legon, Greater Accra</p>
-                 <p>Accra</p>
+                 <p>Ghana</p>
              </div>
              <div class="col-md-4 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
                  <div class="icon3"><i class="icon-color fa fa-envelope fa-3x"></i></div>
@@ -390,7 +393,7 @@
 <!---->
 <div class="footer text-center">
      <div class="container">
-         <div class="social">
+         <div class=" row social">
              <a href="#"><span class="behance"></span></a>
              <a href="#"><span class="dribble"></span></a>
              <a href="#"><span class="twitter"></span></a>
