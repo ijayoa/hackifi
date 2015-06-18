@@ -317,6 +317,7 @@ Router.map ->
         subs.subscribe 'sponsors'
         subs.subscribe 'attachments'
         subs.subscribe 'participants'
+        subs.subscribe 'submissions'
       ]
     onBeforeAction: (pause) ->
       unless Hackathons.findOne({personalizedUrl:this.params._id})
@@ -326,6 +327,8 @@ Router.map ->
     data: ->
       Session.set 'hackathon', Hackathons.findOne({personalizedUrl:this.params._id})
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
+      submissions: Submissions.find({}).fetch()
+      personalizedUrl: this.params._id
  # end of show collections
 
 # add hacakthon page
@@ -429,5 +432,28 @@ Router.map ->
   @route "hackifiSupport",
     path: "/dashboard/hackathon/support/hackifi"
     layoutTemplate:'dashboardlayout'
+
+  @route "addscore",
+    path: "/hackathon/:_id/:subId/addscore"
+    layoutTemplate:'hackathonHome'
+    waitOn: ->
+      [
+        subs.subscribe 'hackathons'
+        subs.subscribe 'judges'
+        subs.subscribe 'attachments'
+        subs.subscribe 'participants'
+        subs.subscribe 'submissions'
+      ]
+    onBeforeAction: (pause) ->
+      unless Hackathons.findOne({personalizedUrl:this.params._id})
+        this.render 'notFound'
+      else
+        this.render 'addscore'
+    data: ->
+      Session.set 'hackathon', Hackathons.findOne({personalizedUrl:this.params._id})
+      hackData: Hackathons.findOne({personalizedUrl:this.params._id})
+      submission: Submissions.findOne(this.params.subId)
     
-# end of add hackathon page
+# end of add hackathon 
+
+
