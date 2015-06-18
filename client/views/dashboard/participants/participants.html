@@ -1,74 +1,84 @@
 <template name="dashboardAddParticipant">
-<div class="row mainrow">
-<h3 class="text-center">Enter Participant Details</h3>
-<hr>
+  <div class="row mainrow">
+    {{#if hackExist}}
+    <h3 class="text-center">Enter Participant Details</h3>
+    <hr>
     <div class="col-sm-8 col-sm-offset-2">
-  {{#autoForm collection="Participants" id="dbInsertParticipantForm" type="method" meteormethod="insertRegistration"}}
-    <fieldset>
-      {{> afQuickField name='name' placeholder='eg. Jane Doe'}}
-      {{> afQuickField name='email'}}
-      {{> afQuickField name='picture'}}
-      {{> afQuickField name='location'}}
-      {{> afQuickField name='linkToLinkedIn' placeholder='linkedIn.com/ijayoa'}}
-      <p> Enter your specialization seperated by a comma.</p>
-      {{> afQuickField name='specialization' placeholder='eg. Android,Web,Finance'}}
-      {{> afQuickField name='country'}}
-    </fieldset>
-    <button type="submit" class="btn btn-primary">Save</button>
-  {{/autoForm}}
+      {{#autoForm collection="Participants" id="dbInsertParticipantForm" type="method" meteormethod="insertRegistration"}}
+      <fieldset>
+        {{> afQuickField name='name' placeholder='eg. Jane Doe'}}
+        {{> afQuickField name='email'}}
+        {{> afQuickField name='picture'}}
+        {{> afQuickField name='location'}}
+        {{> afQuickField name='linkToLinkedIn' placeholder='linkedIn.com/ijayoa'}}
+        <p> Enter your specialization seperated by a comma.</p>
+        {{> afQuickField name='specialization' placeholder='eg. Android,Web,Finance'}}
+        {{> afQuickField name='country'}}
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Save</button>
+      {{/autoForm}}
     </div>
-</div>
+    {{else}}
+    <div class="col-sm-8 col-sm-offset-2">
+
+    <div class="alert alert-info">
+    <p>Hackathon has not been set up!</p>
+      <p><a href="{{pathFor 'createHackathon'}}" class="btn btn-primary"><i class="fa fa-plus"></i>Add Settings</a></p>
+    </div>
+    </div>
+    {{/if}}
+  </div>
 </template>
 
 <template name="allParticipants">
 
-<div class="row mainrow">
-<p><a href="{{pathFor 'dashboardAddParticipant'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add Participant</a></p>
-<div class="row">
-  <h3 class="text-center">Registered Participants</h3>
-<p class="text-center">Total:</p>
-<hr>
+  <div class="row mainrow">
+    <p><a href="{{pathFor 'dashboardAddParticipant'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add Participant</a></p>
+    <div class="row">
+      <h3 class="text-center">Registered Participants</h3>
+      <p class="text-center">Total:</p>
+      <hr>
 
-</div>
-<div class="col-xs-12">
-                            <div class="box">
-                                <div class="box-body table-responsive no-padding">
-                                    <table class="table table-hover">
-                                        <tbody><tr>
+    </div>
+    <div class="col-xs-12">
+      <div class="box">
+        <div class="box-body table-responsive no-padding">
+          <table class="table table-hover">
+            <tbody><tr>
 
-                                            <th>Name</th>
-                                            <th>LinkedIn</th>
-                                            <th>Specialization</th>
-                                            <th>Country</th>
-                                            <th>Mail</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
+              <th>Name</th>
+              <th>LinkedIn</th>
+              <th>Specialization</th>
+              <th>Country</th>
+              <th>Mail</th>
+              <th>Edit</th>
+              <th>Delete</th>
 
-                                        </tr>
-                                        {{#each participants}}
-                                        <tr>
-                                            <td>{{name}}</td>
-                                            <td><a href="{{linkToLinkedIn}}" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-linkedin"></i></a></td>
-                                            <td>{{specialization}}</td>
-                                            <td>{{country}}</td>
-                                            <td><a href="mailto:{{email}}" class="btn btn-default btn-xs"><i class="fa fa-envelope"></i></a></td>
-                                            <td><a href="/dashboard/participants/{{_id}}/edit" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a></td>
-                                             <td><a data-toggle="modal" doc="{{_id}}" data-target="#dashboard-delete-modal" class="hidden-xs btn btn-xs btn-danger btn-delete"><i class="fa fa-times" doc="{{_id}}"></i></a></td>
+            </tr>
+            {{#each participants}}
+            <tr>
+              <td>{{name}}</td>
+              <td><a href="{{linkToLinkedIn}}" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-linkedin"></i></a></td>
+              <td>{{specialization}}</td>
+              <td>{{country}}</td>
+              <td><a href="mailto:{{email}}" class="btn btn-default btn-xs"><i class="fa fa-envelope"></i></a></td>
+              <td><a href="/dashboard/participants/{{_id}}/edit" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a></td>
+              <td><a data-toggle="modal" doc="{{_id}}" data-target="#dashboard-delete-modal" class="hidden-xs btn btn-xs btn-danger btn-delete"><i class="fa fa-times" doc="{{_id}}"></i></a></td>
 
 
-                                        </tr>
-                                        {{else}}
-                                        <div class="alert alert-info">
-                                              <p>There are no visible participants.</p>
-                                              <p><a href="{{pathFor 'dashboardAddParticipant'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
-                                      </div>
-                                      {{/each}}
+            </tr>
+            {{else}}
+            <div class="alert alert-info">
+              <p>There are no visible participants.</p>
+              <p><a href="{{pathFor 'dashboardAddParticipant'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
+            </div>
+            {{/each}}
 
-                                    </tbody></table>
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
-                        </div>
-</div>
+          </tbody></table>
+        </div><!-- /.box-body -->
+      </div><!-- /.box -->
+    </div>
+  </div>
 <!--
 <div class="modal fade" id="dashboard-delete-modal" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -86,6 +96,6 @@
         </div>
       </div>
     </div>
-    </div> -->
+  </div> -->
 </template>
 

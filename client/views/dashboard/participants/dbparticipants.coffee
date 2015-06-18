@@ -24,3 +24,8 @@ Template.allParticipants.helpers
       return Participants.find(hackathon: mydata._id).fetch()
     else
       console.log 'error' + Participants.find(hackathon: mydata._id).fetch()
+  hackExist: ->
+    if Hackathons.findOne({owner: Meteor.userId()})
+      return true
+    else
+      return no
