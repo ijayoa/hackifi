@@ -20,7 +20,10 @@ Schemas.Judges = new SimpleSchema
       afFieldInput:
         type: 'fileUpload'
         collection: 'Attachments'
-
+  username:
+    type: String
+  password:
+    type: String
   createdAt:
     type: Date
     autoform:
