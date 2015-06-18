@@ -12,4 +12,10 @@ Template.hackathonHome.events
   'click #judge-login': (e, t) ->
     $('.judge-login-div').toggle()
     return
+  'submit #judge-login-form': (e, t) ->
+    e.preventDefault()
+    username = $('#j-username').val()
+    password = $('#j-password').val()
+    #console.log("username: " username " password: " password)
+    console.log(password)
   
