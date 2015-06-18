@@ -11,20 +11,25 @@
 				<a href="{{pathFor 'home'}}"><img width="100" height="100" class="img-responsive" src="/img/hackifilogo.png" alt=""></a>
 			</div> -->
 			<div class="row">
-				<div class="col-xs-6 profile-userpic text-center">
-					<img src="/img/abena.png" class="img-responsive" alt="">
 
+				{{#with user}}
+				<div class="col-xs-6 profile-userpic text-center">
+					{{#with getDoc profile.picture 'ProfilePictures'}}
+					<img src="{{url}}" class="img-responsive" alt="photo">
+					{{/with}}
 				</div>
-				<div class="col-xs-6">
-					<div class="profile-usertitle">
-						<div class="profile-usertitle-name">
-							Abena King
+				{{/with}}
+				<div class="col-xs-6" style="padding-left: 1%;">
+					<div class="row profile-usertitle">
+						<div class="row profile-usertitle-name">
+							{{email}}
 						</div>
-						<div class="profile-usertitle-job">
+						<div class="row profile-usertitle-job">
 							Organizer
 						</div>
 					</div>
 				</div>
+				
 			</div>
 			<!-- 	<div class="profile-userpic pull-left">
 					<img src="/img/abena.png" class="img-responsive" alt="">
@@ -38,7 +43,7 @@
 					</div>
 				</div> -->
 
-				<div class="profile-usermenu">
+				<div class="row profile-usermenu">
 					<ul class="nav">
 						<li>
 							<a href="{{pathFor 'dashboard'}}">
