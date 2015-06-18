@@ -1,9 +1,9 @@
 Template.hackathonHome.rendered = () ->
 	$('.navbar').css('margin-bottom',0)
-  # $('.jumbotron').css('background-url','')
 
-# Template.hackathonHome.helpers
-# 	hacakthonName: () ->
-# 		hdata = Session.get 'hackathon'
-# 		console.log hdata.title
-# 		return hdata.title
+Template.hackathonHome.helpers
+	url: ->
+		hd = Session.get 'thisHackathon'
+		photoId = hd.coverPhoto
+		img = Attachments.findOne(_id: photoId)
+		url = img.url()

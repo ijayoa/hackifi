@@ -219,7 +219,9 @@ Router.map ->
       else
         this.render 'hackathonOverview'
     data: ->
+      Session.set 'thisHackathon',Hackathons.findOne({personalizedUrl:this.params._id})
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
+
 
   @route "hackathonSponsors",
     path: "/hackathon/:_id/sponsors"
