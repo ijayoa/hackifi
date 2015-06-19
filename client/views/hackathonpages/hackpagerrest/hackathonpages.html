@@ -213,7 +213,7 @@
 <!-- <h5 class="text-center">ScoreBoard not uploaded</h5>
 
 <h1 class="setuphack text-center"><i class="fa fa-clock-o fa-5x"></i><br> Judging <br>Soon</h1> -->
-  {{#each submissions}}
+ <!--  {{#each submissions}}
     <div class="tile">
       {{#with getDoc teamPicture 'Attachments'}}
         <a href="/hackathon/{{getPersonalizedUrl}}/{{../_id}}/addscore"><img src="{{url}}" height="200" width="200"/>
@@ -232,7 +232,46 @@
         </a>
       {{/with}}
     </div>
-  {{/each}}
+  {{/each}} -->
+  <div class="container-fluid">
+   <table class="table table-responsive">
+      <thead>
+        <tr class="">
+           <th>Product Logo</th>
+           <th>Name Name</th>
+           <th>Product Description</th>
+           <th>Points</th>
+        </tr>
+      </thead>
+    {{#each submissions}}
+      <tbody>
+        <tr>
+          <td>
+            <div class="c">
+              {{#with getDoc teamPicture 'Attachments'}}
+                <a href="/hackathon/{{getPersonalizedUrl}}/{{../_id}}/addscore"><img src="{{url}}" height="200" width="200" class="img-responsive img-thumbnail" />
+                </a>
+              {{/with}}
+              <a href="/hackathon/{{getPersonalizedUrl}}/{{_id}}/addscore" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> 
+                Add score
+              </a>
+            </div>
+          </td>
+          <td>
+              {{productName}}
+          </td>
+          <td>
+              {{shortDescription}}
+          </td>
+          <td>
+              aliceblue
+          </td>
+        </tr>
+      </tbody>
+    {{/each}}
+   </table>
+
+   </div>
 </div>
 </template>
 
@@ -263,7 +302,24 @@
     <div class="col-sm-6">
       <div class="container-fluid well">
         <div class="row-fluid">
-          
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Criteria</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Innovation
+                </td>
+                <td>
+                  
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

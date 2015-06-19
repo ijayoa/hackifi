@@ -25,6 +25,8 @@ Template.hackathonHome.events
             password: password)
         judgeId = judge._id
         Session.setAuth("AuthJudge", judgeId)
+  'click .auth-sign-out': (e, t) ->
+    Session.clearAuth()
 
 
 isNotEmpty = (value) ->
