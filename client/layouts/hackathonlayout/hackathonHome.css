@@ -29,6 +29,9 @@ font-family: 'Kelly Slab', cursive;
    opacity: 0.7;
   margin-top: 3%;
 }
+.join:hover{
+ color: #000;
+}
 .hackcontent{
   font-family: 'Raleway', sans-serif;
 }
