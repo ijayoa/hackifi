@@ -18,4 +18,18 @@ Template.hackathonHome.events
     password = $('#j-password').val()
     #console.log("username: " username " password: " password)
     console.log(password)
+
+isNotEmpty = (value) ->
+  if value and value != ''
+    return true
+  console.log 'Please fill in all required fields.'
+  false
+
+isValidLogin = (username, password, hackathon) ->
+    if Judges.findOne(
+            hackathon: hackathon 
+            username: username 
+            password: password)
+        return true
+    return
   
