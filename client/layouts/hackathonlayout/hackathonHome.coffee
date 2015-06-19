@@ -16,14 +16,15 @@ Template.hackathonHome.events
     e.preventDefault()
     username = $('#j-username').val()
     password = $('#j-password').val()
-    hackathon = Router.current().params._id
-    if isNotEmpty(username) and isNotEmpty(password) and isValidLogin(username, password, hackathon)
+    hackathonUrl = Router.current().params._id
+    hackathonId = Hackathons.findOne({personalizedUrl: hackathonUrl})._id
+    if isNotEmpty(username) and isNotEmpty(password) and isValidLogin(username, password, hackathonUrl)
         judge = Judges.findOne(
-            hackathon: hackathon 
+            hackathon: hackathonId 
             username: username 
             password: password)
         judgeId = judge._id
-        Session.setAuth("AuthJudge", "judgeId")
+        Session.setAuth("AuthJudge", judgeId)
 
 
 isNotEmpty = (value) ->
@@ -32,9 +33,10 @@ isNotEmpty = (value) ->
   console.log 'Please fill in all required fields.'
   false
 
-isValidLogin = (username, password, hackathon) ->
+isValidLogin = (username, password, hackathonUrl) ->
+    hackathonId = Hackathons.findOne({personalizedUrl: hackathonUrl})._id
     if Judges.findOne(
-            hackathon: hackathon 
+            hackathon: hackathonId 
             username: username 
             password: password)
         return true

@@ -16,16 +16,6 @@ Template.registerHelper 'judgeSignedInString', ->
     authSession = Session.get('AuthJudge')
     judge = Judges.findOne(authSession)
     name = judge.name
-    firstName = formatName(name)
+    firstName = name.split(' ').slice(0, -1).join(' ')
     return "Judge " + firstName 
 
-
-
-formatName = (name) ->
-    newName = undefined
-    if typeof name != "undefined"
-        name = name.split(' ')
-    newName = name.shift()
-    if name.length
-        newName += ' ' + name.pop()[0] + '.'
-    newName
