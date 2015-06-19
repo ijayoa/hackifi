@@ -1,15 +1,14 @@
 <template name="hackathonHome">
 {{#with hackData}}
-{{#with getDoc coverPhoto 'Attachments'}}
-<div class="jumbotron" style="background-image: url({{url}}); background:cover;">
+<div class="jumbotron" style="background:cover; background-image:url({{url}}) ">
 
-<h1 class="titlehome text-center">Hack For Growth</h1>
+<h1 class="titlehome text-center">{{title}}</h1>
 
 
 <p class="text-center"><a href="#" class="btn join btn-lg" role="button">REGISTER NOW</a></p>
 </div>
 
-{{/with}}
+
 
 {{/with}}
 

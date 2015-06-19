@@ -54,9 +54,13 @@
 				<p><a href="{{pathFor 'addJudge'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
 </div>
 {{else}}
-<h3 class="text-center">Showing Judges</h3>
+<p><a href="{{pathFor 'addJudge'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add Judge</a></p>
+<div class="row">
+  <h3 class="text-center">Showing Judges</h3>
 <p class="text-center">Judges are people who judge hackathon teams.</p>
 <hr>
+</div>
+
 
 	<div class="row destacados">
 		{{#each judges}}

@@ -3,6 +3,8 @@
 Schemas.Criteria = new SimpleSchema
     name:
       type: String
+    maximum_score: 
+      type: Number
     hackathon:
      type: String
      autoform:

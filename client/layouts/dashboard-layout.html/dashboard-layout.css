@@ -96,9 +96,9 @@
 
 .profile-usertitle-name {
   color: #002b21;
-  font-size: 17px;
-  /*font-weight: 600;*/
-  margin-top: 17%;
+  font-size: 14px;
+  font-weight: 600;
+  /*margin-top: 17%;*/
 }
 
 .profile-usertitle-job {

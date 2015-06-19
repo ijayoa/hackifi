@@ -22,6 +22,9 @@ Meteor.publish 'feedbacks', ->
 Meteor.publish 'messages', ->
 	Messages.find()
 
+Meteor.publish 'criterias', ->
+	Criteria.find()
+
 
 Meteor.publish 'submissions', ->
 	Submissions.find()

@@ -4,5 +4,7 @@ Tracker.autorun ->
   subs.subscribe 'mentors'
   subs.subscribe 'judges'
   subs.subscribe 'sponsors'
+  subs.subscribe 'feedbacks'
+  subs.subscribe 'submissions'
   subs.subscribe 'attachments'
   subs.subscribe 'participants'

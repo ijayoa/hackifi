@@ -8,9 +8,11 @@ Router.map ->
     layoutTemplate: "dashboardlayout"
     waitOn: ->
       [
-        subs.subscribe 'posts'
-        subs.subscribe 'comments'
         subs.subscribe 'attachments'
+        subs.subscribe 'hackathons'
+        subs.subscribe 'participants'
+        subs.subscribe 'submissions'
+        subs.subscribe 'feedbacks'
       ]
     data: ->
       posts: Posts.find({},{sort: {createdAt: -1}}).fetch()
@@ -117,11 +119,27 @@ Router.map ->
       [
         subs.subscribe 'judges'
         subs.subscribe 'attachments'
+        subs.subscribe 'hackathons'
       ]
     data: ->
       userId = Meteor.userId()
       url = Hackathons.findOne({owner: userId}).personalizedUrl
       Session.set 'hackathon', Hackathons.findOne({personalizedUrl: url})
+
+    @route "addCriteria",
+      path: "dashboard/hackathon/add/judging-criteria"
+      layoutTemplate: "dashboardlayout"
+      waitOn: ->
+        [
+          subs.subscribe 'judges'
+          subs.subscribe 'attachments'
+          subs.subscribe 'hackathons'
+        ]
+      data: ->
+        userId = Meteor.userId()
+        url = Hackathons.findOne({owner: userId}).personalizedUrl
+        Session.set 'hackathon', Hackathons.findOne({personalizedUrl: url})
+
 # end of add
 
 # show collections
@@ -135,6 +153,18 @@ Router.map ->
       ]
     data: ->
       judges: Judges.find({owner:Meteor.userId()},{sort: {createdAt: -1}}).fetch()
+
+  @route "allCriterias",
+    path: "dashboard/hackathon/criterias"
+    layoutTemplate: "dashboardlayout"
+    waitOn: ->
+      [
+        subs.subscribe 'judges'
+        subs.subscribe 'attachments'
+        subs.subscribe 'criterias'
+      ]
+    data: ->
+      criterias: Criteria.find({owner:Meteor.userId()},{sort: {createdAt: -1}}).fetch()
 
   @route "allFeedback",
     path: "dashboard/hackathon/feedbacks"
@@ -221,7 +251,9 @@ Router.map ->
       else
         this.render 'hackathonOverview'
     data: ->
+      Session.set 'thisHackathon',Hackathons.findOne({personalizedUrl:this.params._id})
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
+
 
   @route "hackathonSponsors",
     path: "/hackathon/:_id/sponsors"
