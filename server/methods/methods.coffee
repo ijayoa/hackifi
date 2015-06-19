@@ -11,4 +11,7 @@ Meteor.methods
     insertSubmission: (doc) ->
       Submissions.insert doc
 
+    insertJudge: (doc) ->
+      Judges.insert doc
+
 

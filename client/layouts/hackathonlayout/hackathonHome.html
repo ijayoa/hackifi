@@ -41,24 +41,29 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Sign In as a Judge</b> <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>
+          {{#if AuthJudge}}{{judgeSignedInString}}{{else}}Sign In as a Judge{{/if}}</b> <span class="caret"></span></a>
       <ul id="login-dp" class="dropdown-menu">
         <li>
            <div class="row">
               <div class="col-md-12">
-                 <form class="form" role="form" method="post" accept-charset="UTF-8" id="judge-login-form">
-                    <div class="form-group">
-                       <label class="sr-only" for="j-username">Username</label>
-                       <input class="form-control" id="j-username" placeholder="Username" required>
-                    </div>
-                    <div class="form-group">
-                       <label class="sr-only" for="j-password">Password</label>
-                       <input class="form-control" type="password" id="j-password" placeholder="Password" required>
-                    </div>
-                    <div class="form-group">
-                       <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                    </div>
-                 </form>
+                {{#if AuthJudge}}
+                  <button class="btn btn-primary btn-block">Sign Out</button>
+                {{else}}
+                  <form class="form" role="form" method="post" accept-charset="UTF-8" id="judge-login-form">
+                     <div class="form-group">
+                        <label class="sr-only" for="j-username">Username</label>
+                        <input class="form-control" id="j-username" placeholder="Username" required>
+                     </div>
+                     <div class="form-group">
+                        <label class="sr-only" for="j-password">Password</label>
+                        <input class="form-control" type="password" id="j-password" placeholder="Password" required>
+                     </div>
+                     <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                     </div>
+                  </form>
+                {{/if}}
               </div>
            </div>
         </li>

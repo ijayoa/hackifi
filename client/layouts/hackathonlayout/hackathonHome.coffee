@@ -16,8 +16,15 @@ Template.hackathonHome.events
     e.preventDefault()
     username = $('#j-username').val()
     password = $('#j-password').val()
-    #console.log("username: " username " password: " password)
-    console.log(password)
+    hackathon = Router.current().params._id
+    if isNotEmpty(username) and isNotEmpty(password) and isValidLogin(username, password, hackathon)
+        judge = Judges.findOne(
+            hackathon: hackathon 
+            username: username 
+            password: password)
+        judgeId = judge._id
+        Session.setAuth("AuthJudge", "judgeId")
+
 
 isNotEmpty = (value) ->
   if value and value != ''

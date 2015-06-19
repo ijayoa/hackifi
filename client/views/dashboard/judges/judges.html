@@ -4,7 +4,7 @@
 <p class="text-center">Judges are people who judge hackathon teams.</p>
 <hr>
 <div class="col-sm-8 col-sm-offset-2">
-{{#autoForm collection="Judges" id="insertJudgeForm" type="insert"}}
+{{#autoForm collection="Judges" id="insertJudgeForm" type="method" meteormethod="insertJudge"}}
     <fieldset>
       {{> afQuickField name='name' placeholder='eg. Google'}}
       {{> afQuickField name='personalWebsiteLink' placeholder="eg. johndoe.com"}}

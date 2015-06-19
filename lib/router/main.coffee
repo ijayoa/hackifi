@@ -118,6 +118,10 @@ Router.map ->
         subs.subscribe 'judges'
         subs.subscribe 'attachments'
       ]
+    data: ->
+      userId = Meteor.userId()
+      url = Hackathons.findOne({owner: userId}).personalizedUrl
+      Session.set 'hackathon', Hackathons.findOne({personalizedUrl: url})
 # end of add
 
 # show collections
