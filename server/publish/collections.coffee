@@ -16,6 +16,9 @@ Meteor.publish 'mentors', ->
 Meteor.publish 'sponsors', ->
 	Sponsors.find()
 
+Meteor.publish 'scores', ->
+	Scores.find()
+
 Meteor.publish 'feedbacks', ->
 	Feedbacks.find()
 

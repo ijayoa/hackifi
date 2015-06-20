@@ -348,6 +348,7 @@ Router.map ->
     waitOn: ->
       [
         subs.subscribe 'hackathons'
+        subs.subscribe 'scores'
         subs.subscribe 'mentors'
         subs.subscribe 'judges'
         subs.subscribe 'sponsors'
@@ -475,10 +476,12 @@ Router.map ->
     waitOn: ->
       [
         subs.subscribe 'hackathons'
+        subs.subscribe 'scores'
         subs.subscribe 'judges'
         subs.subscribe 'attachments'
         subs.subscribe 'participants'
         subs.subscribe 'submissions'
+        subs.subscribe 'criterias'
       ]
     onBeforeAction: (pause) ->
       unless Hackathons.findOne({personalizedUrl:this.params._id})
@@ -489,6 +492,7 @@ Router.map ->
       Session.set 'hackathon', Hackathons.findOne({personalizedUrl:this.params._id})
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
       submission: Submissions.findOne(this.params.subId)
+      #criterias: Criteria.find({: Meteor.userId()},{sort: {createdAt: -1}}).fetch()
     
 # end of add hackathon 
 
