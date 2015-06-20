@@ -11,4 +11,6 @@ Meteor.methods
     insertSubmission: (doc) ->
       Submissions.insert doc
 
-
+    removeSponsor: (_id) ->
+    	console.log 'read'
+    	Sponsors.remove {_id: _id}

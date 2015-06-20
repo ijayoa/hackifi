@@ -55,7 +55,7 @@
 </div>
 
 
-	<div class="row destacados">
+<div class="row">
 {{#each sponsors}}
 		<div class=" col-xs-6 col-md-3 well apps wow fadeInUp animated">
 				<center>
@@ -65,11 +65,17 @@
 					<!-- <h3 class="name">{{name}}</h3> -->
 				</center>
            <br>
-			<p class="text-center"><a href="{{pathFor 'updateSponsor'}}" role="btn" class="btnspace btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a> <a href="{{pathFor 'deleteSponsor'}}" class="btn btn-xs btn-danger btnspace"> <i class="fa fa-trash"></i></a></p>
+
+			<p class="text-center"><a href="{{pathFor 'updateSponsor'}}" role="btn" class="btnspace btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a> <!-- <a data-toggle="modal" doc="{{_id}}" href='#db-admin-delete-modal' class="btn btn-xs btn-danger btnspace"> <i class="fa fa-trash" doc="{{_id}}"></i></a> -->
+   {{> dbAdminDeleteBtn}}
+      </p>
+
 		</div>
 {{/each}}
 
 </div>
+
+{{> sponsorDeleteModal}}
 
 {{/unless}}
 </div>
