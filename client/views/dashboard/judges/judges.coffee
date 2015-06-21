@@ -5,6 +5,11 @@ AutoForm.hooks
       Router.go 'allJudges'
     onError: (formType, error) ->
       console.log 'error'
+    formToDoc: (doc, ss, formId) ->
+      hid = Session.get 'hackathon'
+      id = hid._id
+      doc.hackathon = id
+      return doc
 
 AutoForm.hooks
   updateJudgeForm:
@@ -16,4 +21,5 @@ AutoForm.hooks
 
 Template.addJudge.rendered = () ->
     sAlert.info 'You can add more than one judge'
+
 
