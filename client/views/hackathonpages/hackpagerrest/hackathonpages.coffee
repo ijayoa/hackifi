@@ -51,23 +51,24 @@ AutoForm.hooks
         return doc
 
   Template.addscore.created = ->
+      #get the template instance
       instance = this
       # initialize the reactive variables
       instance.score = new ReactiveVar(0)
       instance.criteriaId = new ReactiveVar('criteriaId')
       instance.submissionId = new ReactiveVar('submissionId')
       instance.hackathon = new ReactiveVar('hackathon')
+      instance.judgeId = new ReactiveVar('judgeId')
       instance.autorun ->
         # get the score and other values
         score = instance.score.get()
         criteriaId = instance.criteriaId.get()
         submissionId = instance.submissionId.get()
         hackathon = instance.hackathon.get()
-        Meteor.call 'insertScore', criteriaId, score, hackathon, submissionId, (err, result) ->
+        judgeId = instance.judgeId.get()
+        Meteor.call 'insertScore', criteriaId, score, hackathon, submissionId, judgeId, (err, result) ->
           if err
             console.log err
-          else
-            console.log result
           return
         return
       return
@@ -75,15 +76,14 @@ AutoForm.hooks
 
     Template.addscore.rendered = ->
       $this = this
-      score = $this.score.get()
-      criteriaId = $this.criteriaId.get()
-      submissionId = $this.submissionId.get()
-      hackathon = $this.hackathon.get()
+      #get the template instance
+      #onClick of rating stars, get the value and set the reactive variables
       $('.ui.star.rating').rating 'setting', 'onRate', (value) ->
           $this.score.set value
           $this.criteriaId.set this.getAttribute('data-crit-id')
           $this.submissionId.set this.getAttribute('data-sub-id')
           $this.hackathon.set this.getAttribute('data-hack-id')
+          $this.judgeId.set this.getAttribute('data-jud-id')
       return  
 
   

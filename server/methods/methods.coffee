@@ -17,8 +17,17 @@ Meteor.methods
     insertCriteria: (doc) ->
       Criteria.insert doc
 
-    insertScore: (criteriaId, score, hackathon, submissionId) ->
-        doc = Scores.findOne(criteriaId: criteriaId)
+    removeScores: ->
+      Scores.remove({})
+
+    insertScore: (criteriaId, score, hackathon, submissionId, judgeId) ->
+        #check if there is an existing score, if not do an insert, else do an update
+        #ISSUE, a default insert is done before the actual insert.
+        #not sure why, but its not a problem cos functionality is not affected
+        doc = Scores.findOne(
+                criteriaId: criteriaId
+                submissionId: submissionId
+                judgeId:judgeId)
         if typeof doc == 'undefined'
           Scores.insert {
             score: score
@@ -27,10 +36,12 @@ Meteor.methods
             criteriaId: criteriaId
             scoreTimes: 1
             accumulatedScores: score
+            judgeId: judgeId
           }, (err, id) ->
         else
-          scoreTimes = doc.scoreTimes
-          accumulatedScores = doc.accumulatedScores
+          #update the score with the average score
+          scoreTimes = doc.scoreTimes + 1
+          accumulatedScores = doc.accumulatedScores + score
           actualScore = accumulatedScores / scoreTimes
           roundedScore = Math.round(actualScore)
           Scores.update { _id: doc._id },

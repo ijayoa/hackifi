@@ -239,27 +239,29 @@
     </div>
   {{/each}} -->
   <div class="container-fluid">
-   <table class="table table-responsive">
+   <table class="table hackathon-scoreboard-table">
       <thead>
         <tr class="">
            <th>Product Logo</th>
            <th>Name Name</th>
            <th>Product Description</th>
-           <th>Points</th>
+           <th>Score</th>
         </tr>
       </thead>
-    {{#each submissions}}
+    {{#each rankedSubmissions}}
       <tbody>
-        <tr>
+        <tr class="b">
           <td>
             <div class="c">
-              {{#with getDoc teamPicture 'Attachments'}}
+              {{#with getDoc productLogo 'Attachments'}}
                 <a href="/hackathon/{{getPersonalizedUrl}}/{{../_id}}/addscore"><img src="{{url}}" height="200" width="200" class="img-responsive img-thumbnail" />
                 </a>
               {{/with}}
-              <a href="/hackathon/{{getPersonalizedUrl}}/{{_id}}/addscore" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> 
+              {{#if AuthJudge}}
+              <a href="/hackathon/{{getPersonalizedUrl}}/{{_id}}/addscore" class="btn btn-primary btn-sm btn-addscore"><i class="fa fa-plus"></i> 
                 Add score
               </a>
+              {{/if}}
             </div>
           </td>
           <td>
@@ -269,7 +271,7 @@
               {{shortDescription}}
           </td>
           <td>
-              aliceblue
+              {{score}}
           </td>
         </tr>
       </tbody>
@@ -281,11 +283,12 @@
 
 <template name="addscore">
   <br><br>
+  {{#if AuthJudge}}
+  {{#with submission}}
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
         <div class="container-fluid well">
-        {{#with submission}}
         <div class="row-fluid">
                 <div class="col-sm-4 col-md-4" >
                   {{#with getDoc productLogo 'Attachments'}}
@@ -300,7 +303,6 @@
                     <h6>Team Members: {{#each teamMembers}} {{this}}, {{/each}}</h6>
                 </div>
         </div>
-        {{/with}}
       </div>
     </div>
     <div class="col-sm-6">
@@ -314,15 +316,16 @@
               </tr>
             </thead>
             <tbody>
-               {{#each criterias}}
+               {{#each hackCriterias}}
+                  
                   <tr>
                     <td>
                       {{name}}
                     </td>
-                    <td>
-                      <div class="ui star rating" id="criteria-score" data-crit-id="{{_id}}" data-sub-id="{{getSubId}}" data-hack-id="{{getHackId}}" data-rating="" data-max-rating="{{maximum_score}}"></div>
-                    </td>
-                </tr>
+                          <td>
+                            <div class="ui huge star rating" id="criteria-score" data-crit-id="{{_id}}" data-sub-id="{{getSubId}}" data-hack-id="{{getHackId}}" data-jud-id="{{getJudgeId}}" data-rating="{{getScore _id ../_id}}" data-max-rating="{{maximum_score}}"></div>
+                          </td>
+                </tr> 
                {{/each}}
             </tbody>
           </table>
@@ -331,6 +334,9 @@
     </div>
   </div>
   </div>
+  {{/with}}
+  {{else}}
+  {{/if}}
 </template>
 
 

@@ -163,8 +163,6 @@ Router.map ->
         subs.subscribe 'attachments'
         subs.subscribe 'criterias'
       ]
-    data: ->
-      criterias: Criteria.find({owner:Meteor.userId()},{sort: {createdAt: -1}}).fetch()
 
   @route "allFeedback",
     path: "dashboard/hackathon/feedbacks"
@@ -198,6 +196,29 @@ Router.map ->
     data: ->
       submission: Submissions.findOne(this.params._id)
 
+  @route "scoreCards",
+    path: "/dashboard/hackathon/scorecards"
+    layoutTemplate:'dashboardlayout'
+    waitOn: ->
+      [
+        subs.subscribe 'hackathons'
+        subs.subscribe 'criterias'
+        subs.subscribe 'scores'
+        subs.subscribe 'judges'
+      ]
+
+  @route "dashboardScoreBoard",
+    path: "/dashboard/hackathon/scoreboard"
+    layoutTemplate:'dashboardlayout'
+    waitOn: ->
+      [
+        subs.subscribe 'hackathons'
+        subs.subscribe 'attachments'
+        subs.subscribe 'criterias'
+        subs.subscribe 'submissions'
+        subs.subscribe 'judges'
+        subs.subscribe 'scores'
+      ]
 
   @route "allSponsors",
     path: "dashboard/hackathon/sponsors"
@@ -357,14 +378,13 @@ Router.map ->
         subs.subscribe 'submissions'
       ]
     onBeforeAction: (pause) ->
-      unless Hackathons.findOne({personalizedUrl:this.params._id})
+      unless Hackathons.findOne(personalizedUrl: this.params._id)
         this.render 'notFound'
       else
         this.render 'hackathonScoreboard'
     data: ->
-      Session.set 'hackathon', Hackathons.findOne({personalizedUrl:this.params._id})
-      hackData: Hackathons.findOne({personalizedUrl:this.params._id})
-      submissions: Submissions.find({}).fetch()
+      Session.set 'hackathon', Hackathons.findOne(personalizedUrl: this.params._id)
+      hackData: Hackathons.findOne(personalizedUrl: this.params._id)
       personalizedUrl: this.params._id
  # end of show collections
 
@@ -382,13 +402,13 @@ Router.map ->
         subs.subscribe 'participants'
       ]
     onBeforeAction: (pause) ->
-      unless Hackathons.findOne({personalizedUrl:this.params._id})
+      unless Hackathons.findOne( personalizedUrl:this.params._id )
         this.render 'notFound'
       else
         this.render 'hackathonRegister'
     data: ->
-      Session.set 'hackathon', Hackathons.findOne({personalizedUrl:this.params._id})
-      hackData: Hackathons.findOne({personalizedUrl:this.params._id})
+      Session.set 'hackathon', Hackathons.findOne( personalizedUrl:this.params._id )
+      hackData: Hackathons.findOne( personalizedUrl:this.params._id )
 
   @route "hackathonSubmissions",
     path: "/hackathon/:_id/submissions"
@@ -404,13 +424,13 @@ Router.map ->
         subs.subscribe 'submissions'
       ]
     onBeforeAction: (pause) ->
-      unless Hackathons.findOne({personalizedUrl:this.params._id})
+      unless Hackathons.findOne( personalizedUrl: this.params._id )
         this.render 'notFound'
       else
         this.render 'hackathonSubmissions'
     data: ->
-      Session.set 'hackathon', Hackathons.findOne({personalizedUrl:this.params._id})
-      hackData: Hackathons.findOne({personalizedUrl:this.params._id})
+      Session.set 'hackathon', Hackathons.findOne( personalizedUrl:this.params._id )
+      hackData: Hackathons.findOne( personalizedUrl:this.params._id )
 
 
   @route "hackathonFeedbacks",
@@ -447,20 +467,7 @@ Router.map ->
         subs.subscribe 'attachments'
       ]
 
-  @route "scoreBoard",
-    path: "/dashboard/hackathon/scoreboard"
-    layoutTemplate:'dashboardlayout'
-    waitOn: ->
-      [
-        subs.subscribe 'hackathons'
-        subs.subscribe 'mentors'
-        subs.subscribe 'judges'
-        subs.subscribe 'sponsors'
-        subs.subscribe 'attachments'
-        subs.subscribe 'feedbacks'
-        subs.subscribe 'participants'
-        subs.subscribe 'submissions'
-      ]
+
 
   @route "timeLine",
     path: "/dashboard/hackathon/timeline"
