@@ -4,12 +4,15 @@
 <p class="text-center">Judges are people who judge hackathon teams.</p>
 <hr>
 <div class="col-sm-8 col-sm-offset-2">
-{{#autoForm collection="Judges" id="insertJudgeForm" type="insert"}}
+{{#autoForm collection="Judges" id="insertJudgeForm" type="method" meteormethod="insertJudge"}}
     <fieldset>
       {{> afQuickField name='name' placeholder='eg. Google'}}
       {{> afQuickField name='personalWebsiteLink' placeholder="eg. johndoe.com"}}
       {{> afQuickField name='picture'}}
       {{> afQuickField name='about'}}
+      <center><label> Create login credentials for judge</label></center>
+      {{> afQuickField name='username'}}
+      {{> afQuickField name='password'}}
     </fieldset>
     <button type="submit" class="btn btn-primary">Save</button>
   {{/autoForm}}
@@ -31,6 +34,9 @@
       {{> afQuickField name='personalWebsiteLink' placeholder="eg. johndoe.com"}}
       {{> afQuickField name='picture'}}
       {{> afQuickField name='about'}}
+      <center>Create login credentials for judge</center>
+      {{> afQuickField name='username'}}
+      {{> afQuickField name='password'}}
     </fieldset>
     <button type="submit" class="btn btn-primary">Save</button>
   {{/autoForm}}

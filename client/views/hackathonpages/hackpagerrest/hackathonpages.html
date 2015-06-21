@@ -214,12 +214,129 @@
 <h3 class="text-center">Hackathon Scoreboard</h3>
 
 <hr>
-<h5 class="text-center">ScoreBoard not uploaded</h5>
+<!-- <h5 class="text-center">ScoreBoard not uploaded</h5>
 
-<h1 class="setuphack text-center"><i class="fa fa-clock-o fa-5x"></i><br> Judging <br>Soon</h1>
-    </div>s
+<<<<<<< HEAD
+<h1 class="setuphack text-center"><i class="fa fa-clock-o fa-5x"></i><br> Judging <br>Soon</h1> -->
+ <!--  {{#each submissions}}
+    <div class="tile">
+      {{#with getDoc teamPicture 'Attachments'}}
+        <a href="/hackathon/{{getPersonalizedUrl}}/{{../_id}}/addscore"><img src="{{url}}" height="200" width="200"/>
+      <span class="overlay">
+          <span class="content">
+              <span class="tiletitle">{{../productName}}</span>
+              <span class="plus">+</span>
+              <span>
+                <a href="/hackathon/{{getPersonalizedUrl}}/{{../_id}}/addscore" class="btn btn-primary"><i class="fa fa-plus"></i> 
+                  Add score
+                </a>
+              </span>
+              <span class="tilecopy">{{../shortDescription}}</span>
+          </span>
+      </span>
+        </a>
+      {{/with}}
+    </div>
+  {{/each}} -->
+  <div class="container-fluid">
+   <table class="table hackathon-scoreboard-table">
+      <thead>
+        <tr class="">
+           <th>Product Logo</th>
+           <th>Name Name</th>
+           <th>Product Description</th>
+           <th>Score</th>
+        </tr>
+      </thead>
+    {{#each rankedSubmissions}}
+      <tbody>
+        <tr class="b">
+          <td>
+            <div class="c">
+              {{#with getDoc productLogo 'Attachments'}}
+                <a href="/hackathon/{{getPersonalizedUrl}}/{{../_id}}/addscore"><img src="{{url}}" height="200" width="200" class="img-responsive img-thumbnail" />
+                </a>
+              {{/with}}
+              {{#if AuthJudge}}
+              <a href="/hackathon/{{getPersonalizedUrl}}/{{_id}}/addscore" class="btn btn-primary btn-sm btn-addscore"><i class="fa fa-plus"></i> 
+                Add score
+              </a>
+              {{/if}}
+            </div>
+          </td>
+          <td>
+              {{productName}}
+          </td>
+          <td>
+              {{shortDescription}}
+          </td>
+          <td>
+              {{score}}
+          </td>
+        </tr>
+      </tbody>
+    {{/each}}
+   </table>
+   </div>
+</div>
+</template>
 
-
+<template name="addscore">
+  <br><br>
+  {{#if AuthJudge}}
+  {{#with submission}}
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="container-fluid well">
+        <div class="row-fluid">
+                <div class="col-sm-4 col-md-4" >
+                  {{#with getDoc productLogo 'Attachments'}}
+                    <img src="{{url}}"  class="img-responsive img-thumbnail">
+                  {{/with}}
+                </div>
+                
+                <div class="col-sm-8 col-md-8">
+                    <h3>{{productName}}</h3>
+                    <h6>Category: {{productCategory}}</h6>
+                    <h6>Github Link: {{githubLink}}</h6>
+                    <h6>Team Members: {{#each teamMembers}} {{this}}, {{/each}}</h6>
+                </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="container-fluid well">
+        <div class="row-fluid">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Criteria</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+               {{#each hackCriterias}}
+                  
+                  <tr>
+                    <td>
+                      {{name}}
+                    </td>
+                          <td>
+                            <div class="ui huge star rating" id="criteria-score" data-crit-id="{{_id}}" data-sub-id="{{getSubId}}" data-hack-id="{{getHackId}}" data-jud-id="{{getJudgeId}}" data-rating="{{getScore _id ../_id}}" data-max-rating="{{maximum_score}}"></div>
+                          </td>
+                </tr> 
+               {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  {{/with}}
+  {{else}}
+  {{/if}}
 </template>
 
 

@@ -1,0 +1,61 @@
+<template name="scoreCards">
+    <div class="row mainrow">
+      <div class="col-xs-8 col-xs-offset-2">
+    {{#unless scores}}
+    <div class="alert alert-info">
+                    <p>There are no visible scorecards.</p>
+    </div>
+    {{else}}
+    <div class="row">
+      <h3 class="text-center">Showing Scorecards</h3>
+    <p class="text-center">A Scorecard shows how a judge scored a particular submission</p>
+    <hr>
+    </div>
+
+
+        <div class="row destacados">
+            {{#each judges}}
+                <div class=" col-xs-6 col-m6-4 well apps wow fadeInUp animated">
+                    <strong>{{name}}</strong>
+                    <table class="table scorecards-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Product Name
+                                </th>
+                                <th>
+                                    Criteria Scores
+                                </th>
+                                <th>
+                                    Total Scores
+                                </th>
+                            </tr>
+                        </thead>
+                    {{#each submissions}}
+                        <tbody>
+                            <tr>
+                                <td>
+                                   {{productName}} 
+                                </td>
+                                <td>
+                                    <ul>
+                                         {{#each criterias}}
+                                            <li>{{name}} ({{getJudgeCriteriaScore _id ../_id ../../_id}})</li>
+                                          {{/each}}  
+                                    </ul>
+                                </td>
+                                <td>
+                                    {{getJudgeTotalCriteriaScore _id ../_id}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    {{/each}}
+                    </table>
+                </div>
+           {{/each}}
+    </div>
+
+    {{/unless}}
+    </div>
+    </div>
+</template>

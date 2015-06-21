@@ -1,0 +1,48 @@
+<template name="addCriteria">
+    <div class="row mainrow">
+    <h3 class="text-center">Add Judging Criteria</h3>
+    <p class="text-center">A judging criteria is the basis for which scores are awarded.</p>
+    <hr>
+    <div class="col-sm-8 col-sm-offset-2">
+    {{#autoForm collection="Criteria" id="insertCriteriaForm" type="method" meteormethod="insertCriteria"}}
+        <fieldset>
+          {{> afQuickField name='name' placeholder=' Innovation'}}
+          {{> afQuickField name='maximum_score' placeholder="eg. 10"}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Save</button>
+      {{/autoForm}}
+    </div>
+      </div>
+</template>
+<template name="allCriterias">
+    <div class="row mainrow">
+      <div class="col-xs-8 col-xs-offset-2">
+    {{#unless criterias}}
+    <div class="alert alert-info">
+                    <p>There are no visible criterias.</p>
+                    <p><a href="{{pathFor 'addCriteria'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
+    </div>
+    {{else}}
+    <p><a href="{{pathFor 'addCriteria'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add Criteria</a></p>
+    <div class="row">
+      <h3 class="text-center">Showing Criterias</h3>
+    <p class="text-center">A judging criteria is the basis for which scores are awarded.</p>
+    <hr>
+    </div>
+
+
+        <div class="row destacados">
+            {{#each criterias}}
+            <div class=" col-xs-6 col-md-3 well apps wow fadeInUp animated">
+                {{name}}
+               <br>
+               <p class="text-center"><a href="{{pathFor 'updateJudge'}}" role="btn" class="btnspace btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a> <a href="{{pathFor 'deleteJudge'}}" class="btn btn-xs btn-danger btnspace"> <i class="fa fa-trash"></i></a></p>
+            </div>
+           {{/each}}
+
+    </div>
+
+    {{/unless}}
+    </div>
+    </div>
+</template>
