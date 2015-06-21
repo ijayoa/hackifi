@@ -57,7 +57,7 @@
 </div>
 
 
-<div class="row destacados">
+<div class="row">
 		{{#each mentors}}
 		<div class="text-center col-xs-6 col-md-3 well apps wow fadeInUp animated">
 				<center>
@@ -67,12 +67,14 @@
 					<h3 class="hname">{{name}}</h3>
 				</center>
            <br>
-			<p class="text-center"><a href="{{pathFor 'updateMentor'}}" role="btn" class="btnspace btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a> <a href="{{pathFor 'deleteMentor'}}" class="btn btn-xs btn-danger btnspace"> <i class="fa fa-trash"></i></a></p>
+			<p class="text-center"><a href="{{pathFor 'updateMentor'}}" role="btn" class="btnspace btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a> 
+      {{> dbAdminDeleteBtn}}
+      </p>
 		</div>
        {{/each}}
 
 </div>
-
+{{> mentorDeleteModal}}
 {{/unless}}
 </div>
 </div>

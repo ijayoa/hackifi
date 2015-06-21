@@ -26,3 +26,8 @@ p a:hover{
 .btnnt{
 	background-color: #005e49;
 }
+
+/*delete*/
+.del-btn{
+  margin-left:0px;
+}
