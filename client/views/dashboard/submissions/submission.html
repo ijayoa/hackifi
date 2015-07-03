@@ -1,18 +1,14 @@
 <template name="allSubmissions">
 	<div class="row mainrow">
-		<div class="col-xs-8 col-xs-offset-2">
-
-
-			<h3 class="text-center">Team Submissions</h3>
-			<hr>
+		<div class="col-xs-10">
 			<div class="row form-group" style="margin-top:10px;">
 				{{#each submissions}}
 
-				<div class="col-xs-12 col-md-6">
+				<div class="col-xs-6 col-md-4">
 					<div class="panel panel-default">
 						<div class="panel-image">
 							{{#with getDoc  productLogo 'Attachments'}}
-							<img src="{{url}}" name="picture" class=" img-responsive panel-image-preview">
+							<img src="{{url}}" name="picture" class="img-responsive panel-image-preview">
 							{{/with}}
 							<label for="toggle-4"></label>
 						</div>

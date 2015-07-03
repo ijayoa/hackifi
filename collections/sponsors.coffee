@@ -11,7 +11,7 @@ Schemas.Sponsors = new SimpleSchema
   about:
     type: String
     autoform:
-      rows: 5
+      rows: 3
 
   sponsorLogo:
     type: String

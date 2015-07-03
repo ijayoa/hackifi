@@ -1,8 +1,6 @@
 <template name="addJudge">
 <div class="row mainrow">
-<h3 class="text-center">Add Hackathon Judges</h3>
-<p class="text-center">Judges are people who judge hackathon teams.</p>
-<hr>
+
 <div class="col-sm-8 col-sm-offset-2">
 {{#autoForm collection="Judges" id="insertJudgeForm" type="method" meteormethod="insertJudge"}}
     <fieldset>
@@ -24,9 +22,7 @@
 
 <template name="updateJudge">
 <div class="row mainrow">
-<h3 class="text-center">Editing {{name}}</h3>
-<p class="text-center">Judges are people who judge hackathon teams.</p>
-<hr>
+
 <div class="col-sm-8 col-sm-offset-2">
 {{#autoForm collection="Judges" doc=this id="updateJudgeForm" type="update"}}
     <fieldset>
@@ -46,21 +42,24 @@
 
 
 <template name="allJudges">
+<div class="row">
+<div class="btn-group show-on-hover pull-left">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            Action <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="{{pathFor 'addJudge'}}">Add Judge</a></li>
+          </ul>
+</div>
+</div>
 <div class="row mainrow">
-  <div class="col-xs-8 col-xs-offset-2">
+  <div class="col-xs-10">
 {{#unless judges}}
 <div class="alert alert-info">
 				<p>There are no visible judges.</p>
 				<p><a href="{{pathFor 'addJudge'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
 </div>
 {{else}}
-<p><a href="{{pathFor 'addJudge'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add Judge</a></p>
-<div class="row">
-  <h3 class="text-center">Showing Judges</h3>
-<p class="text-center">Judges are people who judge hackathon teams.</p>
-<hr>
-</div>
-
 
 	<div class="row">
 		{{#each judges}}

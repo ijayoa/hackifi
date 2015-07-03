@@ -1,9 +1,11 @@
 body{
   background-color: #eeeeee;
 }
+.lightbackground{
+  background-color: #eeeeee;
+}
 .maincont{
   padding: 0px;
-
 }
 .alert > .fa, .alert > .glyphicon {
   position: absolute;

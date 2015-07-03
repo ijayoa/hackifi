@@ -2,6 +2,13 @@
 .navbar-brand{
 	font-family: 'Kelly Slab', cursive;
 }
+.content-header > h1 {
+  font-size: 20px;
+}
+ 
+.file-upload-clear {
+	 color: #d91e18;
+}
 /*html, body {
     width: 99.45%;
     overflow-x: hidden;

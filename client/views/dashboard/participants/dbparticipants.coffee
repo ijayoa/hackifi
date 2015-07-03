@@ -25,6 +25,14 @@ Template.allParticipants.helpers
     else
       console.log 'error' + Participants.find(hackathon: mydata._id).fetch()
 
+  totalTableParticipants: ->
+    init = 0
+    mydata = Hackathons.findOne({owner: Meteor.userId()})
+    if mydata
+      return Participants.find(hackathon: mydata._id).count()
+    else
+      return init
+
 Template.dashboardAddParticipant.helpers
   hackExist: ->
     if Hackathons.findOne({owner: Meteor.userId()})

@@ -1,8 +1,5 @@
 <template name="addSponsor">
 <div class="row mainrow">
-<h3 class="text-center">Add Hackathon Sponsor</h3>
-<p class="text-center">Sponsors are companies who provide support for the hackathon</p>
-<hr>
 <div class="col-sm-8 col-sm-offset-2">
 {{#autoForm collection="Sponsors" id="insertSponsorForm" type="insert"}}
     <fieldset>
@@ -19,9 +16,6 @@
 
 <template name="updateSponsor">
 <div class="row mainrow">
-<h3  class="text-center">Editing {{name}}</h3>
-<p class="text-center">Sponsors are companies who provide support for the hackathon</p>
-<hr>
 <div class="col-sm-8 col-sm-offset-2">
 {{#autoForm collection="Sponsors" doc=this id="updateSponsorForm" type="update"}}
     <fieldset>
@@ -38,23 +32,25 @@
 
 
 <template name="allSponsors">
+<div class="row">
+ <div class="btn-group show-on-hover pull-left">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            Action <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="{{pathFor 'addSponsor'}}">Add Sponsor</a></li>
+          </ul>
+ </div>
+ </div>
+
 <div class="row mainrow">
-  <div class="col-xs-8 col-xs-offset-2">
+  <div class="col-xs-10">
 {{#unless sponsors}}
 <div class="alert alert-info">
-				<p>There are no visible sponsors.</p>
+        <p>There are no visible Sponsors</p>
+        <p><a href="{{pathFor 'addSponsor'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
 </div>
 {{else}}
-
- <p><a href="{{pathFor 'addSponsor'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add Sponsor</a></p>
-
-<div class="row">
-  <h3 class="text-center">Sponsors</h3>
-<p  class="text-center">Sponsors are companies who provide support for the hackathon</p>
-<hr>
-</div>
-
-
 <div class="row">
 {{#each sponsors}}
 		<div class=" col-xs-6 col-md-3 well apps wow fadeInUp animated">
