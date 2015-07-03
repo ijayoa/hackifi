@@ -1,13 +1,13 @@
 
-.wrap{
+.wap{
 	width:1000px;
 	margin:0 auto;
 }
-.logo{
-	width:430px;
-	position:absolute;
-	top:25%;
-	left:35%;
+.log {
+  width: 430px;
+  position: absolute;
+  top: 25%;
+  left: 35%;
 }
 p a{
 	color:#eee;
@@ -30,4 +30,11 @@ p a:hover{
 /*delete*/
 .del-btn{
   margin-left:0px;
+}
+/*for footer*/
+footer{
+font-family: 'Kelly Slab', cursive;
+}
+footer ul li a {
+	color: #005e49;
 }

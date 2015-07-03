@@ -3,8 +3,6 @@
 </template>
 
 <template name="configureHackathon">
-<h3>Configure Hackathon</h3>
-	<hr>
 	<div class="row">
 	   <div class="col-sm-4 text-center">
           <a class="js-disable-create" href="{{pathFor 'createHackathon'}}"><img src="/img/check.png" width="48px" height="48px"> <br><p>Create Hackathon</p></a>
@@ -24,8 +22,6 @@
 
 {{#unless  $.Session.get 'exists'}}
  <div class="row mainrow">
-  <h3 class="text-center">Create Hackathon</h3>
-	<hr>
   <div class="col-sm-8 col-sm-offset-2">
 	{{#autoForm collection="Hackathons" id="insertHackathonForm" type="insert"}}
     <fieldset>
@@ -66,11 +62,6 @@
 {{#with hack}}
 
 <div class="row mainrow">
-  <h3 class="text-center">Hackathon Details</h3>
-  <p class="muted text-center">Preview Mode</p>
-<hr>
-</div>
-<div class="row">
 <div class="col-sm-6 col-sm-offset-3">
     {{#with getDoc coverPhoto 'Attachments'}}
   <img class="img img-responsive" src="{{url}}"/>
@@ -107,8 +98,6 @@
 </template>
 <template name="updateHackathon">
 <div class="row mainrow">
-   <h3 class="text-center"><i class="fa fa-gears"></i> Settings</h3>
-   <hr>
    <div class="col-sm-8 col-sm-offset-2">
     {{#autoForm collection="Hackathons" doc=this id="updateHackathonForm" type="update"}}
       <fieldset>

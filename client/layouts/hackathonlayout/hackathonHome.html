@@ -35,13 +35,12 @@
         <li><a href="/hackathon/{{personalizedUrl}}/register">Register</a></li>
         <li><a href="/hackathon/{{personalizedUrl}}/submissions">Submissions</a></li>
         <li><a href="/hackathon/{{personalizedUrl}}/scoreboard">Score Board</a></li>
-        <li><a href="/hackathon/{{personalizedUrl}}/resources">Resources</a></li>
         <li><a href="/hackathon/{{personalizedUrl}}/feedback">Feedback</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>
-          {{#if AuthJudge}}{{judgeSignedInString}}{{else}}Sign In as a Judge{{/if}}</b> <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          {{#if AuthJudge}}{{judgeSignedInString}}{{else}}Sign In as a Judge{{/if}}<span class="caret"></span></a>
       <ul id="login-dp" class="dropdown-menu">
         <li>
            <div class="row">

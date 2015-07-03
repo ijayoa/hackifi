@@ -50,8 +50,8 @@
 			url: 'http://github.com/ijayoa'
 			icon: 'github'
 		info:
-			url: 'http://'
-			icon: 'link'
+			url: 'http://linkedin.com/hackifi'
+			icon: 'linkedin'
 
 	#Routes
 	homeRoute: '/'

@@ -18,3 +18,7 @@
 .show-on-hover:hover > ul.dropdown-menu {
     display: block;    
 }
+.show-on-hover:hover > ul.dropdown-menu > li > a:hover {
+    background-color: #eeeeee;
+    color: #000;
+}

@@ -1,12 +1,7 @@
 <template name="newMessage">
 
 <div class="row mainrow">
-  <div class="col-xs-8 col-xs-offset-2">
-<h3 class="text-center">Send Broadcast Message</h3>
-<p class="text-center">A Broadcast Message can be sent to all parties</p>
-<hr>
-<div class="row">
-<div class="col-sm-8 col-sm-offset-2">
+<div class="col-sm-6 col-sm-offset-3">
 {{#autoForm collection="Messages" id="insertMessageForm" type="insert"}}
     <fieldset>
       {{> afQuickField name='selectMedium'}}
@@ -17,8 +12,6 @@
     </fieldset>
     <button type="submit" class="btn btn-primary">Send Message</button>
 {{/autoForm}}
- </div>
- </div>
  </div>
  </div>
 </template>

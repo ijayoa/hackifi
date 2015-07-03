@@ -195,3 +195,14 @@ body{
 hr{
   background-color: #002b21;
 }
+#profile .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: #0D725C;
+   border-color: #dadfe1; 
+}
+#profile .nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  color:#eeeeee;
+  background-color: #0D725C;
+}
+.n-brand{
+  font-size: 24px;}
