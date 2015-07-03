@@ -17,11 +17,10 @@ Router.map ->
     data: ->
       posts: Posts.find({},{sort: {createdAt: -1}}).fetch()
 
-  @route "myHackathons",
-    path: "dashboard/myhackathons"
-    layoutTemplate: "dashboardlayout"
-
-
+  # @route "myHackathons",
+  #   path: "dashboard/myhackathons"
+  #   layoutTemplate: "dashboardlayout"
+  
 # update collections
 
   @route "updateHackathon",
