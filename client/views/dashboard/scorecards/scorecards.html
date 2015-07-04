@@ -1,15 +1,15 @@
 <template name="scoreCards">
 
     <div class="row mainrow">
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-10">
     {{#unless scores}}
     <div class="alert alert-info">
-                    <p>There are no visible scorecards.</p>
+        <p>There are no visible scorecards.</p>
     </div>
     {{else}}
-        <div class="row destacados">
+        <div class="row">
             {{#each judges}}
-                <div class=" col-xs-6 col-m6-4 well apps wow fadeInUp animated">
+                <div class=" col-xs-6 col-md-4 apps">
                     <strong>{{name}}</strong>
                     <table class="table scorecards-table">
                         <thead>

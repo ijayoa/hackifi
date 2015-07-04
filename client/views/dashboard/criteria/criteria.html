@@ -1,41 +1,75 @@
 <template name="addCriteria">
-    <div class="row mainrow">
+  <div class="row mainrow">
     <div class="col-sm-8 col-sm-offset-2">
-    {{#autoForm collection="Criteria" id="insertCriteriaForm" type="method" meteormethod="insertCriteria"}}
-        <fieldset>
-          {{> afQuickField name='name' placeholder=' Innovation'}}
-          {{> afQuickField name='maximum_score' placeholder="eg. 10"}}
-        </fieldset>
-        <button type="submit" class="btn btn-primary">Save</button>
+      {{#autoForm collection="Criteria" id="insertCriteriaForm" type="method" meteormethod="insertCriteria"}}
+      <fieldset>
+        {{> afQuickField name='name' placeholder=' Innovation'}}
+        {{> afQuickField name='maximum_score' placeholder="eg. 10"}}
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Save</button>
       {{/autoForm}}
     </div>
-      </div>
+  </div>
 </template>
 <template name="allCriterias">
-
-    <div class="row mainrow">
-      <div class="col-xs-8 col-xs-offset-2">
-    {{#unless criterias}}
-    <div class="alert alert-info">
-                    <p>There are no visible criterias.</p>
-                    <p><a href="{{pathFor 'addCriteria'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
+  <div class="row">
+    <div class="btn-group show-on-hover pull-left">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        Action <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="{{pathFor 'addCriteria'}}">Add Criteria</a></li>
+      </ul>
     </div>
-    {{else}}
-    <p><a href="{{pathFor 'addCriteria'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add Criteria</a></p>
+  </div>
 
+  {{#unless criterias}}
+  <div class="row mainrow">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="alert alert-info">
+        <p>There are no visible criterias.</p>
+        <p><a href="{{pathFor 'addCriteria'}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add one</a></p>
+      </div>
+    </div>
+  </div>
+  {{else}}
 
-        <div class="row">
+  <div class="row mainrow">
+    <div class="col-xs-6 col-xs-offset-3">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Judging Criteria</div>
+           <table class="table table-hover">
+            <tbody><tr>
+
+              <th>Name</th>
+              <th>Score</th>
+              <th>Importance</th>
+              <th>Actions</th>
+
+            </tr>
             {{#each criterias}}
-            <div class=" col-xs-6 col-md-3 well apps wow fadeInUp animated">
-                {{name}}
-               <br>
-               <p class="text-center"><a href="{{pathFor 'updateJudge'}}" role="btn" class="btnspace btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a> <a href="{{pathFor 'deleteJudge'}}" class="btn btn-xs btn-danger btnspace"> <i class="fa fa-trash"></i></a></p>
-            </div>
-           {{/each}}
+            <tr>
+              <td>{{name}}</td>
+              <td><span class="badge bg-red">{{maximum_score}}</span></td>
+              <td><div class="progress xs  progress-striped active">
+              <div class="progress-bar progress-bar-danger" style="width: {{maximum_score}}%"></div>
+                         </div></td>
+              <td><a href="#" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a>
+              <a href="#" class="hidden-xs btn btn-xs btn-danger"><i class="fa fa-trash"></i></a></td>
 
+
+            </tr>
+            {{/each}}
+
+          </tbody></table>
+      </div>
     </div>
 
-    {{/unless}}
-    </div>
-    </div>
+
+  </div>
+
+
+
+{{/unless}}
+
 </template>
