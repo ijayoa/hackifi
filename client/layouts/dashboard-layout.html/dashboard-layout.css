@@ -141,7 +141,7 @@ body{
 }
 .profile-usermenu ul li {
   font-family: 'Raleway', sans-serif;
- border-bottom: 1px solid #004637;
+ /*border-bottom: 1px solid #004637;*/
   background-color: #002b21;
 }
 .profile-usermenu ul li ul li {

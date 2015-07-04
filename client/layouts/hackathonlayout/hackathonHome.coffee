@@ -1,5 +1,10 @@
 Template.hackathonHome.rendered = () ->
-	$('.navbar').css('margin-bottom',0)
+  $('.navbar').css('margin-bottom',0)
+  thisHackathon = Session.get 'thisHackathon'
+  $('.sponsors').addClass 'hide' if Sponsors.find({owner:thisHackathon.owner})?
+  $('.judges').addClass 'hide' if Judges.find({owner:thisHackathon.owner})?
+  $('.mentors').addClass 'hide' if Mentors.find({owner:thisHackathon.owner})?
+  console.log thisHackathon
 
 Template.hackathonHome.events
   'click #judge-login': (e, t) ->
@@ -40,8 +45,8 @@ isValidLogin = (username, password, hackathonUrl) ->
     return
   
 Template.hackathonHome.helpers
-	url: ->
-		hd = Session.get 'thisHackathon'
-		photoId = hd.coverPhoto
-		img = Attachments.findOne(_id: photoId)
-		url = img.url()
+  url: ->
+    hd = Session.get 'thisHackathon'
+    photoId = hd.coverPhoto
+    img = Attachments.findOne(_id: photoId)
+    url = img.url()

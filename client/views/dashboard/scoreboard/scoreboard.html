@@ -28,40 +28,9 @@
          </div>
          
        </div>
+       {{else}}
+       {{> judgingSoon}}
        {{/each}}
-      <!-- <table class="table table-responsive">
-      <thead>
-        <tr class="">
-         <th>Product Logo</th>
-         <th>Name Name</th>
-         <th>Product Description</th>
-         <th>Score</th>
-       </tr>
-     </thead>
-     {{#each submissions}}
-     <tbody>
-      <tr>
-        <td>
-          <div class="c">
-            {{#with getDoc productLogo 'Attachments'}}
-            <a href="#"><img src="{{url}}" height="200" width="200" class="img-responsive img-thumbnail" />
-            </a>
-            {{/with}}
-          </div>
-        </td>
-        <td>
-          {{productName}}
-        </td>
-        <td>
-          {{shortDescription}}
-        </td>
-        <td>
-          {{getTotalScore _id}}
-        </td>
-      </tr>
-    </tbody>
-    {{/each}}
-  </table> -->
 </div>
 </div>
 

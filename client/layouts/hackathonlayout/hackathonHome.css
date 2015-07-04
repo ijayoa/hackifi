@@ -32,7 +32,11 @@ font-family: 'Kelly Slab', cursive;
 .join:hover{
  color: #000;
 }
+.jumbotron a:active{
+  color: #000;
+}
 .hackcontent{
+  min-height: 800px;
   font-family: 'Raleway', sans-serif;
 }
 
