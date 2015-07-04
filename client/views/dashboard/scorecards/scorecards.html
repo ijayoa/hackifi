@@ -1,13 +1,77 @@
 <template name="scoreCards">
+  <div class="row-fluid mainrow">
 
-    <div class="row mainrow">
-      <div class="col-xs-10">
-    {{#unless scores}}
-    <div class="alert alert-info">
-        <p>There are no visible scorecards.</p>
-    </div>
+        {{#unless scores}}
+      
+          <div class="col-xs-8 col-xs-offset-2">
+            <div class="alert alert-info">
+                <p>There are no visible scorecards.</p>
+            </div>
+        </div>
+ 
     {{else}}
-        <div class="row">
+
+
+    {{#each judges}}
+    <div class="col-xs-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Judged <small class="muted">{{tm_now createdAt}}</small></h3>
+        </div>
+        <div class="panel-image hide-panel-body">
+            <!-- inner panel -->
+            <div class="row">
+
+                <div class="col-xs-4 text-center margtop">
+                    <h3 class="panel-title ">{{name}}</h3>
+                    {{#with getDoc picture 'Attachments'}}
+                    <img src="{{url}}" name="picture" width="150" height="150" class="img-circle">
+                    {{/with}}
+                </div>
+                <div class="col-xs-8">
+                    <table class="table scorecards-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Product Name
+                                </th>
+                                <th>
+                                    Criteria Scores
+                                </th>
+                                <th>
+                                    Total Scores
+                                </th>
+                            </tr>
+                        </thead>
+                        {{#each submissions}}
+                        <tbody>
+                            <tr>
+                                <td>
+                                 {{productName}} 
+                             </td>
+                             <td>
+                                <ul>
+                                   {{#each criterias}}
+                                   <li>{{name}} ({{getJudgeCriteriaScore _id ../_id ../../_id}})</li>
+                                   {{/each}}  
+                               </ul>
+                           </td>
+                           <td>
+                            {{getJudgeTotalCriteriaScore _id ../_id}}
+                        </td>
+                    </tr>
+                </tbody>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+{{/each}}
+
+        <!-- <div class="row">
             {{#each judges}}
                 <div class=" col-xs-6 col-md-4 apps">
                     <strong>{{name}}</strong>
@@ -47,9 +111,10 @@
                     </table>
                 </div>
            {{/each}}
-    </div>
+       </div> -->
 
-    {{/unless}}
-    </div>
-    </div>
+       {{/unless}}
+   </div>
+
 </template>
+
