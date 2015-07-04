@@ -218,6 +218,8 @@ Router.map ->
         subs.subscribe 'judges'
         subs.subscribe 'scores'
       ]
+    data: ->
+      hackData: Hackathons.findOne(owner: Meteor.userId())
 
   @route "allSponsors",
     path: "dashboard/hackathon/sponsors"

@@ -57,7 +57,8 @@
                                </ul>
                            </td>
                            <td>
-                            {{getJudgeTotalCriteriaScore _id ../_id}}
+                           <span class="badge bg-red">{{getJudgeTotalCriteriaScore _id ../_id}}</span>
+                            
                         </td>
                     </tr>
                 </tbody>
@@ -70,48 +71,6 @@
 </div>
 </div>
 {{/each}}
-
-        <!-- <div class="row">
-            {{#each judges}}
-                <div class=" col-xs-6 col-md-4 apps">
-                    <strong>{{name}}</strong>
-                    <table class="table scorecards-table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    Product Name
-                                </th>
-                                <th>
-                                    Criteria Scores
-                                </th>
-                                <th>
-                                    Total Scores
-                                </th>
-                            </tr>
-                        </thead>
-                    {{#each submissions}}
-                        <tbody>
-                            <tr>
-                                <td>
-                                   {{productName}} 
-                                </td>
-                                <td>
-                                    <ul>
-                                         {{#each criterias}}
-                                            <li>{{name}} ({{getJudgeCriteriaScore _id ../_id ../../_id}})</li>
-                                          {{/each}}  
-                                    </ul>
-                                </td>
-                                <td>
-                                    {{getJudgeTotalCriteriaScore _id ../_id}}
-                                </td>
-                            </tr>
-                        </tbody>
-                    {{/each}}
-                    </table>
-                </div>
-           {{/each}}
-       </div> -->
 
        {{/unless}}
    </div>
