@@ -1,13 +1,13 @@
 <template name="dashboardScoreBoard">
   <div class="container-fluid">
     <div class="row  ">
-      <div class="col-xs-6 col-xs-offset-3 btn-primary score-header text-center">
+      <div class="col-xs-6 col-xs-offset-3 btn-primary db-score-header text-center">
         {{getHackathonName hackData}}
 
       </div>
     </div>
     <div class="row text-center ">
-      <div class="col-xs-6 col-xs-offset-3 text-center score-board">
+      <div class="col-xs-8 col-xs-offset-2 text-center db-score-board">
         {{#each submissions}}
         <div class="row mainrow" >
          <div class="col-xs-8 col-xs-offset-2 ">
@@ -21,12 +21,12 @@
             <h3 class="panel-title">{{teamMembers}}</h3>
           </div>
           <div class="col-xs-6 text-center margtop">
-           <h3 class="panel-title "> Score </h3>
+           <h3 class="panel-title ">Total Score </h3>
            <div class="huge">{{getTotalScore _id}}</div>
          </div>
            </div>
          </div>
-         
+
        </div>
        {{else}}
        {{> judgingSoon}}

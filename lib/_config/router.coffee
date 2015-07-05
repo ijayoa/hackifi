@@ -13,7 +13,6 @@ Router.configure
       @redirect '/setUserName'
     @next()
 
-
 Router.waitOn ->
   subs.subscribe 'user'
 

@@ -41,6 +41,10 @@ font-family: 'Kelly Slab', cursive;
   min-height: 800px;
   font-family: 'Raleway', sans-serif;
 }
+.hackcontent h3{
+  font-size: 20px;
+  margin-bottom: 3%;
+}
 
 /*============== Judge Sign IN Form ============================================*/
 

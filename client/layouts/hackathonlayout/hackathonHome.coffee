@@ -1,5 +1,5 @@
 Template.hackathonHome.rendered = () ->
-  $('.navbar').css('margin-bottom',0)
+  # $('.navbar').css('margin-bottom',0)
   thisHackathon = Session.get 'thisHackathon'
   if Sponsors.find({owner:thisHackathon.owner}).count() == 0
     $('.sponsors').addClass 'hide'

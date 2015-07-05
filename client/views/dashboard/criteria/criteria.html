@@ -11,6 +11,19 @@
     </div>
   </div>
 </template>
+<template name="updateCriteria">
+  <div class="row mainrow">
+    <div class="col-sm-8 col-sm-offset-2">
+      {{#autoForm collection="Criteria" doc=this id="updateCriteriaForm" type="update"}}
+      <fieldset>
+        {{> afQuickField name='name' placeholder=' Innovation'}}
+        {{> afQuickField name='maximum_score' placeholder="eg. 10"}}
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>
 <template name="allCriterias">
   <div class="row">
     <div class="btn-group show-on-hover pull-left">
@@ -35,7 +48,7 @@
   {{else}}
 
   <div class="row mainrow">
-    <div class="col-xs-6 col-xs-offset-3">
+    <div class="col-xs-8 col-xs-offset-2">
       <div class="panel panel-primary">
         <div class="panel-heading">Judging Criteria</div>
            <table class="table table-hover">
@@ -54,7 +67,7 @@
               <td><div class="progress xs  progress-striped active">
               <div class="progress-bar progress-bar-danger" style="width: {{maximum_score}}%"></div>
                          </div></td>
-              <td><a href="#" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a>
+              <td><a href="{{pathFor 'updateCriteria'}}" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a>
               <a href="#" class="hidden-xs btn btn-xs btn-danger"><i class="fa fa-trash"></i></a></td>
 
 

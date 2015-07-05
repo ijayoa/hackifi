@@ -124,6 +124,16 @@ Router.map ->
       userId = Meteor.userId()
       url = Hackathons.findOne({owner: userId}).personalizedUrl
       Session.set 'hackathon', Hackathons.findOne({personalizedUrl: url})
+    
+    @route "updateCriteria",
+      path: "dashboard/criteria/edit/:_id"
+      layoutTemplate: "dashboardlayout"
+      waitOn: ->
+        [
+          subs.subscribe 'criterias'
+        ]
+      data: ->
+        return Criteria.findOne(this.params._id)
 
     @route "addCriteria",
       path: "dashboard/hackathon/add/judging-criteria"

@@ -3,6 +3,11 @@ Template.hackathonScoreboard.helpers
         url = Router.current().data().personalizedUrl
         return url
 
+Template.addscore.helpers
+    getPUrl: ->
+        url = Router.current().data().hackData.personalizedUrl
+        return url
+
 Template.registerHelper 'AuthJudge', ->
     if Session.get('AuthJudge')
         authSession = Session.get('AuthJudge')

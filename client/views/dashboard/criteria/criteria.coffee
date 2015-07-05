@@ -10,3 +10,10 @@ AutoForm.hooks
       id = hid._id
       doc.hackathon = id
       return doc
+
+  updateCriteriaForm:
+    onSuccess: (formType, result) ->
+      sAlert.success 'Criteria was successfully updated'
+      Router.go 'allCriterias'
+    onError: (formType, error) ->
+      sAlert.error 'Update failed'
