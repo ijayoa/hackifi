@@ -295,6 +295,7 @@ Router.map ->
       else
         this.render 'hackathonSponsors'
     data: ->
+      Session.set 'thisHackathon',Hackathons.findOne({personalizedUrl:this.params._id})
       hData = Hackathons.findOne({personalizedUrl:this.params._id})
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
       sponsorData: Sponsors.find({owner:hData.owner}).fetch()
@@ -317,6 +318,7 @@ Router.map ->
       else
         this.render 'hackathonMentors'
     data: ->
+      Session.set 'thisHackathon',Hackathons.findOne({personalizedUrl:this.params._id})
       hData = Hackathons.findOne({personalizedUrl:this.params._id})
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
       mentorData: Mentors.find({owner:hData.owner}).fetch()
@@ -339,30 +341,10 @@ Router.map ->
       else
         this.render 'hackathonJudges'
     data: ->
+      Session.set 'thisHackathon',Hackathons.findOne({personalizedUrl:this.params._id})
       hData = Hackathons.findOne({personalizedUrl:this.params._id})
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
       judgeData: Judges.find({owner:hData.owner}).fetch()
-
-  @route "hackathonResources",
-    path: "/hackathon/:_id/resources"
-    layoutTemplate:'hackathonHome'
-    waitOn: ->
-      [
-        subs.subscribe 'hackathons'
-        subs.subscribe 'mentors'
-        subs.subscribe 'judges'
-        subs.subscribe 'sponsors'
-        subs.subscribe 'attachments'
-        subs.subscribe 'participants'
-      ]
-    onBeforeAction: (pause) ->
-      unless Hackathons.findOne({personalizedUrl:this.params._id})
-        this.render 'notFound'
-      else
-        this.render 'hackathonResources'
-    data: ->
-      Session.set 'hackathon', Hackathons.findOne({personalizedUrl:this.params._id})
-      hackData: Hackathons.findOne({personalizedUrl:this.params._id})
 
   @route "hackathonScoreboard",
     path: "/hackathon/:_id/scoreboard"
@@ -384,6 +366,7 @@ Router.map ->
       else
         this.render 'hackathonScoreboard'
     data: ->
+      Session.set 'thisHackathon',Hackathons.findOne({personalizedUrl:this.params._id})
       Session.set 'hackathon', Hackathons.findOne(personalizedUrl: this.params._id)
       hackData: Hackathons.findOne(personalizedUrl: this.params._id)
       personalizedUrl: this.params._id
@@ -408,6 +391,7 @@ Router.map ->
       else
         this.render 'hackathonRegister'
     data: ->
+      Session.set 'thisHackathon',Hackathons.findOne({personalizedUrl:this.params._id})
       Session.set 'hackathon', Hackathons.findOne( personalizedUrl:this.params._id )
       hackData: Hackathons.findOne( personalizedUrl:this.params._id )
 
@@ -430,6 +414,7 @@ Router.map ->
       else
         this.render 'hackathonSubmissions'
     data: ->
+      Session.set 'thisHackathon',Hackathons.findOne({personalizedUrl:this.params._id})
       Session.set 'hackathon', Hackathons.findOne( personalizedUrl:this.params._id )
       hackData: Hackathons.findOne( personalizedUrl:this.params._id )
 
@@ -454,6 +439,7 @@ Router.map ->
       else
         this.render 'hackathonFeedbacks'
     data: ->
+      Session.set 'thisHackathon',Hackathons.findOne({personalizedUrl:this.params._id})
       Session.set 'hackathon', Hackathons.findOne({personalizedUrl:this.params._id})
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
 
@@ -497,6 +483,7 @@ Router.map ->
       else
         this.render 'addscore'
     data: ->
+      Session.set 'thisHackathon',Hackathons.findOne({personalizedUrl:this.params._id})
       Session.set 'hackathon', Hackathons.findOne({personalizedUrl:this.params._id})
       hackData: Hackathons.findOne({personalizedUrl:this.params._id})
       submission: Submissions.findOne(this.params.subId)

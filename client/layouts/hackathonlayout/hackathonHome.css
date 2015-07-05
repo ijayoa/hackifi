@@ -3,7 +3,9 @@
   font-size: 17px;
   padding: 11px;
   margin-top: -30px;
+  margin-bottom: 3%;
   border: 0px;
+  min-width: 60%;
   background-color: #eeeeee;
  /* border-bottom:solid; */
 }

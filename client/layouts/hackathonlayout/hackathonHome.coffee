@@ -1,10 +1,12 @@
 Template.hackathonHome.rendered = () ->
   $('.navbar').css('margin-bottom',0)
   thisHackathon = Session.get 'thisHackathon'
-  $('.sponsors').addClass 'hide' if Sponsors.find({owner:thisHackathon.owner})?
-  $('.judges').addClass 'hide' if Judges.find({owner:thisHackathon.owner})?
-  $('.mentors').addClass 'hide' if Mentors.find({owner:thisHackathon.owner})?
-  console.log thisHackathon
+  if Sponsors.find({owner:thisHackathon.owner}).count() == 0
+    $('.sponsors').addClass 'hide'
+  if Judges.find({owner:thisHackathon.owner}).count() == 0
+    $('.judges').addClass 'hide'
+  if Mentors.find({owner:thisHackathon.owner}).count() == 0
+    $('.mentors').addClass 'hide'
 
 Template.hackathonHome.events
   'click #judge-login': (e, t) ->
