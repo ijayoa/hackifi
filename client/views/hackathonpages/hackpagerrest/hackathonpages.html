@@ -1,8 +1,8 @@
 <template name="hackathonMentors">
-  <div class="row mainrow">
+  <div class="row mainrow text-center">
     <h3 class="text-center">Hacakthon Mentors </h3>
     <hr>
-    <div class="col-sm-10 col-sm-offset-1">
+    <div class="col-sm-10 col-sm-offset-1 text-center">
       {{#each mentorData}}
       <div class="col-md-4 col-sm-6">
        <div class="card-container">
@@ -20,8 +20,6 @@
             <div class="main">
               <h3 class="name">{{name}}</h3>
               <p class="profession">Mentor</p>
-              <h5><i class="fa fa-map-marker fa-fw text-muted"></i> Unknown</h5>
-              <h5><i class="fa fa-building-o fa-fw text-muted"></i> Unknown </h5>
               <h5><i class="fa fa-envelope-o fa-fw text-muted"></i>  {{personalWebsiteLink}}</h5>
             </div>
             <div class="footer">
@@ -36,21 +34,21 @@
         </div> <!-- end front panel -->
         <div class="back">
           <div class="header">
-            <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+            <h4 class="motto">{{name}}</h4>
           </div>
           <div class="content">
             <div class="main">
-              <h4 class="text-center">Experience</h4>
+              <h5 class="text-center">Experience</h5>
               <p class="text-center">{{about}}</p>
-              <h4 class="text-center">Areas of Expertise</h4>
+              <h5 class="text-center">Areas of Expertise</h5>
               <p class="text-center">{{areaOfSpecialization}}</p>
             </div>
           </div>
           <div class="footer">
             <div class="social-links text-center">
-              <a href="http://cretive-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-              <a href="http://cretive-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-              <a href="http://cretive-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+              <a href="#" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+              <a href="#" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
             </div>
           </div>
         </div> <!-- end back panel -->
@@ -58,9 +56,7 @@
     </div> <!-- end card-container -->
   </div> <!-- end col sm 3 -->
   {{else}}
-  <h4>Hackathon Mentors</h4>
-  <hr>
-  <div class="alert alert-warning">>No Mentors for this Hackathon
+  <div class="alert alert-info">>No Mentors for this Hackathon
     <a href="{{pathFor 'updateHackathon'}}" class="alert-link"> Give Feedback</a>
   </div>
   {{/each}}
@@ -68,10 +64,10 @@
 </template>
 
 <template name="hackathonJudges">
-  <div class="row mainrow">
-    <h3 class="text-center">Hacakthon Judges </h3>
+  <div class="row mainrow text-center">
+    <h3 class="text-center">Hacakthon Judges</h3>
     <hr>
-    <div class="col-sm-10 col-sm-offset-1">
+    <div class="col-sm-10 col-sm-offset-1 text-center">
       {{#each judgeData}}
       <div class="col-md-4 col-sm-6">
        <div class="card-container">
@@ -90,37 +86,35 @@
               <div class="main">
                 <h3 class="name">{{name}}</h3>
                 <p class="profession">Judge</p>
-                <h5><i class="fa fa-map-marker fa-fw text-muted"></i> Unknown</h5>
-                <h5><i class="fa fa-building-o fa-fw text-muted"></i> Unknown </h5>
                 <h5><i class="fa fa-envelope-o fa-fw text-muted"></i>  {{personalWebsiteLink}}</h5>
               </div>
               <div class="footer">
-                <div class="rating">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                </div>
+                 <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
               </div>
             </div>
           </div> <!-- end front panel -->
           <div class="back">
             <div class="header">
-              <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+              <h5 class="motto">{{name}}</h5>
             </div>
             <div class="content">
               <div class="main">
-                <h4 class="text-center">Experience</h4>
+                <h5 class="text-center">Experience</h5>
                 <p class="text-center">{{about}}</p>
-                <h4 class="text-center">Areas of Expertise</h4>
+                <h5 class="text-center">Area of Expertise</h5>
                 <p class="text-center">Unknown</p>
               </div>
             </div>
             <div class="footer">
               <div class="social-links text-center">
-                <a href="http://cretive-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-                <a href="http://cretive-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-                <a href="http://cretive-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                <a href="#" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                <a href="#" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                <a href="#" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
               </div>
             </div>
           </div> <!-- end back panel -->
@@ -128,9 +122,7 @@
       </div> <!-- end card-container -->
     </div> <!-- end col sm 3 -->
     {{else}}
-    <h4>Hackathon Judges</h4>
-    <hr>
-    <div class="alert alert-warning">>No judges for this Hackathon
+    <div class="alert alert-info">>No judges for this Hackathon
       <a href="{{pathFor 'updateHackathon'}}" class="alert-link"> Give Feedback</a>
     </div>
     {{/each}}
@@ -313,54 +305,6 @@
   </div>
 
 </div>
-
-
-<!--     <div class="row mainrow tile">
-      <div class="col-xs-8 col-xs-offset-2">
-        <div class="row">
-                <div class="col-xs-4 col-md-4" >
-                  {{#with getDoc productLogo 'Attachments'}}
-                    <img src="{{url}}"  class="img-responsive img-thumbnail">
-                  {{/with}}
-                </div>
-                
-                <div class="col-xs-8 col-md-8">
-                    <p>{{productName}}</h3>
-                    <p>Category: {{productCategory}}</p>
-                    <p>Github Link: {{githubLink}}</p>
-                    <p>Team Members: {{teamMembers}}</p>
-                </div>
-        </div>
-      </div>
-    </div>
- 
-     <div class="row mainrow tile">
-      <div class="col-xs-8 col-xs-offset-2">
-        <div class="row box-body table-responsive no-padding">
-          <table class="table table-responsive">
-            <thead>
-              <tr>
-                <th>Criteria</th>
-                <th>Score</th>
-              </tr>
-            </thead>
-            <tbody>
-               {{#each hackCriterias}}
-                  
-                  <tr>
-                    <td>
-                      {{name}}
-                    </td>
-                          <td>
-                            <div class="ui huge star rating" id="criteria-score" data-crit-id="{{_id}}" data-sub-id="{{getSubId}}" data-hack-id="{{getHackId}}" data-jud-id="{{getJudgeId}}" data-rating="{{getScore _id ../_id}}" data-max-rating="{{maximum_score}}"></div>
-                          </td>
-                </tr> 
-               {{/each}}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div> -->
 
     {{/with}}
     {{else}}
