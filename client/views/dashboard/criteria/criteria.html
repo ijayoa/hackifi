@@ -68,12 +68,13 @@
               <div class="progress-bar progress-bar-danger" style="width: {{maximum_score}}%"></div>
                          </div></td>
               <td><a href="{{pathFor 'updateCriteria'}}" class="hidden-xs btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a>
-              <a href="#" class="hidden-xs btn btn-xs btn-danger"><i class="fa fa-trash"></i></a></td>
+                {{> dbAdminDeleteBtn}}
+              </td>
 
 
             </tr>
             {{/each}}
-
+            {{> criteriaDeleteModal}}
           </tbody></table>
       </div>
     </div>

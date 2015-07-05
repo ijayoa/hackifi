@@ -17,6 +17,9 @@
     removeMentor: (_id) ->
     	Mentors.remove {_id: _id}
 
+    removeCriteria: (_id) ->
+      Criteria.remove {_id: _id}
+
     removeJudge: (_id) ->
     	Judges.remove {_id: _id}
 
