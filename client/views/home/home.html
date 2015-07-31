@@ -1,333 +1,340 @@
 <template name="home">
 
-<head>
-<title>Hackifi | Home</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <title>Hackifi | Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-<script src="js/wow.min.js"></script>
-<script>
- new WOW().init();
-</script>
+        <script src="js/wow.min.js"></script>
+        <script>
+         new WOW().init();
+     </script>
 
-        <script type="text/javascript" src="js/move-top.js"></script>
-        <script type="text/javascript" src="js/easing.js"></script>
-        <script type="text/javascript">
-            jQuery(document).ready(function($) {
-                $(".scroll").click(function(event){
-                    event.preventDefault();
-                    $('html,body').animate({scrollTop:$(this.hash).offset().top},900);
-                });
+     <script type="text/javascript" src="js/move-top.js"></script>
+     <script type="text/javascript" src="js/easing.js"></script>
+     <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},900);
             });
-        </script>
+        });
+    </script>
 
 
 </head>
 <body>
-<!---->
-<div class="banner">
-<div class="setfont">
-     <div class="container-fluid sfont">
-         <div class="header row">
-         <div class="col-xs-12">
-             <div class="wow fadeInLeft" data-wow-delay="0.5s">
-              <a class="navlogo" href="{{pathFor 'home'}}">
-               <img src="/img/hackifilogo.png" width="120px" height="120px" class="img-responsive img">
-             </a>
-             </div>
-             <div class="top-menu">
-               <span class="menu"></span>
-                 <ul>
-                 <li class="active"><a href="/">Home</a></li>
-                 <li><a class="scroll" href="#howhackifiworks">How It Works</a></li>
-                 <li><a class="scroll" href="#ourfeatures">Features</a></li>
-                 <li><a class="scroll" href="#ourpricing">Pricing</a></li>
-                 <li><a class="scroll" href="#testimonials">Testimonials</a></li>
-                 <li><a class="scroll" href="#contact">Contact</a></li>
-                  {{#unless User}}
-                  <!-- {{_ "login2"}} -->
-                  <li><a  style="padding: 12px;" class="hvr-bounce-to-left btn btn-success view wow fadeInLeft" id="home-login" href="{{pathFor route='signIn'}}">Get Started</a></li>
-                  {{/unless}}
+    <!---->
+    <div class="banner">
+        <div class="setfont">
+         <div class="container-fluid sfont">
+             <div class="header row">
+                 <div class="col-xs-12">
+                     <div class="wow fadeInLeft" data-wow-delay="0.5s">
+                      <a class="navlogo" href="{{pathFor 'home'}}">
+                       <img src="/img/hackifilogo.png" width="120px" height="120px" class="img-responsive img">
+                   </a>
+               </div>
+               <div class="top-menu">
+                   <span class="menu"></span>
+                   <ul>
+                     <li class="active"><a href="/">Home</a></li>
+                     <li><a class="scroll" href="#howhackifiworks">How It Works</a></li>
+                     <li><a class="scroll" href="#ourfeatures">Features</a></li>
+                     <li><a class="scroll" href="#ourpricing">Pricing</a></li>
+                     <li><a class="scroll" href="#testimonials">Testimonials</a></li>
+                     <li><a class="scroll" href="#contact">Contact</a></li>
+                     {{#unless User}}
+                     <!-- {{_ "login2"}} -->
+                     <li><a  style="padding: 12px;" class="hvr-bounce-to-left btn btn-success view wow fadeInLeft" id="home-login" href="{{pathFor route='signIn'}}">Get Started</a></li>
+                     {{/unless}}
                  </ul>
              </div>
-              <!-- script-for-menu -->
-         <script>
+             <!-- script-for-menu -->
+             <script>
                 $("span.menu").click(function(){
                     $(".top-menu ul").slideToggle("slow" , function(){
                     });
                 });
-         </script>
-         <!-- script-for-menu -->
-</div>
-             <div class="clearfix"></div>
-         </div>
-         <div class="row banner-info text-center">
-             <div class="col-xs-12 banner-text wow fadeInRight text-center" data-wow-delay="0.5s">
-                 <h1 class="maintitle text-center">HACKATHONS MADE EASY</h1>
-                 <p class="ext-center">Hackifi makes it easier for hackathon organizers to set up and manage hackathons.</p>
-                 {{#if User}}
-                    <a href="{{pathFor 'dashboard'}}" class="text-center view hvr-bounce-to-left btn btn-success"><i class="fa fa-dashboard"></i> {{_ "dashboard"}}</a>
-                    {{else}}
-                     <a class="text-center view hvr-bounce-to-left btn btn-success" href="{{pathFor route='signIn'}}">PLAN A HACKATHON</a>
-                 {{/if}}
-             </div>
-         </div>
-
-     </div>
+            </script>
+            <!-- script-for-menu -->
+        </div>
+        <div class="clearfix"></div>
     </div>
+    <div class="row banner-info text-center">
+     <div class="col-xs-12 banner-text wow fadeInRight text-center" data-wow-delay="0.5s">
+         <h1 class="maintitle text-center">HACKATHONS MADE EASY</h1>
+         <p class="ext-center">Hackifi makes it easier for hackathon organizers to set up and manage hackathons.</p>
+         {{#if User}}
+         <a href="{{pathFor 'dashboard'}}" class="text-center view hvr-bounce-to-left btn btn-success"><i class="fa fa-dashboard"></i> {{_ "dashboard"}}</a>
+         {{else}}
+         <a class="text-center view hvr-bounce-to-left btn btn-success" href="{{pathFor route='signIn'}}">PLAN A HACKATHON</a>
+         {{/if}}
+     </div>
+ </div>
+
+</div>
+</div>
 </div>
 <!---->
 <div class="features-cover">
-<div class="container">
-<div class="row">
-        <div class="content-feature-grids" id="ourfeatures">
-                 <h3 class="text-center">Hackifi Features</h3><br>
-                <p id="howitworksintro" class="text-center">WE MAKE HACKATHONS EASY BY PROVIDING</p>
-                <div class="col-xs-12 col-md-6">
-                    <div class="feature-grid wow fadeInLeft">
-                        <div class="hidden-xs feature-grid-left icon1">
-                            <span><i class="fa fa-dashboard fa-3x"></i></span>
-                        </div>
-                        <div class="feature-grid-right">
-                            <h2>Hackathon DashBoard</h2>
-                            <p>Get instant overview of hacakathon performance and respond quickly to notifications.</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="feature-grid wow fadeInLeft">
-                        <div class="hidden-xs feature-grid-left icon2">
-                            <span><i class="fa fa-microphone fa-3x"></i></span>
-                        </div>
-                        <div class="feature-grid-right">
-                            <h2>Communication</h2>
-                            <p>Remain connected always, send out manual or automated updates, deadlines or messages.</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="feature-grid wow fadeInLeft">
-                        <div class="hidden-xs feature-grid-left icon3">
-                            <span><i class="fa fa-legal fa-3x"></i></span>
-                        </div>
-                        <div class="feature-grid-right">
-                            <h2>ScoreBoard</h2>
-                            <p>Enter scores and automatically generate a digital scoreboard that can be made visible to participants. </p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+    <div class="container">
+        <div class="row">
+            <div class="content-feature-grids" id="ourfeatures">
+             <div class="col-xs-12">
+               <h3 class="text-center">Hackifi Features</h3><br>
+               <p id="howitworksintro" class="text-center">WE MAKE HACKATHONS EASY BY PROVIDING</p>
+           </div>
+
+           <div class="col-xs-12 col-md-6">
+
+              <div class="mb row wow fadeInLeft">
+                <div class="col-xs-2 icon1">
+                    <span><i class="fa fa-dashboard fa-3x"></i></span>
                 </div>
-                <div class=" col-xs-12 col-md-6">
-                    <div class="feature-grid wow fadeInRight">
-                        <div class="hidden-xs feature-grid-left icon4">
-                            <span><i class="fa fa-check fa-3x"></i> </span>
-                        </div>
-                        <div class="feature-grid-right">
-                            <h2>Registration</h2>
-                            <p>Collect and review participant's details and export them after the hackathon for future marketing purposes.</p>
-                        </div>
-                        <div class="clearfix"></div>        
-                    </div>
-                    <div class="feature-grid wow fadeInRight">
-                        <div class="hidden-xs feature-grid-left icon5">
-                            <span><i class="fa fa-folder-open fa-3x"></i></span>
-                        </div>
-                        <div class="feature-grid-right">
-                            <h2>Submission</h2>
-                            <p>Collect team submissions through slides and links. Also, promote submissions on social media.</p>
-                        </div>
-                        <div class="clearfix"></div>        
-                    </div>
-                    <div class="feature-grid wow fadeInRight">
-                        <div class="hidden-xs feature-grid-left icon6">
-                            <span><i class="fa fa-comments fa-3x"></i></span>
-                        </div>
-                        <div class="feature-grid-right">
-                            <h2>Feedback</h2>
-                            <p>Recieve and analyze feedback from participants about their experience.</p>
-                        </div>
-                        <div class="clearfix"></div>        
-                    </div>
+                <div class="col-xs-10">
+                    <h2 class="pull-left">DashBoard</h2>
+                    <p class="pull-left">Get instant overview of hacakathon performance and respond quickly to notifications.</p>
                 </div>
-                    <div class="clearfix"></div>        
+            </div>
+
+            <div class="mb row wow fadeInRight">
+                <div class="col-xs-2 icon1">
+                    <span><i class="fa fa-check fa-3x"></i></span>
                 </div>
+                <div class="col-xs-10">
+                    <h2 class="pull-left">Registration</h2>
+                    <p class="pull-left">Collect and review participant's details and export them after the hackathon for future marketing purposes.</p>
+                </div>
+            </div>
+
+            <div class="mb row wow fadeInLeft">
+                <div class="col-xs-2 icon1">
+                    <span><i class="fa fa-microphone fa-3x"></i></span>
+                </div>
+                <div class="col-xs-10">
+                    <h2 class="pull-left">ScoreBoard</h2>
+                    <p class="pull-left">Enter scores and automatically generate a digital scoreboard that can be made visible to participants.</p>
+                </div>
+            </div>
+
+        </div>
+        <div class=" col-xs-12 col-md-6">
+            <div class="mb row wow fadeInLeft">
+                <div class="col-xs-2 icon1">
+                    <span><i class="fa fa-microphone fa-3x"></i></span>
+                </div>
+                <div class="col-xs-10">
+                    <h2 class="pull-left">Communication</h2>
+                    <p class="pull-left">Get instant overview of hacakathon performance and respond quickly to notifications.</p>
+                </div>
+            </div>
+
+            <div class="mb row wow fadeInRight">
+                <div class="col-xs-2 icon1">
+                    <span><i class="fa fa-folder-open fa-3x"></i></span>
+                </div>
+                <div class="col-xs-10">
+                    <h2 class="pull-left">Submission</h2>
+                    <p class="pull-left">Collect team submissions through slides and links. Also, promote submissions on social media.</p>
+                </div>
+            </div>
+            <div class="mb row wow fadeInRight">
+                <div class="col-xs-2 icon1">
+                    <span><i class="fa fa-comments fa-3x"></i></span>
+                </div>
+                <div class="col-xs-10">
+                    <h2 class="pull-left">Feedback</h2>
+                    <p class="pull-left">Recieve and analyze feedback from participants about their experience.</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="clearfix"></div>        
     </div>
+</div>
     <!-- <div class="row text-center">
         <a class="view hvr-bounce-to-left btn btn-success" href="{{pathFor route='signIn'}}">PLAN A HACKATHON</a>
     </div> -->
 </div>
 </div>
 <div id="howhackifiworks" class="features">
-     <div class="container">
-         <div class="features-head">
-             <h3 class="text-center">How it Works</h3><br>
-             <p id="howitworksintro" class="text-center">SET UP HACKATHONS IN 4 EASY STEPS</p>
-         </div>
-         <div class="features-section">
-         
-         <div class="col-md-12">
-         <div class="row">
-             <div class="col-md-3 col-xs-12 feature-grid wow fadeInUp">
-                <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-google-wallet fa-4x"></i></button>
-                 <h3 class="process-step">Subscribe</h3>
+ <div class="container">
+     <div class="row features-head">
+         <h3 class="text-center">How it Works</h3><br>
+         <p id="howitworksintro" class="text-center">SET UP HACKATHONS IN 4 EASY STEPS</p>
+     </div>
+     <div class="features-section">
 
-                 <p id="howitworks">Subscribe to the Bronze, Silver or Gold offer. </p>
+         <div class="col-xs-12 col-md-12">
+             <div class="row">
+                <div class="col-md-3 col-xs-12 feature-grid wow fadeInUp">
+                    <div class="row">
+                        <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-google-wallet fa-4x"></i></button>
+                        <h3 class="process-step">Subscribe</h3>
 
-             </div>
-             <div class="col-md-3 col-xs-12 feature-grid wow fadeInUp">
-                 <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-paint-brush fa-4x"></i></button>
-                 <h3 class="process-step">Customize Settings</h3>
+                        <p id="howitworks">Subscribe to the Bronze, Silver or Gold offer. </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12 feature-grid wow fadeInUp">
+                   <div class="row">
+                     <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-paint-brush fa-4x"></i></button>
+                     <h3 class="process-step">Customize Settings</h3>
 
-                 <p id="howitworks">Enter details such as rules, schedules, eligibility. </p>
+                     <p id="howitworks">Enter details such as rules, schedules, eligibility. </p>
 
-
-
-             </div>
-             <div class="col-md-3 col-xs-12 feature-grid wow fadeInUp">
-                 <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-tint fa-4x"></i></button>
-                 <h3 class="process-step">Personalize Url</h3>
-
-                 <p id="howitworks">Set a unique URL for participants to interact with the competition. </p> 
+                 </div>
 
              </div>
              <div class="col-md-3 col-xs-12 feature-grid wow fadeInUp">
-                 <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-rocket fa-4x"></i></button>
-                 <h3 class="process-step">Hackathon Launched</h3>
+                 <div class="row">
+                     <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-tint fa-4x"></i></button>
+                     <h3 class="process-step">Personalize Url</h3>
 
-                 <p id="howitworks">That's All!, your hackathon is now live! Easy Breezy!</p>
+                     <p id="howitworks">Set a unique URL for participants to interact with the competition. </p> 
+                 </div>
+             </div>
+             <div class="col-md-3 col-xs-12 feature-grid wow fadeInUp">
+                 <div class="row">
+                     <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-rocket fa-4x"></i></button>
+                     <h3 class="process-step">Hackathon Launched</h3>
 
+                     <p id="howitworks">That's All!, your hackathon is now live! Easy Breezy!</p>
 
+                 </div>
 
              </div>
-             </div>
-             </div>
-             <div class="clearfix"></div>
          </div>
      </div>
+     <div class="clearfix"></div>
+ </div>
+</div>
 </div>
 <div class="features2">
-     <div class="container">
-         <div class="features-head">
-             <h3 class="text-center">Why Use Hackifi?</h3><br>
-             <p id="howitworksintro" class="text-center">WE ARE DEDICATED</p>
-         </div>
-         <div class="features-section">
+ <div class="container">
+     <div class="features-head">
+         <h3 class="text-center">Why Use Hackifi?</h3><br>
+         <p id="howitworksintro" class="text-center">WE ARE DEDICATED</p>
+     </div>
+     <div class="features-section">
 
          <div class="col-md-12 text-center">
-         <div class="row">
+             <div class="row">
               <p id="howitworksintroP">Hackifi incorporates best practices and automates the management of hackathons from start-to-finish. As hackathons become more popular, organizers set their events apart by increasingly differentiating the experience they offer.</p>
-             </div>
-             <div class="text-center row process-step">
-                <a class="text-center downloadwhy wow bounceIn" data-wow-delay="0.4s" href="mailto:support@hackifi.com">GET A QUOTE TODAY</a>
-             </div>
-             </div>
-             <div class="clearfix"></div>
-         </div>
-     </div>
+          </div>
+          <div class="text-center row process-step">
+            <a class="text-center downloadwhy wow bounceIn" data-wow-delay="0.4s" href="mailto:support@hackifi.com">GET A QUOTE TODAY</a>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+</div>
 </div>
 <!---->
 <div id="testimonials" class="pricing">
-<div class="pricing-cover">
+    <div class="pricing-cover">
      <div class="container">
          <div class="pricing-text">
             <p>WHAT OUR CUSTOMERS ARE SAYING ABOUT US</p><br>
             <h3>Testimonials</h3>
+        </div>
+        <!-- start slider -->
+        <div class="pricing-grids">
+         <div class="slider">
+             <ul class="rslides" id="slider2">
+                 <li>
+                     <div class="col-md-6 pricing-plans">
+                      <p>Brilliant idea and a sharp team! With the six hachatons thrown by my company every year, this tool is a God-send to my administrative staff</p>
+                      <div class="pic1">
+                         <img src="images/jorn.jpeg" alt=""/>
+                     </div>
+                     <div class="pic-info">
+                        <h5>Jorn Lyseggen</h5>
+                        <a href="#">CEO, Meltwater Group</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-md-6 pricing-plans">
+                  <p>I wish I had this app last year. Organizing my first hackathon for a new company was overwhelming. Hackifi makes it seamless. </p>
+                  <div class="pic1">
+                     <img src="images/victorhubaccra.jpg" alt=""/>
+                 </div>
+                 <div class="pic-info">
+                    <h5>Victor Ofoegbu</h5>
+                    <a href="#">Community manager, Hub Accra</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </li>
+        <li>
+         <div class="col-md-6 pricing-plans">
+          <p>Handling my first hackathon was a nightmare. I never realized all the asssignments I had to make sure where in order. When I found Hackifi online, I was so releaved! </p>
+          <div class="pic1">
+             <img src="images/averi.jpg" alt=""/>
          </div>
-         <!-- start slider -->
-         <div class="pricing-grids">
-             <div class="slider">
-                 <ul class="rslides" id="slider2">
-                     <li>
-                         <div class="col-md-6 pricing-plans">
-                              <p>Brilliant idea and a sharp team! With the six hachatons thrown by my company every year, this tool is a God-send to my administrative staff</p>
-                              <div class="pic1">
-                                 <img src="images/jorn.jpeg" alt=""/>
-                              </div>
-                              <div class="pic-info">
-                                    <h5>Jorn Lyseggen</h5>
-                                    <a href="#">CEO, Meltwater Group</a>
-                              </div>
-                              <div class="clearfix"></div>
-                         </div>
-                         <div class="col-md-6 pricing-plans">
-                              <p>I wish I had this app last year. Organizing my first hackathon for a new company was overwhelming. Hackifi makes it seamless. </p>
-                              <div class="pic1">
-                                 <img src="images/victorhubaccra.jpg" alt=""/>
-                              </div>
-                              <div class="pic-info">
-                                    <h5>Victor Ofoegbu</h5>
-                                    <a href="#">Community manager, Hub Accra</a>
-                              </div>
-                              <div class="clearfix"></div>
-                         </div>
-                          <div class="clearfix"></div>
-                      </li>
-                      <li>
-                         <div class="col-md-6 pricing-plans">
-                              <p>Handling my first hackathon was a nightmare. I never realized all the asssignments I had to make sure where in order. When I found Hackifi online, I was so releaved! </p>
-                              <div class="pic1">
-                                 <img src="images/averi.jpg" alt=""/>
-                              </div>
-                              <div class="pic-info">
-                                    <h5>Averi Thomas</h5>
-                                    <a href="#">Business Development Manager, MINC</a>
-                              </div>
-                              <div class="clearfix"></div>
-                         </div>
-                          <div class="col-md-6 pricing-plans">
-                              <p>Hackifi is a software that delivers on every promise made. I was able to communicate wit the judges, teams and other organizers so easily. Kudos to the team!</p>
-                              <div class="pic1">
-                                 <img src="images/amma.jpg" alt=""/>
-                              </div>
-                              <div class="pic-info">
-                                    <h5>Amma Baffoe</h5>
-                                    <a href="#">Director of Recruitment, MEST Ghana</a>
-                              </div>
-                              <div class="clearfix"></div>
-                         </div>
-                          <div class="clearfix"></div>
-                      </li>
-                  </ul>
-               </div>
-               <!-- end slider -->
-          </div>
+         <div class="pic-info">
+            <h5>Averi Thomas</h5>
+            <a href="#">Business Development Manager, MINC</a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="col-md-6 pricing-plans">
+      <p>Hackifi is a software that delivers on every promise made. I was able to communicate wit the judges, teams and other organizers so easily. Kudos to the team!</p>
+      <div class="pic1">
+         <img src="images/amma.jpg" alt=""/>
      </div>
+     <div class="pic-info">
+        <h5>Amma Baffoe</h5>
+        <a href="#">Director of Recruitment, MEST Ghana</a>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+</li>
+</ul>
+</div>
+<!-- end slider -->
+</div>
+</div>
 </div>
 </div>
 <div id="ourpricing" class="theme">
-     <div class="container text-center">
-         <div class="pricing-text text-center">
-            <p class="text-center">ORGANIZE BETTER HACKATHONS</p>
-            <h3>Hackifi Pricing Plans</h3>
-         </div>
-         <p id="howitworksintroP" class="pp text-center wow bounceIn" data-wow-delay="0.4s"> Our prices are fixed based on the volume of participants at your hackathon. </p>
-          <!-- <a class="view hvr-bounce-to-left wow bounceIn" data-wow-delay="0.4s" href="#">VIEW FEATURES</a> -->
-         <a class="text-center download wow bounceIn" data-wow-delay="0.4s" href="mailto:support@hackifi.com">GET A QUOTE TODAY</a>
-     </div>
+ <div class="container text-center">
+     <div class="pricing-text text-center">
+        <p class="text-center">ORGANIZE BETTER HACKATHONS</p>
+        <h3>Hackifi Pricing Plans</h3>
+    </div>
+    <p id="howitworksintroP" class="pp text-center wow bounceIn" data-wow-delay="0.4s"> Our prices are fixed based on the volume of participants at your hackathon. </p>
+    <!-- <a class="view hvr-bounce-to-left wow bounceIn" data-wow-delay="0.4s" href="#">VIEW FEATURES</a> -->
+    <a class="text-center download wow bounceIn" data-wow-delay="0.4s" href="mailto:support@hackifi.com">GET A QUOTE TODAY</a>
+</div>
 </div>
 <div id="about" class="about">
-     <div class="container">
-         <div class="about-top">
-             <div class="col-md-6 about-device wow fadeInLeft" data-wow-delay="0.5s">
-                 <img src="images/app.png" alt=""/>
-             </div>
-             <div class="col-md-6 about-device-info wow fadeInRight" data-wow-delay="0.5s">
-                 <div class="device-text">
-                     <h4>HACKIFI FOR RECRUITMENT </h4>
-                     <h3>Recruit the best developers </h3>
-                     <p>With our database of the best software developers and programmers from all over the world, we offer leads and matches to software job-seekers and the kings of software. </p>
-                 </div>
-                 <div class="about-list">
-                     <ul>
-                         <li><a href="#"><i class="icon-color fa fa-trophy"></i> Discover Winners</a></li>
-                         <li><a href="#"><i class="icon-color fa fa-globe"></i>  Real-time global coverage of hackathons</a></li>
-                         <li><a href="#"><i style="padding-right: 1%;" class="icon-color fa fa-mobile"></i>  Mobile Optimized</a></li>
-                         <li><a href="#"><i class="icon-color fa fa-magic"></i>  With tons of features</a></li>
-                     </ul>
-                 </div>
-             </div>
-             <div class="clearfix"></div>
+ <div class="container">
+     <div class="about-top">
+         <div class="col-md-6 col-xs-12 about-device wow fadeInLeft" data-wow-delay="0.5s">
+             <img src="images/app.png" alt=""/>
          </div>
+         <div class="col-md-6 col-xs-12 about-device-info wow fadeInRight" data-wow-delay="0.5s">
+             <div class="device-text">
+                 <h4>HACKIFI FOR RECRUITMENT </h4>
+                 <h3>Recruit the best developers </h3>
+                 <p>With our database of the best software developers and programmers from all over the world, we offer leads and matches to software job-seekers and the kings of software. </p>
+             </div>
+             <div class="about-list">
+                 <ul>
+                     <li><a href="#"><i class="icon-color fa fa-trophy"></i> Discover Winners</a></li>
+                     <li><a href="#"><i class="icon-color fa fa-globe"></i>  Real-time global coverage of hackathons</a></li>
+                     <li><a href="#"><i style="padding-right: 1%;" class="icon-color fa fa-mobile"></i>  Mobile Optimized</a></li>
+                     <li><a href="#"><i class="icon-color fa fa-magic"></i>  With tons of features</a></li>
+                 </ul>
+             </div>
+         </div>
+         <div class="clearfix"></div>
      </div>
+ </div>
 </div>
 <!-- <div class="about-bottom">
      <div class="container">
@@ -343,65 +350,65 @@
          </div>
          <div class="clearfix"></div>
      </div>
-</div> -->
-<!---->
-  <script src="js/responsiveslides.min.js"></script>
-  <script>
+ </div> -->
+ <!---->
+ <script src="js/responsiveslides.min.js"></script>
+ <script>
     // You can also use "$(window).load(function() {"
-    $(function () {
-      $("#slider2").responsiveSlides({
-        auto: true,
-        pager: true,
-        speed: 300,
-        namespace: "callbacks",
+        $(function () {
+          $("#slider2").responsiveSlides({
+            auto: true,
+            pager: true,
+            speed: 300,
+            namespace: "callbacks",
+        });
       });
-    });
   </script>
 
-<!---->
-<div id="contact" class="contact">
+  <!---->
+  <div id="contact" class="contact">
      <div class="container-fluid">
          <div class="row contact-text">
             <h4>STAY IN TOUCH</h4>
             <h3>Contact us</h3>
+        </div>
+        <div class="row contact-grids">
+         <div class="col-md-4 col-xs-12  contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
+             <div class="icon1"><i class="icon-color fa fa-mobile fa-3x"></i></div>
+             <p>Work: (233) 246-614-835</p>
+             <p>Mobile: (233) 248-060-588</p>
          </div>
-         <div class="row contact-grids">
-             <div class="col-md-4 col-xs-12  contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
-                 <div class="icon1"><i class="icon-color fa fa-mobile fa-3x"></i></div>
-                 <p>Work: (233) 246-614-835</p>
-                 <p>Mobile: (233) 248-060-588</p>
-             </div>
-             <div class="col-md-4 col-xs-12 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
-                 <div class="icon2"><i class="icon-color fa fa-map-marker fa-3x"></i></div>
-                 <p>20 Aluguntuguntu Street</p>
-                 <p>Ambassadorial Enclave</p>
-                 <p>East Legon, Greater Accra</p>
-                 <p>Ghana</p>
-             </div>
-             <div class="col-md-4 col-xs-12 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
-                 <div class="icon3"><i class="icon-color fa fa-envelope fa-3x"></i></div>
-                 <a href="mailto:support@hackifi.com">Email us: support@hackifi.com</a>
-             </div>
-             <div class="clearfix"></div>
+         <div class="col-md-4 col-xs-12 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
+             <div class="icon2"><i class="icon-color fa fa-map-marker fa-3x"></i></div>
+             <p>20 Aluguntuguntu Street</p>
+             <p>Ambassadorial Enclave</p>
+             <p>East Legon, Greater Accra</p>
+             <p>Ghana</p>
          </div>
+         <div class="col-md-4 col-xs-12 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
+             <div class="icon3"><i class="icon-color fa fa-envelope fa-3x"></i></div>
+             <a href="mailto:support@hackifi.com">Email us: support@hackifi.com</a>
+         </div>
+         <div class="clearfix"></div>
      </div>
+ </div>
 </div>
 <!---->
 <div class="footer text-center">
-     <div class="container">
-         <div class=" row social">
-             <a href="#"><span class="behance"></span></a>
-             <a href="#"><span class="dribble"></span></a>
-             <a href="#"><span class="twitter"></span></a>
-             <a href="#"><span class="facebook"></span></a>
-             <a href="#"><span class="linkedin"></span></a>
-         </div>
-         <p id="footp" class="wow bounceIn" data-wow-delay="0.4s"> Copyright &copy; 2015 Hackifi.</p>
+ <div class="container">
+     <div class=" row social">
+         <a href="#"><span class="behance"></span></a>
+         <a href="#"><span class="dribble"></span></a>
+         <a href="#"><span class="twitter"></span></a>
+         <a href="#"><span class="facebook"></span></a>
+         <a href="#"><span class="linkedin"></span></a>
      </div>
+     <p id="footp" class="wow bounceIn" data-wow-delay="0.4s"> Copyright &copy; 2015 Hackifi.</p>
+ </div>
 </div>
 
 <script type="text/javascript">
-        $(document).ready(function() {
+    $(document).ready(function() {
                 /*
                 var defaults = {
                 containerID: 'toTop', // fading element id
@@ -410,13 +417,13 @@
                 easingType: 'linear'
                 };
                 */
-        $().UItoTop({ easingType: 'easeOutQuart' });
-});
-</script>
-<a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+                $().UItoTop({ easingType: 'easeOutQuart' });
+            });
+        </script>
+        <a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
 
- </body>
+    </body>
 
 <!-- <div id="skrollr-body">
     {{> skrollrBackground}}
@@ -454,7 +461,7 @@
                     </div> -->
                     <!--                 <div class="col-lg-6 col-sm-6">
                                                 <img class="img-responsive" src="/img/image-header1.png" alt="">
-                    </div> -->
+                                            </div> -->
     <!--             </div>
             </div>
         </div>
@@ -497,7 +504,7 @@
                         <h1>Great features!</h1>
                         <h2>You can use {{Config.siteName}} to do anything</h2>
                 </div>
-    </section> -->
+            </section> -->
    <!--  <section id="ipad" class="colored text-center">
         <div class="container">
             <div class="row">
@@ -548,8 +555,8 @@
         data-anchor-target="#intro"
         data-bottom-top="transform: translate3d(0px, -80%, 0px);"
         data-top-bottom="transform: translate3d(0px, 80%, 0px);"
-    ></div> -->
-    <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
+        ></div> -->
+        <!--the +/-80% translation can be adjusted to control the speed difference of the image-->
 <!-- </div>
 </template> -->
 <!-- <template name="footerHome">

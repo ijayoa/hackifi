@@ -784,7 +784,7 @@ padding:3em 0;
 @media (max-width: 480px){
 .pricing-bottom, .contact {
   padding: 5% 0 5% 0;
-  min-height: 500px;
+  min-height: 550px;
 }
 }
 .social span {
@@ -1016,11 +1016,11 @@ font-size: 2.3em;
 .pricing-text-bottom h3 {
 padding-bottom: 1em;
 }
-.feature-grid {
+/*.feature-grid {
 width: 50%;
 float: left;
 margin-bottom:2em;
-}
+}*/
 .feature-grid h3 {
 font-size: 1.7em;
 }
@@ -1526,4 +1526,11 @@ font-size: 0.85em;
 .social span{
 margin-right:1em;
 }
+}
+
+.alignR{
+	text-align: right;
+}
+.alignL{
+	text-align: left;
 }
