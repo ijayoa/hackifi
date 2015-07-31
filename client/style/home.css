@@ -781,6 +781,12 @@ padding:5% 0;
 /*background:#0d725c;*/
 padding:3em 0;
 }
+@media (max-width: 480px){
+.pricing-bottom, .contact {
+  padding: 5% 0 5% 0;
+  min-height: 500px;
+}
+}
 .social span {
 background: url(../images/social.png) no-repeat 0px 0px;
 width: 27px;

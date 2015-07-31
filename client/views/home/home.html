@@ -2,6 +2,7 @@
 
 <head>
 <title>Hackifi | Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
@@ -29,6 +30,7 @@
 <div class="setfont">
      <div class="container-fluid sfont">
          <div class="header row">
+         <div class="col-xs-12">
              <div class="wow fadeInLeft" data-wow-delay="0.5s">
               <a class="navlogo" href="{{pathFor 'home'}}">
                <img src="/img/hackifilogo.png" width="120px" height="120px" class="img-responsive img">
@@ -57,25 +59,19 @@
                 });
          </script>
          <!-- script-for-menu -->
-
+</div>
              <div class="clearfix"></div>
          </div>
          <div class="row banner-info text-center">
-             <div class="col-md-12 hidden-xs banner-text wow fadeInRight text-center" data-wow-delay="0.5s">
-                 <h1 class="maintitle">HACKATHONS MADE EASY</h1>
-                 <p>Hackifi makes it easier for hackathon organizers to set up and manage hackathons.</p>
+             <div class="col-xs-12 banner-text wow fadeInRight text-center" data-wow-delay="0.5s">
+                 <h1 class="maintitle text-center">HACKATHONS MADE EASY</h1>
+                 <p class="ext-center">Hackifi makes it easier for hackathon organizers to set up and manage hackathons.</p>
                  {{#if User}}
-                    <a href="{{pathFor 'dashboard'}}" class="view hvr-bounce-to-left btn btn-success"><i class="fa fa-dashboard"></i> {{_ "dashboard"}}</a>
+                    <a href="{{pathFor 'dashboard'}}" class="text-center view hvr-bounce-to-left btn btn-success"><i class="fa fa-dashboard"></i> {{_ "dashboard"}}</a>
                     {{else}}
-                     <a class="view hvr-bounce-to-left btn btn-success" href="{{pathFor route='signIn'}}">PLAN A HACKATHON</a>
+                     <a class="text-center view hvr-bounce-to-left btn btn-success" href="{{pathFor route='signIn'}}">PLAN A HACKATHON</a>
                  {{/if}}
              </div>
-             <div class="small-title col-xs-8 col-xs-offset-2 visible-xs banner-text wow fadeInRight text-center" data-wow-delay="0.5s">
-                 <h1 class="maintitle">HACKATHONS MADE EASY</h1>
-                 <p>Hackifi helps you organize hackathons from start to finish</p>
-                 <a class="view hvr-bounce-to-left btn btn-success" href="{{pathFor route='signIn'}}">PLAN A HACKATHON</a>
-             </div>
-             <div class="clearfix"></div>
          </div>
 
      </div>
@@ -88,9 +84,9 @@
         <div class="content-feature-grids" id="ourfeatures">
                  <h3 class="text-center">Hackifi Features</h3><br>
                 <p id="howitworksintro" class="text-center">WE MAKE HACKATHONS EASY BY PROVIDING</p>
-                <div class="col-md-6">
+                <div class="col-xs-12 col-md-6">
                     <div class="feature-grid wow fadeInLeft">
-                        <div class="feature-grid-left icon1">
+                        <div class="hidden-xs feature-grid-left icon1">
                             <span><i class="fa fa-dashboard fa-3x"></i></span>
                         </div>
                         <div class="feature-grid-right">
@@ -100,7 +96,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="feature-grid wow fadeInLeft">
-                        <div class="feature-grid-left icon2">
+                        <div class="hidden-xs feature-grid-left icon2">
                             <span><i class="fa fa-microphone fa-3x"></i></span>
                         </div>
                         <div class="feature-grid-right">
@@ -110,7 +106,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="feature-grid wow fadeInLeft">
-                        <div class="feature-grid-left icon3">
+                        <div class="hidden-xs feature-grid-left icon3">
                             <span><i class="fa fa-legal fa-3x"></i></span>
                         </div>
                         <div class="feature-grid-right">
@@ -120,9 +116,9 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class=" col-xs-12 col-md-6">
                     <div class="feature-grid wow fadeInRight">
-                        <div class="feature-grid-left icon4">
+                        <div class="hidden-xs feature-grid-left icon4">
                             <span><i class="fa fa-check fa-3x"></i> </span>
                         </div>
                         <div class="feature-grid-right">
@@ -132,7 +128,7 @@
                         <div class="clearfix"></div>        
                     </div>
                     <div class="feature-grid wow fadeInRight">
-                        <div class="feature-grid-left icon5">
+                        <div class="hidden-xs feature-grid-left icon5">
                             <span><i class="fa fa-folder-open fa-3x"></i></span>
                         </div>
                         <div class="feature-grid-right">
@@ -142,7 +138,7 @@
                         <div class="clearfix"></div>        
                     </div>
                     <div class="feature-grid wow fadeInRight">
-                        <div class="feature-grid-left icon6">
+                        <div class="hidden-xs feature-grid-left icon6">
                             <span><i class="fa fa-comments fa-3x"></i></span>
                         </div>
                         <div class="feature-grid-right">
@@ -170,14 +166,14 @@
          
          <div class="col-md-12">
          <div class="row">
-             <div class="col-md-3 feature-grid wow fadeInUp">
+             <div class="col-md-3 col-xs-12 feature-grid wow fadeInUp">
                 <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-google-wallet fa-4x"></i></button>
                  <h3 class="process-step">Subscribe</h3>
 
                  <p id="howitworks">Subscribe to the Bronze, Silver or Gold offer. </p>
 
              </div>
-             <div class="col-md-3 feature-grid wow fadeInUp">
+             <div class="col-md-3 col-xs-12 feature-grid wow fadeInUp">
                  <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-paint-brush fa-4x"></i></button>
                  <h3 class="process-step">Customize Settings</h3>
 
@@ -186,14 +182,14 @@
 
 
              </div>
-             <div class="col-md-3 feature-grid wow fadeInUp">
+             <div class="col-md-3 col-xs-12 feature-grid wow fadeInUp">
                  <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-tint fa-4x"></i></button>
                  <h3 class="process-step">Personalize Url</h3>
 
                  <p id="howitworks">Set a unique URL for participants to interact with the competition. </p> 
 
              </div>
-             <div class="col-md-3 feature-grid wow fadeInUp">
+             <div class="col-md-3 col-xs-12 feature-grid wow fadeInUp">
                  <button type="button" class="btn btn-circle" disabled="disabled"><i class="fa fa-rocket fa-4x"></i></button>
                  <h3 class="process-step">Hackathon Launched</h3>
 
@@ -364,25 +360,25 @@
 
 <!---->
 <div id="contact" class="contact">
-     <div class="container">
+     <div class="container-fluid">
          <div class="row contact-text">
             <h4>STAY IN TOUCH</h4>
             <h3>Contact us</h3>
          </div>
          <div class="row contact-grids">
-             <div class="col-md-4 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
+             <div class="col-md-4 col-xs-12  contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
                  <div class="icon1"><i class="icon-color fa fa-mobile fa-3x"></i></div>
                  <p>Work: (233) 246-614-835</p>
                  <p>Mobile: (233) 248-060-588</p>
              </div>
-             <div class="col-md-4 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
+             <div class="col-md-4 col-xs-12 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
                  <div class="icon2"><i class="icon-color fa fa-map-marker fa-3x"></i></div>
                  <p>20 Aluguntuguntu Street</p>
                  <p>Ambassadorial Enclave</p>
                  <p>East Legon, Greater Accra</p>
                  <p>Ghana</p>
              </div>
-             <div class="col-md-4 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
+             <div class="col-md-4 col-xs-12 contact-grid text-center wow bounceIn" data-wow-delay="0.4s">
                  <div class="icon3"><i class="icon-color fa fa-envelope fa-3x"></i></div>
                  <a href="mailto:support@hackifi.com">Email us: support@hackifi.com</a>
              </div>
