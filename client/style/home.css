@@ -1,4 +1,12 @@
-
+ span.menu{
+	display:block;
+	float:right;
+}
+span.menu:before {
+	content: url(../images/nav.png);
+	cursor: pointer;
+	height:32px;
+}
 .navbar-brand{
 	font-family: 'Kelly Slab', cursive;
 }
@@ -1262,11 +1270,7 @@ height: 340px;
 }
 }
 @media(max-width: 480px){
-span.menu:before {
-	content: url(../images/nav.png);
-	cursor: pointer;
-	height:32px;
-}
+
 .top-menu {
 width: 11%;
 float: right;
@@ -1294,10 +1298,7 @@ border-bottom:none;
 .top-menu ul li a:hover{
 color:#16151b;
 }
- span.menu{
-	display:block;
-	float:right;
-}
+
 .top-menu  ul{
 	margin: 0;
 	z-index: 999;
