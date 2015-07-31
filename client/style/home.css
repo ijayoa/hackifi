@@ -91,11 +91,10 @@ margin-top:5%;
 .banner-pic{
 text-align:right;
 }
-.banner-text{
-padding-left:0;
+.banner-info{
 margin-top:6%;
 }
-.banner-text h3{
+.banner-info h3{
 font-size:1em;
 font-weight:700;
 letter-spacing:1px;
@@ -103,13 +102,13 @@ text-transform:uppercase;
 color:#005e49;
 margin-bottom:1.2em;
 }
-.banner-text h1{
+.banner-info h1{
 font-size:3.4em;
 font-weight: 600;
 color:#eee;
 margin-bottom:0.5em;
 }
-.banner-text p{
+.banner-info p{
 font-size:1.5em;
 color:#eeeeee;
 line-height:1.5em;
