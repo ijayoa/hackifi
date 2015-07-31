@@ -64,7 +64,11 @@
     </div>
     <div class="row banner-info text-center">
      <div class="col-xs-12 banner-info wow fadeInRight text-center" data-wow-delay="0.5s">
-         <h1 class="maintitle text-center">HACKATHONS MADE EASY</h1>
+          <div class="row">
+              <h1 class="maintitle text-center hidden-xs">HACKATHONS MADE EASY</h1>
+              <p class="maintitle banxs text-center hidden-md visible-xs">HACKATHONS MADE EASY</p>
+          </div>
+         
          <p class="ext-center">Hackifi makes it easier for hackathon organizers to set up and manage hackathons.</p>
          {{#if User}}
          <a href="{{pathFor 'dashboard'}}" class="text-center view hvr-bounce-to-left btn btn-success"><i class="fa fa-dashboard"></i> {{_ "dashboard"}}</a>
