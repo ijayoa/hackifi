@@ -15,16 +15,10 @@ Schemas.Submissions = new SimpleSchema
     autoform:
       options: ->
           return [
-            {value: 'Technology', label: 'Technology'}
-            {value: 'Finance', label: 'Finance'},
+            {value: 'Financial', label: 'Finance'},
             {value: 'Agriculture', label: 'Agriculture'},
-            {value: 'Safety and Alerts', label: 'Safety and Alerts'},
-            {value: 'Environmental', label: 'Environmental'},
-            {value: 'Business', label: 'Business'},
-            {value: 'Communication', label: 'Communication'},
             {value: 'Health', label: 'Health'},
-            {value: 'Transportation', label: 'Transportation'}
-            {value: 'Social or LifeStyle', label: 'Social or LifeStyle'}
+            {value: 'Entertainment', label: 'Entertainment'}
            ]
 
   shortDescription:

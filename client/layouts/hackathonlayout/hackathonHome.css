@@ -20,9 +20,10 @@
 font-family: 'Kelly Slab', cursive;
 }
 .jumbotron h1{
-	color: #eeeeee;
+	color: inherit;
 	margin-top: 3%;
 }
+
 
 .join{
   color: #000;

@@ -6,7 +6,7 @@ Schemas.Criteria = new SimpleSchema
     
     maximum_score: 
       type: Number
-      max: 15
+      max: 50
 
     hackathon:
      type: String

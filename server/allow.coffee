@@ -76,3 +76,11 @@ Meteor.users.allow
 			true
 		else
 			false
+
+Submissions.allow
+	insert: (userId, doc) ->
+		true
+	update: (userId, doc, fields, modifier) ->
+		userId
+	remove: (userId, doc) ->
+		userId
