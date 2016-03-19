@@ -40,9 +40,10 @@
         #ISSUE, a default insert is done before the actual insert.
         #not sure why, but its not a problem cos functionality is not affected
         doc = Scores.findOne(
-                criteriaId: criteriaId
+                # criteriaId: criteriaId
                 submissionId: submissionId
-                judgeId:judgeId)
+                # judgeId:judgeId
+                )
         if typeof doc == 'undefined'
           Scores.insert {
             score: score
