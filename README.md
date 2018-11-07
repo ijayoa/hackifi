@@ -13,7 +13,7 @@ meteor
 
 ## What's built into this product
 
-## User Authentication With Roles
+### User Authentication With Roles
 Hackathon participant, organizer, judge and overall product admin
 
 ### Main Pages
