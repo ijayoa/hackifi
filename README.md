@@ -1,52 +1,42 @@
-Meteor Starter
-==============
+# Hackifi - Complete Hackathon Web Product
 
-A Meteor boilerplate with a lot packed in. Written in Coffeescript.
+Hackifi is a SAAS web application that enables hackathon organizers to seamlessly manage hackathons from START to FINISH.
+It's built on Blaze, Nodejs, MongoDB using the MeteorJS framework for development speed. 
 
-[Demo](http://starter.meteor.com) - For admin, log in with: `starter@meteorfactory.io` and `meteorrocks`
-
-[Tutorials](http://learn.meteorfactory.io/meteor-starter/)
-
-[MIT License](http://choosealicense.com/licenses/mit/)
-
-### Setup ####
+## Setting up 
 
 ```
-git clone https://github.com/yogiben/meteor-starter.git myapp
-cd myapp
+git clone https://github.com/ijayoa/hackifi.git hackifi
+cd hackifi
 meteor
 ```
 
-### What's included ###
-#### Visitors####
-* Sexy landing page
+## What's built into this product
 
-####Users####
-* Login / Sign up etc. from [Accounts Entry](https://github.com/Differential/accounts-entry)
-* Sign in with Facebook etc. with automatic photo import
-* Profile Page - add a photo, location and other fields defined in schema
-* Have a username (or not)
-* Change their password and delete their account
+## User Authentication With Roles
+Hackathon participant, organizer, judge and overall product admin
 
-#### Admin ####
-* Manage everything via an [admin dahsboard](https://github.com/yogiben/meteor-admin/) (go to `/admin`)
+### Main Pages
+1. Full web app business landing page for a product 
+1. Hackthon home page
+1. Leaderboard Score Page
+1. Organizer admin page
 
-#### Interactions ####
-* Create / edit posts with image upload
-* Favorite / comment on posts
+### Interactions - Organizer
+- Setup Hackathon
+- Manage participants
+- Manage Judges
+- Manage Submission
 
-### Customisation ###
-Detailed tutorails coming soon.
+### Interactions - Judge
+- Score a hackathon
+- profile
 
-First steps:
-* Edit basic setting in `/both/_config/_config.coffee`
-* Delete / modify HTML in `/client/views/home.html`
-* Update colors in `/client/style/bootstrap-variables.less`
-* Add / edit collections in `/both/collections/`
-* Create routes and views in `/both/router.coffee` and `/client/views` folder
+### Interactions - Participant
+- Register for a hackathon
+- Make submission
+- View notifications
 
-### Screenshots ###
-![alt tag](https://raw.githubusercontent.com/yogiben/meteor-starter/master/readme/meteor-starter-5.png)
-![alt tag](https://raw.githubusercontent.com/yogiben/meteor-starter/master/readme/login.png)
-![alt tag](https://raw.githubusercontent.com/yogiben/meteor-starter/master/readme/profile.png)
-![alt tag](https://raw.githubusercontent.com/yogiben/meteor-starter/master/readme/like_comment.png)
+### Interactions - Admin
+- Manage application on a high level
+- Create , edit , delete, update functions on all objects
